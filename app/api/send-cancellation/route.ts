@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import sgMail from "@sendgrid/mail";
 
-const ADMIN_EMAIL = "owais@nusoft.co";
 const SENDER_EMAIL = "contact@cyrusonehotel.com";
 
 export async function POST(req: NextRequest) {
