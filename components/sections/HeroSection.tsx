@@ -21,7 +21,7 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
       <div className="absolute inset-0 z-0">
         <Image
           src="/hero-bg.png"
-          alt="CyrusOne Hotel interior — modern architecture near Islamabad airport"
+          alt="Cyrus One Hotel interior — modern architecture near Islamabad airport"
           fill
           priority
           className="object-cover"

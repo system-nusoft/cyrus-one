@@ -18,7 +18,7 @@ export interface RoomContent {
 export const roomContent: Record<string, RoomContent> = {
   "Standard Double": {
     slug: "standard-double",
-    displayName: "CyrusOne Standard Double",
+    displayName: "Cyrus One Standard Double",
     description:
       "The double room's kitchenette, which features a refrigerator and an electric kettle, is available for cooking and storing food. The double room offers air conditioning, a seating area, a balcony with city views as well as a private bathroom featuring a shower. The unit offers 1 bed.",
     area: "25",
@@ -37,7 +37,7 @@ export const roomContent: Record<string, RoomContent> = {
   },
   "Deluxe Double": {
     slug: "deluxe-double",
-    displayName: "CyrusOne Deluxe Double",
+    displayName: "Cyrus One Deluxe Double",
     description:
       "The double room's kitchenette, which has a refrigerator and an electric kettle, is available for cooking and storing food. The spacious double room features air conditioning, a seating area, a balcony with city views as well as a private bathroom boasting a shower. The unit has 1 bed.",
     area: "31",
@@ -56,7 +56,7 @@ export const roomContent: Record<string, RoomContent> = {
   },
   "Deluxe Twin": {
     slug: "deluxe-twin",
-    displayName: "CyrusOne Deluxe Twin",
+    displayName: "Cyrus One Deluxe Twin",
     description:
       "The twin room's kitchenette, which has a refrigerator and an electric kettle, is available for cooking and storing food. The spacious twin room features air conditioning, a seating area, a balcony with city views as well as a private bathroom boasting a shower. The unit has 2 beds.",
     area: "34",
@@ -75,7 +75,7 @@ export const roomContent: Record<string, RoomContent> = {
   },
   "Executive Suite": {
     slug: "executive-suite",
-    displayName: "CyrusOne Executive Suite",
+    displayName: "Cyrus One Executive Suite",
     description:
       "The air-conditioned suite features 1 bedroom and 1 bathroom with a shower and a hairdryer. The suite's kitchenette, which has a refrigerator and an electric kettle, is available for cooking and storing food. Featuring a balcony with city views, this suite also provides a seating area and a flat-screen TV. The unit offers 1 bed.",
     area: "46",
@@ -94,7 +94,7 @@ export const roomContent: Record<string, RoomContent> = {
   },
   "3 Bed Executive": {
     slug: "3-bed-executive",
-    displayName: "CyrusOne 3 Bed Executive",
+    displayName: "Cyrus One 3 Bed Executive",
     description:
       "The spacious apartment features 2 bedrooms and 2 bathrooms with a shower and free toiletries. The apartment's kitchenette, which has a refrigerator, is available for cooking and storing food. The air-conditioned apartment provides a flat-screen TV, a seating area, a wardrobe, an electric kettle as well as city views. The unit offers 3 beds.",
     area: "80",
@@ -113,7 +113,7 @@ export const roomContent: Record<string, RoomContent> = {
   },
   "2 Bed Suite": {
     slug: "2-bed-suite",
-    displayName: "CyrusOne 2 Bed Executive Suite",
+    displayName: "Cyrus One 2 Bed Executive Suite",
     description:
       "This spacious apartment includes 1 living room, 2 separate bedrooms and 2 bathrooms with a shower and free toiletries. The apartment's kitchenette, which has a refrigerator, is available for cooking and storing food. The air-conditioned apartment offers a flat-screen TV, a seating area, a wardrobe, an electric kettle as well as city views. The unit has 2 beds.",
     area: "78",
@@ -132,7 +132,7 @@ export const roomContent: Record<string, RoomContent> = {
   },
   "2 Bed Presendential Suites": {
     slug: "2-bed-presidential-suite",
-    displayName: "CyrusOne 2 Bed Presidential Suite",
+    displayName: "Cyrus One 2 Bed Presidential Suite",
     description:
       "This spacious apartment is comprised of 2 living rooms, 2 separate bedrooms and 2 bathrooms with a shower and free toiletries. The apartment's kitchenette, which features a refrigerator, is available for cooking and storing food. The air-conditioned apartment offers a flat-screen TV, a seating area, a wardrobe, an electric kettle as well as city views. The unit offers 2 beds.",
     area: "92",
