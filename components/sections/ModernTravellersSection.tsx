@@ -43,7 +43,7 @@ export default function ModernTravellersSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/travellers-bg.png"
-          alt="CyrusOne Hotel corridor with colourful doors"
+          alt="Cyrus One Hotel corridor with colourful doors"
           fill
           className="object-cover"
           sizes="100vw"
@@ -59,7 +59,7 @@ export default function ModernTravellersSection() {
           </h2>
           <p className="text-sm md:text-lg text-white/80 mt-4 max-w-lg mx-auto">
             Whether you&apos;re in transit, visiting for business, or exploring
-            Islamabad, CyrusOne is designed to move with your journey.
+            Islamabad, Cyrus One is designed to move with your journey.
           </p>
         </div>
 

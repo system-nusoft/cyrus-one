@@ -89,7 +89,7 @@ export default function GuestReviewsSection() {
         </h2>
         <p className="text-neutral-500 mt-3 text-sm md:text-base max-w-2xl mx-auto">
           Hear from our guests — business travellers, families, and transit
-          passengers who chose CyrusOne for their Islamabad stay.
+          passengers who chose Cyrus One for their Islamabad stay.
         </p>
       </div>
 
@@ -98,7 +98,7 @@ export default function GuestReviewsSection() {
         <div className="relative rounded-3xl overflow-hidden min-h-[340px] md:min-h-[400px]">
           <Image
             src="/hotel-exterior.png"
-            alt="CyrusOne Hotel exterior — Islamabad"
+            alt="Cyrus One Hotel exterior — Islamabad"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
       sgMail.setApiKey(apiKey);
 
       const adminHtml = `
-        <h2>New Booking — CyrusOne Hotel</h2>
+        <h2>New Booking — Cyrus One Hotel</h2>
         <p><strong>Guest:</strong> ${body.firstName} ${body.lastName}</p>
         <p><strong>Email:</strong> ${body.email}</p>
         <p><strong>Phone:</strong> ${body.phoneNumber}</p>

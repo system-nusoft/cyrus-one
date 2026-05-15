@@ -22,10 +22,10 @@ export default function Footer() {
         <div className="grid grid-cols-2 items-start">
           {/* Logo */}
           <div>
-            <Link href="/" aria-label="CyrusOne Hotel — go to homepage">
+            <Link href="/" aria-label="Cyrus One Hotel — go to homepage">
               <Image
                 src="/logo-white.png"
-                alt="CyrusOne by Trivolles logo"
+                alt="Cyrus One by Trivolles logo"
                 width={180}
                 height={60}
                 className="w-36 md:w-44 h-auto"
@@ -91,7 +91,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-white/10 mt-8 pt-6">
           <p className="text-xs text-neutral-500 text-center">
-            © {new Date().getFullYear()} CyrusOne by Trivolles. All rights reserved.
+            © {new Date().getFullYear()} Cyrus One by Trivolles. All rights reserved.
           </p>
         </div>
       </div>

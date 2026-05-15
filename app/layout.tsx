@@ -17,28 +17,28 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cyrusonehotel.com"),
   title: {
-    default: "CyrusOne Hotel Islamabad | Modern Hotel Near the Airport",
-    template: "%s | CyrusOne Hotel Islamabad",
+    default: "Cyrus One Hotel Islamabad | Modern Hotel Near the Airport",
+    template: "%s | Cyrus One Hotel Islamabad",
   },
   description:
-    "CyrusOne by Trivolles — a premium 55-room hotel in Islamabad, perfectly positioned on Srinagar Highway. Minutes from the airport with seamless check-ins, high-speed Wi-Fi, and 7 room categories.",
+    "Cyrus One by Trivolles — a premium 55-room hotel in Islamabad, perfectly positioned on Srinagar Highway. Minutes from the airport with seamless check-ins, high-speed Wi-Fi, and 7 room categories.",
   keywords: [
     "hotel islamabad",
     "hotel near islamabad airport",
-    "cyrusone hotel",
+    "cyrus one hotel",
     "trivolles",
     "srinagar highway hotel",
     "islamabad airport hotel",
     "business hotel islamabad",
     "transit hotel islamabad",
   ],
-  authors: [{ name: "CyrusOne by Trivolles" }],
+  authors: [{ name: "Cyrus One by Trivolles" }],
   openGraph: {
     type: "website",
     locale: "en_PK",
     url: "https://cyrusonehotel.com",
-    siteName: "CyrusOne Hotel Islamabad",
-    title: "CyrusOne Hotel Islamabad | Modern Hotel Near the Airport",
+    siteName: "Cyrus One Hotel Islamabad",
+    title: "Cyrus One Hotel Islamabad | Modern Hotel Near the Airport",
     description:
       "Premium 55-room hotel in Islamabad — minutes from the airport. Business travellers, transit passengers, and families welcome.",
     images: [
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "CyrusOne Hotel Islamabad exterior",
+        alt: "Cyrus One Hotel Islamabad exterior",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CyrusOne Hotel Islamabad | Modern Hotel Near the Airport",
+    title: "Cyrus One Hotel Islamabad | Modern Hotel Near the Airport",
     description:
       "Premium 55-room hotel in Islamabad — minutes from the airport.",
     images: ["/og-image.jpg"],

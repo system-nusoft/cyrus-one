@@ -24,10 +24,10 @@ export default function Header({ dark = false }: HeaderProps) {
       <div className="grid grid-cols-2 items-start">
         {/* Logo */}
         <div>
-          <Link href="/" aria-label="CyrusOne Hotel — go to homepage">
+          <Link href="/" aria-label="Cyrus One Hotel — go to homepage">
             <Image
               src="/logo-white.png"
-              alt="CyrusOne by Trivolles logo"
+              alt="Cyrus One by Trivolles logo"
               width={180}
               height={60}
               priority

@@ -23,7 +23,7 @@ export default function BookingSuccessModal({ roomName }: BookingSuccessModalPro
         <div className="relative h-56 bg-neutral-200 overflow-hidden">
           <img
             src="/hero-bg.png"
-            alt="CyrusOne Hotel"
+            alt="Cyrus One Hotel"
             className="w-full h-full object-cover"
             onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
           />

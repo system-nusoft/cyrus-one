@@ -20,7 +20,7 @@ export default function VideoSection() {
           <iframe
             className="absolute inset-0 w-full h-full"
             src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
-            title="CyrusOne Hotel — From the moment you arrive, the pace begins to ease"
+            title="Cyrus One Hotel — From the moment you arrive, the pace begins to ease"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
@@ -29,7 +29,7 @@ export default function VideoSection() {
             {/* Thumbnail */}
             <Image
               src="/video-thumbnail.png"
-              alt="CyrusOne Hotel room — warm interiors near Islamabad airport"
+              alt="Cyrus One Hotel room — warm interiors near Islamabad airport"
               fill
               className="object-cover"
               sizes="100vw"
