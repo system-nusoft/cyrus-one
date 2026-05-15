@@ -6,14 +6,14 @@ export default function DiningSection() {
   return (
     <section
       className="py-16 md:pt-0 px-6 md:px-10 lg:px-16"
-      aria-label="Dining at CyrusOne"
+      aria-label="Dining at Cyrus One"
     >
       <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-center">
         {/* Image */}
         <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
           <Image
             src="/breakfast.png"
-            alt="CyrusOne dining — a thoughtfully composed breakfast spread"
+            alt="Cyrus One dining — a thoughtfully composed breakfast spread"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 55vw"
@@ -27,7 +27,7 @@ export default function DiningSection() {
           </h2>
 
           <p className="text-base text-neutral-500 leading-relaxed">
-            every detail at cyrusone is intentional. from the first sip of
+            every detail at cyrus one is intentional. from the first sip of
             morning coffee to a perfectly set breakfast table — engineered for
             comfort, rest, and precision. a stay that truly resets you.
           </p>
