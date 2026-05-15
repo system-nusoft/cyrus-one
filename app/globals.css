@@ -1,0 +1,40 @@
+@import "~react-day-picker/style.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@layer base {
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: var(--font-raleway), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  /* Ensure form elements inherit the body font */
+  button, input, textarea, select {
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* react-day-picker overrides — replace default blue with site dark colour */
+.rdp-root {
+  --rdp-accent-color: #171717;
+  --rdp-accent-background-color: #e5e5e5;
+  --rdp-today-color: #171717;
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" fill="none">
+  <!-- CYRUS ONE wordmark placeholder -->
+  <text x="0" y="32" font-family="serif" font-size="28" font-weight="700" fill="white" letter-spacing="2">CYRUS ONE</text>
+  <text x="20" y="55" font-family="serif" font-size="13" fill="white" letter-spacing="4">BY TRIVOLLES</text>
+  <!-- Diamond accent -->
+  <polygon points="112,10 118,18 112,26 106,18" fill="#3B82F6" opacity="0.9"/>
+</svg>
