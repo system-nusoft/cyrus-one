@@ -27,7 +27,7 @@ export default function Header({ dark = false }: HeaderProps) {
           <Link href="/" aria-label="Cyrus One Hotel — go to homepage">
             <Image
               src="/logo-white.png"
-              alt="Cyrus One by Trivolles logo"
+              alt="Cyrus One by Trivelles logo"
               width={180}
               height={60}
               priority

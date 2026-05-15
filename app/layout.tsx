@@ -17,28 +17,28 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cyrusonehotel.com"),
   title: {
-    default: "Cyrus One Hotel Islamabad | Modern Hotel Near the Airport",
+    default: "Cyrus One Hotel Islamabad",
     template: "%s | Cyrus One Hotel Islamabad",
   },
   description:
-    "Cyrus One by Trivolles — a premium 55-room hotel in Islamabad, perfectly positioned on Srinagar Highway. Minutes from the airport with seamless check-ins, high-speed Wi-Fi, and 7 room categories.",
+    "Cyrus One by Trivelles — a premium 55-room hotel in Islamabad, perfectly positioned on Srinagar Highway. Minutes from the airport with seamless check-ins, high-speed Wi-Fi, and 7 room categories.",
   keywords: [
     "hotel islamabad",
     "hotel near islamabad airport",
     "cyrus one hotel",
-    "trivolles",
+    "trivelles",
     "srinagar highway hotel",
     "islamabad airport hotel",
     "business hotel islamabad",
     "transit hotel islamabad",
   ],
-  authors: [{ name: "Cyrus One by Trivolles" }],
+  authors: [{ name: "Cyrus One by Trivelles" }],
   openGraph: {
     type: "website",
     locale: "en_PK",
     url: "https://cyrusonehotel.com",
     siteName: "Cyrus One Hotel Islamabad",
-    title: "Cyrus One Hotel Islamabad | Modern Hotel Near the Airport",
+    title: "Cyrus One Hotel Islamabad",
     description:
       "Premium 55-room hotel in Islamabad — minutes from the airport. Business travellers, transit passengers, and families welcome.",
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cyrus One Hotel Islamabad | Modern Hotel Near the Airport",
+    title: "Cyrus One Hotel Islamabad",
     description:
       "Premium 55-room hotel in Islamabad — minutes from the airport.",
     images: ["/og-image.jpg"],

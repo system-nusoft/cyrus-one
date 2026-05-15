@@ -18,7 +18,7 @@ const hotelJsonLd = {
   "@type": "Hotel",
   name: "Cyrus One Hotel",
   description:
-    "Cyrus One by Trivolles — a premium 55-room hotel in Islamabad, perfectly positioned on Srinagar Highway, minutes from the airport.",
+    "Cyrus One by Trivelles — a premium 55-room hotel in Islamabad, perfectly positioned on Srinagar Highway, minutes from the airport.",
   url: "https://cyrusonehotel.com",
   telephone: ["+92-341-2205252", "+92-305-2201888"],
   address: {

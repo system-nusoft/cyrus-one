@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import BookingPageClient from "./BookingPageClient";
 
-export const metadata = { title: "Book Your Stay — Cyrus One by Trivolles" };
+export const metadata = { title: "Book Your Stay — Cyrus One by Trivelles" };
 
 export default function BookPage() {
   return (
