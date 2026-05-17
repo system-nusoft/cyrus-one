@@ -11,7 +11,7 @@ const socialLinks = [
   { href: "https://www.linkedin.com/company/cyrus-one-by-trivelles/", label: "LinkedIn", Icon: LinkedInIcon },
   { href: "https://www.instagram.com/cyrusonebytrivelles?igsh=MTlmMW15NXp5NHNneA==", label: "Instagram", Icon: InstagramIcon },
   { href: "https://www.facebook.com/profile.php?id=61579446300255", label: "Facebook", Icon: FacebookIcon },
-  { href: "https://wa.me/923222638162", label: "WhatsApp", Icon: WhatsAppIcon },
+  { href: "https://wa.me/923224770222", label: "WhatsApp", Icon: WhatsAppIcon },
 ];
 
 interface HeaderProps {
