@@ -12,7 +12,7 @@ export default function VideoSection() {
 
   return (
     <section
-      className="py-12 md:py-16 px-6 md:px-10 lg:px-16"
+      className="py-12 md:py-20 px-6 md:px-10 lg:px-16"
       aria-label="Hotel video"
     >
       <div className="relative rounded-3xl overflow-hidden aspect-video w-full">
@@ -39,13 +39,15 @@ export default function VideoSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
 
             {/* Text overlay */}
-            <div className="absolute top-8 left-8 md:top-12 md:left-12 max-w-xs md:max-w-xl">
-              <h2 className="font-bold text-xl md:text-4xl lg:text-6xl text-white leading-tight">
-                From the moment you arrive, the pace begins to ease
+            <div className="absolute top-4 left-4 md:top-12 md:left-12 max-w-xs md:max-w-xl">
+              <h2 className="font-bold text-2xl md:text-4xl lg:text-6xl text-white leading-tight">
+                A New Standard in Serviced Living
               </h2>
-              <p className="text-sm md:text-md text-white/80 mt-3 leading-relaxed">
-                A seamless shift from travel to comfort<br />
-                only minutes away from the airport
+              <p className="text-sm md:text-lg text-white/80 mt-3 leading-relaxed">
+                For those who expect more from their stay. As part of a
+                distinguished UK portfolio, Cyrus One brings a legacy of
+                exceptional service and meticulous attention to detail to every
+                apartment.
               </p>
             </div>
 

@@ -11,20 +11,27 @@ interface BookingBarProps {
   loading?: boolean;
 }
 
-export default function BookingBar({ onSearch, loading = false }: BookingBarProps) {
+export default function BookingBar({
+  onSearch,
+  loading = false,
+}: BookingBarProps) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
   const [checkIn, setCheckIn] = useState<Date | undefined>(today);
   const [checkOut, setCheckOut] = useState<Date | undefined>(addDays(today, 1));
-  const [guests, setGuests] = useState<GuestCounts>({ rooms: 1, adults: 1, children: 0 });
+  const [guests, setGuests] = useState<GuestCounts>({
+    rooms: 1,
+    adults: 1,
+    children: 0,
+  });
 
   function handleSearch() {
     if (!checkIn || !checkOut) return;
     onSearch(
       format(checkIn, "yyyy-MM-dd"),
       format(checkOut, "yyyy-MM-dd"),
-      guests
+      guests,
     );
   }
 
@@ -39,8 +46,12 @@ export default function BookingBar({ onSearch, loading = false }: BookingBarProp
     <div className="bg-white rounded-3xl shadow-xl p-6 w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-4">
         <div>
-          <p className="font-bold text-2xl text-neutral-900">Check Availability</p>
-          <p className="text-sm text-neutral-900 mt-0.5">Multiple room types available</p>
+          <p className="font-bold text-2xl text-neutral-900">
+            Ready to check in?
+          </p>
+          <p className="text-sm text-neutral-900 mt-0.5">
+            Discover our diverse range of hotel apartments
+          </p>
         </div>
         <div className="hidden md:flex items-center justify-end">
           <p className="text-sm text-neutral-900">

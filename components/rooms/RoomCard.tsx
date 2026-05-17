@@ -125,7 +125,7 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
           <>
             <button
               type="button"
-              onClick={prevImage}
+              onClick={(e) => { e.stopPropagation(); prevImage(); }}
               className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-neutral-700 flex items-center justify-center hover:bg-white transition-colors shadow"
               aria-label="Previous image"
             >
@@ -133,7 +133,7 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
             </button>
             <button
               type="button"
-              onClick={nextImage}
+              onClick={(e) => { e.stopPropagation(); nextImage(); }}
               className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-neutral-700 flex items-center justify-center hover:bg-white transition-colors shadow"
               aria-label="Next image"
             >
@@ -149,7 +149,7 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
                   role="tab"
                   aria-selected={i === imageIndex}
                   aria-label={`Go to image ${i + 1}`}
-                  onClick={() => setImageIndex(i)}
+                  onClick={(e) => { e.stopPropagation(); setImageIndex(i); }}
                   className={`w-2 h-2 rounded-full transition-all ${
                     i === imageIndex ? "bg-white scale-125" : "bg-black/40"
                   }`}
@@ -162,36 +162,36 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
 
       {/* Room details */}
       <div className="p-6 md:px-8 md:py-0 flex flex-col gap-5 bg-white">
-        <h3 className="font-bold text-2xl text-neutral-900 small-caps uppercase">
+        <h3 className="font-bold text-2xl md:text-3xl text-neutral-900 small-caps">
           {content.displayName}
         </h3>
 
         {/* Overview */}
         <div>
-          <p className="font-bold text-sm text-neutral-900 mb-1">Overview</p>
-          <p className="text-sm text-neutral-900 leading-relaxed line-clamp-2">
+          <p className="font-bold text-lg text-neutral-900 mb-1">Overview</p>
+          <p className="text-md text-neutral-900 leading-tight line-clamp-2">
             {content.description}
           </p>
         </div>
 
         {/* Pill tags */}
         <div className="flex flex-wrap gap-2 font-bold">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-input text-xs text-neutral-700">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-input text-sm text-neutral-700">
             <BedDouble className="w-3.5 h-3.5" />
             {content.bedType}
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-input text-xs text-neutral-700">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-input text-sm text-neutral-700">
             <Users className="w-3.5 h-3.5" />
             {content.maxGuests} Guests
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-input text-xs text-neutral-700">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-input text-sm text-neutral-700">
             <Maximize2 className="w-3.5 h-3.5" />
             {content.area} m²
           </span>
         </div>
 
         {/* Amenities grid */}
-        <div className="flex flex-wrap gap-x-6 gap-y-4 font-bold">
+        <div className="flex flex-wrap gap-x-4 md:gap-x-6 gap-y-4 font-bold">
           {(["Free WiFi", "Air conditioning", "Flat-screen TV", "Private kitchenette"] as const).map((amenity) => (
             <div key={amenity} className="flex flex-col items-center gap-1.5 w-16">
               <span className="flex items-center justify-center w-12 h-12 rounded-full bg-input text-neutral-700 shrink-0">
@@ -205,13 +205,13 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
         </div>
 
         {/* Pricing bar */}
-        <div className="mt-auto rounded-3xl border-[1px] border-black bg-white px-5 py-4 flex items-center justify-between gap-4">
+        <div className="mt-auto rounded-3xl border-[1px] border-black bg-white px-3 md:px-5 py-4 flex items-center justify-between gap-4">
           <div>
             <p className="font-bold text-lg text-neutral-900">
               PKR {formatPKR(pricePerNight)}
-              <span className="font-bold text-lg text-neutral-900"> + Tax</span>
+              <span className="font-bold text-sm md:text-lg text-neutral-900"> + Tax</span>
             </p>
-            <p className="text-lg font-bold text-neutral-900 mt-0.5">per night</p>
+            <p className="text-sm md:text-lg font-bold text-neutral-900 mt-0.5">per night</p>
           </div>
 
           {isUnavailable ? (
