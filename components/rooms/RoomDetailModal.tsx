@@ -17,6 +17,7 @@ import {
   Landmark,
   Building2,
   Sun,
+  BedDouble,
 } from "lucide-react";
 import type { RoomContent } from "@/content/rooms";
 
@@ -97,7 +98,7 @@ export default function RoomDetailModal({ content, isUnavailable, bookingUrl, on
                 alt={`${content.displayName} — photo ${i + 1} of ${images.length}`}
                 fill
                 priority={i === 0}
-                className={`object-contain transition-opacity duration-300 ${
+                className={`object-cover transition-opacity duration-300 ${
                   i === imageIndex ? "opacity-100" : "opacity-0"
                 }`}
                 sizes="(max-width: 768px) 100vw, 672px"
@@ -154,31 +155,42 @@ export default function RoomDetailModal({ content, isUnavailable, bookingUrl, on
           <div className="space-y-5">
 
             {/* About */}
-            <div className="grid grid-cols-[160px_1fr] gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-[160px_1fr] gap-4">
               <span className="font-bold text-sm text-neutral-900 pt-0.5">About This Room</span>
-              <p className="text-sm text-neutral-600 leading-relaxed">{content.description}</p>
+              <p className="col-span-2 md:col-span-1 text-sm text-neutral-900 leading-relaxed">{content.description}</p>
             </div>
 
             <div className="border-t border-neutral-100" />
 
             {/* Room Size */}
-            <div className="grid grid-cols-[160px_1fr] gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-[160px_1fr] gap-4">
               <span className="font-bold text-sm text-neutral-900">Room Size</span>
-              <p className="text-sm text-neutral-600">{content.area} m²</p>
+              <p className="col-span-2 md:col-span-1 text-sm text-neutral-900">{content.area} m²</p>
+            </div>
+
+            <div className="border-t border-neutral-100" />
+
+            {/* Bed Type */}
+            <div className="grid grid-cols-3 md:grid-cols-[160px_1fr] gap-4">
+              <span className="font-bold text-sm text-neutral-900">Bed Type</span>
+              <p className="col-span-2 md:col-span-1 text-sm text-neutral-900 flex items-center gap-2">
+                <BedDouble className="w-4 h-4 shrink-0 text-neutral-900" />
+                {content.bedType}
+              </p>
             </div>
 
             <div className="border-t border-neutral-100" />
 
             {/* Room Amenities — badge amenities as icons */}
-            <div className="grid grid-cols-[160px_1fr] gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-[160px_1fr] gap-4">
               <span className="font-bold text-sm text-neutral-900 pt-1">Room Amenities</span>
-              <div className="flex flex-wrap gap-x-5 gap-y-4">
+              <div className="col-span-2 md:col-span-1 flex flex-wrap gap-x-5 gap-y-4">
                 {content.amenities.map((amenity) => (
                   <div key={amenity} className="flex flex-col items-center gap-1.5 w-16">
                     <span className="flex items-center justify-center w-11 h-11 rounded-full bg-input text-neutral-700 shrink-0">
                       {AMENITY_ICONS[amenity] ?? <Wifi className="w-5 h-5" />}
                     </span>
-                    <span className="text-xs text-neutral-600 text-center leading-tight w-full">{amenity}</span>
+                    <span className="text-xs text-neutral-900 text-center leading-tight w-full">{amenity}</span>
                   </div>
                 ))}
               </div>
@@ -188,14 +200,23 @@ export default function RoomDetailModal({ content, isUnavailable, bookingUrl, on
             {content.detailedAmenities.map((cat) => (
               <div key={cat.category}>
                 <div className="border-t border-neutral-100 mb-5" />
-                <div className="grid grid-cols-[160px_1fr] gap-4">
+                <div className="grid grid-cols-3 md:grid-cols-[160px_1fr] gap-4">
                   <span className="font-bold text-sm text-neutral-900 pt-0.5">{cat.category}</span>
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                  <div className="col-span-2 md:col-span-1 grid grid-cols-2 gap-x-4 gap-y-1">
                     {cat.items.map((item) => (
-                      <span key={item} className="text-sm text-neutral-600">{item}</span>
+                      <span key={item} className="text-sm text-neutral-900">{item}</span>
                     ))}
                   </div>
                 </div>
+                {cat.category === "Facilities" && (
+                  <>
+                    <div className="border-t border-neutral-100 mt-5" />
+                    <div className="grid grid-cols-3 md:grid-cols-[160px_1fr] gap-4 mt-5">
+                      <span className="font-bold text-sm text-neutral-900">Shuttle Service</span>
+                      <p className="col-span-2 md:col-span-1 text-sm text-neutral-900">Free Airport Shuttle</p>
+                    </div>
+                  </>
+                )}
               </div>
             ))}
           </div>

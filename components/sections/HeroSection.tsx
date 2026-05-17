@@ -35,19 +35,15 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-36 pb-8">
-        <div className="max-w-2xl">
-          <h1 className="text-5xl md:text-6xl lg:text-6xl font-normal text-white leading-tight">
-            Easily Accessible,
-            <br />
-            Just Minutes From
-            <br />
-            The Airport
+        <div className="max-w-3xl">
+          <h1 className="text-5xl md:text-7xl font-normal text-white leading-tight">
+            Your British Haven,
+            <br /> Minutes from the Runway
           </h1>
-          <p className="text-sm md:text-base text-white/80 mt-6 max-w-md leading-relaxed">
-            Stay close to the airport while remaining seamlessly connected to
-            the city and motorway network. Perfectly positioned on Srinagar
-            Highway for smooth arrivals, faster departures, and stress-free
-            travel.
+          <p className="text-md md:text-lg text-white/80 mt-6 max-w-lg leading-tight">
+            Just 4.5km from Islamabad International Airport, we bring exacting
+            UK hospitality standards to expansive, balcony-lined hotel
+            apartments.
           </p>
         </div>
       </div>

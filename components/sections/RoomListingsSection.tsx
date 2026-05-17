@@ -45,17 +45,17 @@ export default function RoomListingsSection({
   return (
     <section
       id="rooms"
-      className="pt-24 md:pt-20 pb-16 md:pb-24 px-6 md:px-10 lg:px-16"
+      className="pt-12 md:pt-20 pb-12 md:pb-20 px-6 md:px-10 lg:px-16"
       aria-label="Room listings"
     >
       {/* Section header */}
       <div className="text-center mb-12 md:mb-16">
-        <h2 className="font-bold text-4xl md:text-5xl text-neutral-900">
-          Book The One That Suits You Best
+        <h2 className="font-bold text-3xl md:text-5xl text-neutral-900">
+          Our Signature Hotel Apartment Collections
         </h2>
-        <p className="text-neutral-900 mt-3 text-sm md:text-base">
-          Choose from 7 different room categories designed to match your comfort
-          and style.
+        <p className="text-neutral-900 mt-3 text-md md:text-lg">
+          Thoughtfully designed layouts, premium amenities, and the space you
+          need to unwind in style.
         </p>
       </div>
 

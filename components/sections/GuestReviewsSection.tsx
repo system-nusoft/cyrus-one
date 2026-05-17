@@ -79,21 +79,21 @@ export default function GuestReviewsSection() {
 
   return (
     <section
-      className="pb-20 md:pb-20 px-6 md:px-10 lg:px-16"
+      className="pb-12 md:py-20 px-6 md:px-10 lg:px-16"
       aria-label="Guest reviews"
     >
       {/* Section header */}
-      <div className="text-center mb-12 md:mb-16">
-        <h2 className="font-bold text-4xl md:text-5xl text-neutral-900">
+      <div className="text-center mb-4 md:mb-16">
+        <h2 className="font-bold text-3xl md:text-5xl text-neutral-900">
           Guest Reviews
         </h2>
-        <p className="text-neutral-500 mt-3 text-sm md:text-base max-w-2xl mx-auto">
+        <p className="text-neutral-900 mt-3 text-md md:text-lg max-w-2xl mx-auto">
           Hear from our guests — business travellers, families, and transit
           passengers who chose Cyrus One for their Islamabad stay.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-stretch">
         {/* Left — Google rating card */}
         <div className="relative rounded-3xl overflow-hidden min-h-[340px] md:min-h-[400px]">
           <Image
@@ -108,7 +108,7 @@ export default function GuestReviewsSection() {
           <div className="absolute inset-0 p-8 flex flex-col justify-between">
             <div>
               <p className="font-bold text-white text-lg">Google Reviews</p>
-              <div className="flex items-center gap-3 mt-2">
+              <div className="flex items-center gap-2 mt-2">
                 <span className="font-playfair font-bold text-white text-5xl">
                   4.7
                 </span>
@@ -131,7 +131,7 @@ export default function GuestReviewsSection() {
 
         {/* Right — Review slider */}
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             {/* Reviewer photo */}
             <div className="relative rounded-3xl overflow-hidden aspect-[3/4] min-h-[280px]">
               <Image
@@ -166,11 +166,11 @@ export default function GuestReviewsSection() {
                   <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2 md:gap-4">
                 <h3 className="font-bold text-xl text-neutral-900">
                   {review.name}
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-md md:text-lg text-neutral-900 leading-relaxed">
                   {review.text}
                 </p>
                 <StarRating count={review.rating} />
