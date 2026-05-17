@@ -2,7 +2,19 @@
 
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import {
+  ChevronDown,
+  LogIn,
+  LogOut,
+  Info,
+  Users,
+  User,
+  CreditCard,
+  CigaretteOff,
+  PartyPopper,
+  PawPrint,
+  BedSingle,
+} from "lucide-react";
 import Image from "next/image";
 import { format, parse } from "date-fns";
 import Header from "@/components/layout/Header";
@@ -477,44 +489,6 @@ export default function BookingPageClient() {
               />
             </section>
 
-            {/* Policies */}
-            <section
-              className="rounded-3xl p-8"
-              style={{ backgroundColor: "#f5f5f5" }}
-            >
-              <h2 className="font-bold text-2xl text-neutral-900 text-center uppercase mb-6">
-                Policies
-              </h2>
-              <div className="text-sm text-neutral-600 space-y-4">
-                <div>
-                  <p className="font-semibold text-neutral-800 mb-1">
-                    Check-in / Check-out
-                  </p>
-                  <p>
-                    Check-in from 2:00 PM · Check-out before 12:00 PM (noon)
-                  </p>
-                  <p className="text-neutral-400 text-xs mt-0.5">
-                    Early check-in and late check-out subject to availability.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-neutral-800 mb-1">
-                    Cancellation
-                  </p>
-                  <p>
-                    Free cancellation up to 24 hours before check-in.
-                    Cancellations made within 24 hours are non-refundable.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-neutral-800 mb-1">General</p>
-                  <p>
-                    Pets are not allowed · No smoking on premises ·
-                    Government-issued ID required at check-in
-                  </p>
-                </div>
-              </div>
-            </section>
           </div>
 
           {/* ── RIGHT COLUMN ── */}
@@ -654,6 +628,207 @@ export default function BookingPageClient() {
               </div>
             </section>
           </div>
+
+          {/* ── POLICIES (3rd grid child → col 1 row 2 on desktop, last on mobile) ── */}
+          <section
+            className="rounded-3xl p-8"
+            style={{ backgroundColor: "#f5f5f5" }}
+          >
+            <h2 className="font-bold text-2xl text-neutral-900 text-center uppercase mb-2">
+              Policies
+            </h2>
+
+              {/* Check-in */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <LogIn className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Check-in
+                  </span>
+                </div>
+                <div className="text-sm text-neutral-900 space-y-1">
+                  <p>From 12:00 to 00:00</p>
+                  <p>
+                    Guests are required to show a photo identification and
+                    credit card upon check-in
+                  </p>
+                  <p>
+                    You&apos;ll need to let the property know in advance what
+                    time you&apos;ll arrive.
+                  </p>
+                </div>
+              </div>
+
+              {/* Check-out */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <LogOut className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Check-out
+                  </span>
+                </div>
+                <p className="text-sm text-neutral-900">From 00:00 to 14:00</p>
+              </div>
+
+              {/* Cancellation / prepayment */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <Info className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Cancellation/ prepayment
+                  </span>
+                </div>
+                <p className="text-sm text-neutral-900">
+                  Cancellation and prepayment policies vary according to
+                  accommodation type. Please enter the dates of your stay and
+                  check the conditions of your required option.
+                </p>
+              </div>
+
+              {/* Children and beds */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <Users className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Children and beds
+                  </span>
+                </div>
+                <div className="text-sm text-neutral-900 space-y-3">
+                  <p className="font-bold">Child policies</p>
+                  <p>Children of any age are welcome.</p>
+                  <p>
+                    Children 13 years and above will be charged as adults at
+                    this property.
+                  </p>
+                  <p>
+                    To see correct prices and occupancy information, please add
+                    the number of children in your group and their ages to your
+                    search.
+                  </p>
+
+                  <p className="font-bold pt-1">Cot and extra bed policies</p>
+                  <div className="border border-neutral-300 rounded-lg overflow-hidden text-sm">
+                    <div className="px-4 py-2 bg-neutral-100 font-medium">
+                      0 – 12 years
+                    </div>
+                    <div className="px-4 py-3 flex items-center justify-between gap-4 border-t border-neutral-200">
+                      <span className="flex items-center gap-2">
+                        <BedSingle className="w-4 h-4 shrink-0" />
+                        Extra bed upon request
+                      </span>
+                      <span>PKR 3,000 per child, per night</span>
+                    </div>
+                  </div>
+
+                  <p>
+                    Prices for extra beds are not included in the total price,
+                    and will have to be paid for separately during your stay.
+                  </p>
+                  <p>
+                    The number of extra beds allowed is dependent on the option
+                    you choose. Please check your selected option for more
+                    information.
+                  </p>
+                  <p>There are no cots available at this property.</p>
+                  <p>All extra beds are subject to availability.</p>
+                </div>
+              </div>
+
+              {/* No age restriction */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <User className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    No age restriction
+                  </span>
+                </div>
+                <p className="text-sm text-neutral-900">
+                  There is no age requirement for check-in
+                </p>
+              </div>
+
+              {/* Groups */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <Users className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Groups
+                  </span>
+                </div>
+                <p className="text-sm text-neutral-900">
+                  When booking more than 3 rooms, different policies and
+                  additional supplements may apply.
+                </p>
+              </div>
+
+              {/* Accepted payment methods */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <CreditCard className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Accepted payment methods
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <Image
+                    src="/Visa.svg"
+                    alt="Visa"
+                    width={48}
+                    height={30}
+                    className="object-contain"
+                  />
+                  <Image
+                    src="/UnionPay.svg"
+                    alt="UnionPay"
+                    width={48}
+                    height={30}
+                    className="object-contain"
+                  />
+                  <span className="px-3 py-2 bg-green-800 text-white text-xs font-semibold rounded">
+                    Cash
+                  </span>
+                </div>
+              </div>
+
+              {/* Smoking */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <CigaretteOff className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Smoking
+                  </span>
+                </div>
+                <p className="text-sm text-neutral-900">
+                  Smoking is not allowed.
+                </p>
+              </div>
+
+              {/* Parties */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+                <div className="flex items-start gap-2">
+                  <PartyPopper className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Parties
+                  </span>
+                </div>
+                <p className="text-sm text-neutral-900">
+                  Parties/events are not allowed
+                </p>
+              </div>
+
+              {/* Pets */}
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5">
+                <div className="flex items-start gap-2">
+                  <PawPrint className="w-5 h-5 shrink-0 mt-0.5" />
+                  <span className="font-bold text-sm text-neutral-900">
+                    Pets
+                  </span>
+                </div>
+                <p className="text-sm text-neutral-900">
+                  Pets are not allowed.
+                </p>
+              </div>
+            </section>
         </div>
       </main>
 

@@ -33,7 +33,7 @@ export const roomContent: Record<string, RoomContent> = {
       { category: "Accessibility", items: ["Entire unit wheelchair accessible", "Baby safety gates"] },
       { category: "Smoking Policy", items: ["No smoking"] },
     ],
-    images: ["/images/rooms/standard-double/1.webp", "/images/rooms/standard-double/2.webp", "/images/rooms/standard-double/3.webp", "/images/rooms/standard-double/4.webp", "/images/rooms/standard-double/5.webp", "/images/rooms/standard-double/6.webp", "/images/rooms/standard-double/7.webp", "/images/rooms/standard-double/8.webp", "/images/rooms/standard-double/9.webp", "/images/rooms/standard-double/10.webp", "/images/rooms/standard-double/11.webp", "/images/rooms/standard-double/12.webp", "/images/rooms/standard-double/13.webp", "/images/rooms/standard-double/14.webp"],
+    images: ["/images/rooms/standard-double/1.webp", "/images/rooms/standard-double/2.webp", "/images/rooms/standard-double/3.webp", "/images/rooms/standard-double/4.webp", "/images/rooms/standard-double/5.webp", "/images/rooms/standard-double/6.webp", "/images/rooms/standard-double/7.webp", "/images/rooms/standard-double/8.webp", "/images/rooms/standard-double/9.webp", "/images/rooms/standard-double/10.webp", "/images/rooms/standard-double/11.webp", "/images/rooms/standard-double/12.webp"],
   },
   "Deluxe Double": {
     slug: "deluxe-double",
@@ -71,7 +71,7 @@ export const roomContent: Record<string, RoomContent> = {
       { category: "Accessibility", items: ["Entire unit wheelchair accessible", "Baby safety gates"] },
       { category: "Smoking Policy", items: ["No smoking"] },
     ],
-    images: ["/images/rooms/deluxe-twin/1.webp", "/images/rooms/deluxe-twin/2.webp", "/images/rooms/deluxe-twin/3.webp", "/images/rooms/deluxe-twin/4.webp", "/images/rooms/deluxe-twin/5.webp", "/images/rooms/deluxe-twin/6.webp", "/images/rooms/deluxe-twin/7.webp", "/images/rooms/deluxe-twin/8.webp", "/images/rooms/deluxe-twin/9.webp", "/images/rooms/deluxe-twin/10.webp", "/images/rooms/deluxe-twin/11.webp", "/images/rooms/deluxe-twin/12.webp", "/images/rooms/deluxe-twin/13.webp"],
+    images: ["/images/rooms/deluxe-twin/1.webp", "/images/rooms/deluxe-twin/2.webp", "/images/rooms/deluxe-twin/3.webp", "/images/rooms/deluxe-twin/4.webp", "/images/rooms/deluxe-twin/5.webp", "/images/rooms/deluxe-twin/6.webp", "/images/rooms/deluxe-twin/7.webp", "/images/rooms/deluxe-twin/8.webp", "/images/rooms/deluxe-twin/9.webp", "/images/rooms/deluxe-twin/10.webp", "/images/rooms/deluxe-twin/11.webp", "/images/rooms/deluxe-twin/12.webp"],
   },
   "Executive Suite": {
     slug: "executive-suite",
