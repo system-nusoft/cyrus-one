@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Raleway } from "next/font/google";
+import { Playfair_Display, Raleway, Roboto } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -11,6 +11,13 @@ const playfair = Playfair_Display({
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -73,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${raleway.variable} scroll-smooth`}>
+    <html lang="en" className={`${playfair.variable} ${raleway.variable} ${roboto.variable} scroll-smooth`}>
       <body className="font-raleway antialiased">{children}</body>
     </html>
   );

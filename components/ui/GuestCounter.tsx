@@ -40,7 +40,7 @@ function Counter({
         >
           <Minus className="w-3 h-3" />
         </button>
-        <span className="w-6 text-center font-semibold text-neutral-900 text-sm">
+        <span className="font-roboto w-6 text-center font-semibold text-neutral-900 text-sm">
           {value}
         </span>
         <button
@@ -83,7 +83,7 @@ export default function GuestCounter({ value, onChange }: GuestCounterProps) {
       >
         <span className="flex items-center gap-2">
           <Users className="w-4 h-4 text-neutral-400" />
-          <span className="font-medium text-neutral-900">
+          <span className="font-roboto font-medium text-neutral-900">
             {roomLabel} · {guestLabel}
           </span>
         </span>

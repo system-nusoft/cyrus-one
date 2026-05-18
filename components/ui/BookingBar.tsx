@@ -46,7 +46,7 @@ export default function BookingBar({
     <div className="bg-white rounded-3xl shadow-xl p-6 w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-4">
         <div>
-          <p className="font-bold text-2xl text-neutral-900">
+          <p className="font-bold text-2xl text-neutral-900 font-raleway">
             Ready to check in?
           </p>
           <p className="text-sm text-neutral-900 mt-0.5">

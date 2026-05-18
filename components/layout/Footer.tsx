@@ -19,8 +19,9 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-950 text-white" aria-label="Site footer">
       <div className="px-6 md:px-10 lg:px-16 py-12 md:py-16">
+
+        {/* Top row — logo + CTA (same on all breakpoints) */}
         <div className="grid grid-cols-2 items-start">
-          {/* Logo */}
           <div>
             <Link href="/" aria-label="Cyrus One Hotel — go to homepage">
               <Image
@@ -33,14 +34,13 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* CTA button */}
           <div className="flex justify-end">
             <a
               href="#availability"
               className="flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full bg-white text-neutral-900 font-semibold text-md hover:bg-neutral-100 transition-colors"
-              aria-label="Check room availability"
+              aria-label="Book now"
             >
-              <span>Check Availability</span>
+              <span>Book Now</span>
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 text-white shrink-0">
                 <ArrowUpRight className="w-5 h-5" />
               </span>
@@ -48,8 +48,41 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom row */}
-        <div className="grid grid-cols-2 items-end mt-24 md:mt-32">
+        {/* ── MOBILE bottom section (hidden on md+) ── */}
+        <div className="flex flex-col items-center gap-6 mt-16 md:hidden">
+          {/* Social icons */}
+          <nav aria-label="Footer social media links">
+            <ul className="flex items-center gap-3">
+              {socialLinks.map(({ href, label, Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                  >
+                    <Icon className="w-10 h-10" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Phone */}
+          <p className="font-roboto font-bold text-sm text-white text-center">
+            +92 341-2205252&nbsp;&nbsp;+92 305-2201888
+          </p>
+
+          {/* Address */}
+          <address className="not-italic text-sm text-neutral-300 leading-relaxed text-center">
+            Main Boulevard, near Mumtaz City<br />
+            Airport Enclave Block A<br />
+            Islamabad, 44000, Pakistan
+          </address>
+        </div>
+
+        {/* ── DESKTOP bottom section (hidden on mobile) ── */}
+        <div className="hidden md:grid grid-cols-2 items-end mt-32">
           {/* Address */}
           <address className="not-italic text-sm text-neutral-300 leading-relaxed">
             Main Boulevard, near Mumtaz City<br />
@@ -81,7 +114,7 @@ export default function Footer() {
               <p className="text-xs font-bold text-white tracking-widest uppercase">
                 Book Your Stay
               </p>
-              <p className="text-xs text-neutral-400 mt-0.5">
+              <p className="font-roboto text-xs text-neutral-400 mt-0.5">
                 +92 341-2205252&nbsp;&nbsp;+92 305-2201888
               </p>
             </div>

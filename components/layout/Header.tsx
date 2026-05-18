@@ -8,9 +8,21 @@ import {
 } from "@/components/ui/SocialIcons";
 
 const socialLinks = [
-  { href: "https://www.linkedin.com/company/cyrus-one-by-trivelles/", label: "LinkedIn", Icon: LinkedInIcon },
-  { href: "https://www.instagram.com/cyrusonebytrivelles?igsh=MTlmMW15NXp5NHNneA==", label: "Instagram", Icon: InstagramIcon },
-  { href: "https://www.facebook.com/profile.php?id=61579446300255", label: "Facebook", Icon: FacebookIcon },
+  {
+    href: "https://www.linkedin.com/company/cyrus-one-by-trivelles/",
+    label: "LinkedIn",
+    Icon: LinkedInIcon,
+  },
+  {
+    href: "https://www.instagram.com/cyrusonebytrivelles?igsh=MTlmMW15NXp5NHNneA==",
+    label: "Instagram",
+    Icon: InstagramIcon,
+  },
+  {
+    href: "https://www.facebook.com/profile.php?id=61579446300255",
+    label: "Facebook",
+    Icon: FacebookIcon,
+  },
   { href: "https://wa.me/923224770222", label: "WhatsApp", Icon: WhatsAppIcon },
 ];
 
@@ -20,7 +32,9 @@ interface HeaderProps {
 
 export default function Header({ dark = false }: HeaderProps) {
   return (
-    <header className={`${dark ? "relative bg-black" : "absolute top-0 left-0 right-0"} z-30 px-6 md:px-10 lg:px-16 py-6`}>
+    <header
+      className={`${dark ? "relative bg-black" : "absolute top-0 left-0 right-0"} z-30 px-6 md:px-10 lg:px-16 py-6`}
+    >
       <div className="grid grid-cols-2 items-start">
         {/* Logo */}
         <div>
@@ -37,7 +51,7 @@ export default function Header({ dark = false }: HeaderProps) {
         </div>
 
         {/* Social + CTA */}
-        <div className="flex flex-col items-end gap-2">
+        <div className="flex flex-col items-end gap-2 hidden md:flex">
           <nav aria-label="Social media links">
             <ul className="flex items-center gap-2">
               {socialLinks.map(({ href, label, Icon }) => (
@@ -60,9 +74,13 @@ export default function Header({ dark = false }: HeaderProps) {
               Book Your Stay
             </p>
             <p className="text-xs text-white/90 mt-0.5 font-bold">
-              <span className="block md:inline">+92 341-2205252</span>
+              <a href="tel:923412205252">
+                <span className="font-roboto block md:inline">+92 341-2205252</span>
+              </a>
               <span className="hidden md:inline">&nbsp;&nbsp;</span>
-              <span className="block md:inline">+92 305-2201888</span>
+              <a href="tel:933052201888">
+                <span className="font-roboto block md:inline">+92 305-2201888</span>
+              </a>
             </p>
           </div>
         </div>

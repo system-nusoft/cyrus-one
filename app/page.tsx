@@ -8,6 +8,7 @@ import RoomListingsSection from "@/components/sections/RoomListingsSection";
 import ModernTravellersSection from "@/components/sections/ModernTravellersSection";
 import VideoSection from "@/components/sections/VideoSection";
 import GuestReviewsSection from "@/components/sections/GuestReviewsSection";
+import LocationSection from "@/components/sections/LocationSection";
 import DiningSection from "@/components/sections/DiningSection";
 import Footer from "@/components/layout/Footer";
 import type { OraRoomCategory } from "@/services/ora-pms/types";
@@ -118,6 +119,7 @@ export default function HomePage() {
         <VideoSection />
         <DiningSection />
         <GuestReviewsSection />
+        <LocationSection />
       </main>
 
       <Footer />
