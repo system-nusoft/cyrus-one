@@ -12,6 +12,7 @@ const config: Config = {
       fontFamily: {
         playfair: ["var(--font-playfair)", "Georgia", "serif"],
         raleway: ["var(--font-raleway)", "sans-serif"],
+        roboto: ["var(--font-roboto)", "sans-serif"],
       },
       colors: {
         background: "var(--background)",

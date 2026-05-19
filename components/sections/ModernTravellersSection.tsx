@@ -93,7 +93,7 @@ export default function ModernTravellersSection() {
 
               <div className="mt-auto pt-4 border-t border-neutral-200/60 w-full hidden">
                 <p
-                  className="font-raleway font-bold text-3xl"
+                  className="font-roboto font-bold text-3xl"
                   style={{ color: "#545454" }}
                 >
                   {item.stat}
