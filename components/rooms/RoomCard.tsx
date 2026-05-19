@@ -113,13 +113,6 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
           );
         })}
 
-        {isUnavailable && (
-          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-            <span className="font-bold text-white text-lg tracking-wide uppercase bg-black/60 px-5 py-2 rounded-full">
-              Unavailable
-            </span>
-          </div>
-        )}
 
         {images.length > 1 && (
           <>
