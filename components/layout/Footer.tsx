@@ -80,7 +80,7 @@ export default function Footer() {
           </nav>
 
           {/* Phone */}
-          <p className="font-roboto font-bold text-sm text-white text-center">
+          <p className="font-roboto font-bold text-sm text-white text-center hidden">
             <a
               href="tel:923412205252"
               className="text-[#1db6ea] transition-colors"
@@ -136,7 +136,7 @@ export default function Footer() {
                 ))}
               </ul>
             </nav>
-            <div className="text-right">
+            <div className="text-right hidden">
               <p className="text-xs font-bold text-white tracking-widest uppercase">
                 Book Your Stay
               </p>

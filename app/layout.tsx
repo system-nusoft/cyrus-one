@@ -24,11 +24,11 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cyrusonehotel.com"),
   title: {
-    default: "Cyrus One Hotel Islamabad",
+    default: "Cyrus One | Premium Hotel Apartments Near Islamabad Airport",
     template: "%s | Cyrus One Hotel Islamabad",
   },
   description:
-    "Cyrus One by Trivelles — a premium 55-room hotel in Islamabad, perfectly positioned on Srinagar Highway. Minutes from the airport with seamless check-ins, high-speed Wi-Fi, and 7 room categories.",
+    "Experience premium comfort at Cyrus One by Trivelles. Elegant luxury hotel apartments conveniently located near Islamabad International Airport and the M2.",
   keywords: [
     "hotel islamabad",
     "hotel near islamabad airport",
@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_PK",
     url: "https://cyrusonehotel.com",
-    siteName: "Cyrus One Hotel Islamabad",
-    title: "Cyrus One Hotel Islamabad",
+    siteName: "Cyrus One by Trivelles",
+    title: "Cyrus One by Trivelles | Premium Hotel Apartments Near Islamabad Airport",
     description:
-      "Premium 55-room hotel in Islamabad — minutes from the airport. Business travellers, transit passengers, and families welcome.",
+      "Discover elegant spaces and premium hospitality in our luxury hotel apartments, located just minutes from Islamabad International Airport and the M2 Motorway.",
     images: [
       {
         url: "/og-image.jpg",
@@ -56,13 +56,6 @@ export const metadata: Metadata = {
         alt: "Cyrus One Hotel Islamabad exterior",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cyrus One Hotel Islamabad",
-    description:
-      "Premium 55-room hotel in Islamabad — minutes from the airport.",
-    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,

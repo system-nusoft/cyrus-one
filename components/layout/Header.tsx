@@ -69,7 +69,7 @@ export default function Header({ dark = false }: HeaderProps) {
               ))}
             </ul>
           </nav>
-          <div className="text-right">
+          <div className="text-right hidden">
             <p className="text-xs font-bold text-white tracking-widest uppercase">
               Book Your Stay
             </p>

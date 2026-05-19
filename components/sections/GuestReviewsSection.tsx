@@ -8,29 +8,29 @@ const platforms = [
   {
     name: "Booking.com",
     icon: "/booking.svg",
-    rating: 10,
+    rating: "5.0",
     reviews: 3,
     href: "https://www.booking.com/hotel/pk/cyrus-one-by-trivelles.html",
   },
   {
     name: "Agoda",
     icon: "/agoda.svg",
-    rating: 10,
+    rating: "4.0",
     reviews: 3,
     href: "https://www.agoda.com/cyrus-one-by-trivelles/hotel/islamabad-pk.html",
   },
   {
     name: "Trip.com",
     icon: "/trip.svg",
-    rating: 10,
+    rating: "5.0",
     reviews: 3,
     href: "https://www.trip.com/hotels/detail/?cityEnName=Islamabad&cityId=531&hotelId=134035371",
   },
   {
     name: "Expedia",
     icon: "/expedia.svg",
-    rating: 10,
-    reviews: 3,
+    rating: "-",
+    reviews: "No",
     href: "https://www.expedia.com/Cyrus-One-By-Trivelles.h128379625.Hotel-Information",
   },
 ];
@@ -105,8 +105,8 @@ export default function GuestReviewsSection() {
 
         {/* Right — Platform ratings card */}
         <div className="bg-neutral-900 rounded-3xl p-8 flex items-center">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 w-full">
-            {platforms.map((p) => (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4 w-full">
+            {platforms.filter((p) => p.rating !== "-").map((p) => (
               <div key={p.name} className="flex flex-col items-center gap-3">
                 {/* Icon circle */}
                 <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center shrink-0 p-3">
@@ -122,7 +122,7 @@ export default function GuestReviewsSection() {
                 {/* Rating */}
                 <div className="flex items-center gap-1 text-white font-bold text-3xl">
                   <span className="font-roboto">{p.rating}</span>
-                  <Star className="w-8 h-8 fill-white text-white" />
+                  {p.rating !== "-" && <StarRating count={1} />}
                 </div>
 
                 {/* Review count pill */}
