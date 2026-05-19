@@ -8,11 +8,11 @@ import type { GuestCounts } from "@/components/ui/GuestCounter";
 
 const heroImages = [
   {
-    src: "/hero-bg.png",
-    alt: "Cyrus One Hotel interior — modern architecture near Islamabad airport",
+    src: "/hero-bg-1.webp",
+    alt: "Cyrus One Hotel exterior — modern architecture near Islamabad airport",
   },
-  { src: "/hotel-exterior.png", alt: "Cyrus One Hotel exterior — Islamabad" },
   { src: "/travellers-bg.png", alt: "Cyrus One Hotel — guest experience" },
+  { src: "/hotel-bg.png", alt: "Cyrus One Hotel exterior — Islamabad" },
 ];
 
 interface HeroSectionProps {
