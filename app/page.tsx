@@ -8,6 +8,7 @@ import RoomListingsSection from "@/components/sections/RoomListingsSection";
 import ModernTravellersSection from "@/components/sections/ModernTravellersSection";
 import VideoSection from "@/components/sections/VideoSection";
 import GuestReviewsSection from "@/components/sections/GuestReviewsSection";
+import LocationSection from "@/components/sections/LocationSection";
 import DiningSection from "@/components/sections/DiningSection";
 import Footer from "@/components/layout/Footer";
 import type { OraRoomCategory } from "@/services/ora-pms/types";
@@ -16,9 +17,9 @@ import type { GuestCounts } from "@/components/ui/GuestCounter";
 const hotelJsonLd = {
   "@context": "https://schema.org",
   "@type": "Hotel",
-  name: "Cyrus One Hotel",
+  name: "Premium Hotel Apartments Near Islamabad International Airport",
   description:
-    "Cyrus One by Trivelles — a premium 55-room hotel in Islamabad, perfectly positioned on Srinagar Highway, minutes from the airport.",
+    "Experience the perfect blend of British hospitality standards and bold design at Cyrus One by Trivelles, a premium UK hotel chain. Conveniently located just minutes from Islamabad International Airport and the M2 Motorway, our thoughtfully curated hotel apartments offer spacious, premium comfort for business travelers and families alike. Step inside, unwind, and experience a space that truly welcomes you home.",
   url: "https://cyrusonehotel.com",
   telephone: ["+92-341-2205252", "+92-305-2201888"],
   address: {
@@ -118,6 +119,7 @@ export default function HomePage() {
         <VideoSection />
         <DiningSection />
         <GuestReviewsSection />
+        <LocationSection />
       </main>
 
       <Footer />

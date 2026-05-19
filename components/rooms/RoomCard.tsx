@@ -182,11 +182,11 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
           </span>
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-input text-sm text-neutral-700">
             <Users className="w-3.5 h-3.5" />
-            {content.maxGuests} Guests
+            <span className="font-roboto">{content.maxGuests}</span> Guests
           </span>
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-input text-sm text-neutral-700">
             <Maximize2 className="w-3.5 h-3.5" />
-            {content.area} m²
+            <span className="font-roboto">{content.area}</span> m²
           </span>
         </div>
 
@@ -208,7 +208,7 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
         <div className="mt-auto rounded-3xl border-[1px] border-black bg-white px-3 md:px-5 py-4 flex items-center justify-between gap-4">
           <div>
             <p className="font-bold text-lg text-neutral-900">
-              PKR {formatPKR(pricePerNight)}
+              PKR <span className="font-roboto">{formatPKR(pricePerNight)}</span>
               <span className="font-bold text-sm md:text-lg text-neutral-900"> + Tax</span>
             </p>
             <p className="text-sm md:text-lg font-bold text-neutral-900 mt-0.5">per night</p>

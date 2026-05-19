@@ -165,7 +165,7 @@ export default function RoomDetailModal({ content, isUnavailable, bookingUrl, on
             {/* Room Size */}
             <div className="grid grid-cols-3 md:grid-cols-[160px_1fr] gap-4">
               <span className="font-bold text-sm text-neutral-900">Room Size</span>
-              <p className="col-span-2 md:col-span-1 text-sm text-neutral-900">{content.area} m²</p>
+              <p className="col-span-2 md:col-span-1 text-sm text-neutral-900"><span className="font-roboto">{content.area}</span> m²</p>
             </div>
 
             <div className="border-t border-neutral-100" />
