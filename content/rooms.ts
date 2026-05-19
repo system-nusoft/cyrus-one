@@ -33,7 +33,7 @@ export const roomContent: Record<string, RoomContent> = {
       { category: "Accessibility", items: ["Entire unit wheelchair accessible", "Baby safety gates"] },
       { category: "Smoking Policy", items: ["No smoking"] },
     ],
-    images: ["/images/rooms/standard-double/1.webp", "/images/rooms/standard-double/2.webp", "/images/rooms/standard-double/3.webp", "/images/rooms/standard-double/4.webp", "/images/rooms/standard-double/5.webp", "/images/rooms/standard-double/6.webp", "/images/rooms/standard-double/7.webp", "/images/rooms/standard-double/8.webp", "/images/rooms/standard-double/9.webp", "/images/rooms/standard-double/10.webp", "/images/rooms/standard-double/11.webp", "/images/rooms/standard-double/12.webp"],
+    images: ["/images/rooms/standard-double/1.webp", "/images/rooms/standard-double/2.webp", "/images/rooms/standard-double/3.webp", "/images/rooms/standard-double/4.webp", "/images/rooms/standard-double/5.webp", "/images/rooms/standard-double/6.webp", "/images/rooms/standard-double/7.webp", "/images/rooms/standard-double/8.webp", "/images/rooms/standard-double/9.webp", "/images/rooms/standard-double/10.webp", "/images/rooms/standard-double/11.webp"],
   },
   "Deluxe Double": {
     slug: "deluxe-double",
@@ -71,7 +71,7 @@ export const roomContent: Record<string, RoomContent> = {
       { category: "Accessibility", items: ["Entire unit wheelchair accessible", "Baby safety gates"] },
       { category: "Smoking Policy", items: ["No smoking"] },
     ],
-    images: ["/images/rooms/deluxe-twin/1.webp", "/images/rooms/deluxe-twin/2.webp", "/images/rooms/deluxe-twin/3.webp", "/images/rooms/deluxe-twin/4.webp", "/images/rooms/deluxe-twin/5.webp", "/images/rooms/deluxe-twin/6.webp", "/images/rooms/deluxe-twin/7.webp", "/images/rooms/deluxe-twin/8.webp", "/images/rooms/deluxe-twin/9.webp", "/images/rooms/deluxe-twin/10.webp", "/images/rooms/deluxe-twin/11.webp", "/images/rooms/deluxe-twin/12.webp"],
+    images: ["/images/rooms/deluxe-twin/1.webp", "/images/rooms/deluxe-twin/2.webp", "/images/rooms/deluxe-twin/3.webp", "/images/rooms/deluxe-twin/4.webp", "/images/rooms/deluxe-twin/5.webp", "/images/rooms/deluxe-twin/6.webp", "/images/rooms/deluxe-twin/7.webp", "/images/rooms/deluxe-twin/8.webp", "/images/rooms/deluxe-twin/9.webp", "/images/rooms/deluxe-twin/10.webp", "/images/rooms/deluxe-twin/11.webp", "/images/rooms/deluxe-twin/12.webp", "/images/rooms/deluxe-twin/13.webp", "/images/rooms/deluxe-twin/14.webp"],
   },
   "Executive Suite": {
     slug: "executive-suite",
@@ -79,7 +79,7 @@ export const roomContent: Record<string, RoomContent> = {
     description:
       "The air-conditioned suite features 1 bedroom and 1 bathroom with a shower and a hairdryer. The suite's kitchenette, which has a refrigerator and an electric kettle, is available for cooking and storing food. Featuring a balcony with city views, this suite also provides a seating area and a flat-screen TV. The unit offers 1 bed.",
     area: "46",
-    maxGuests: 3,
+    maxGuests: 2,
     bedType: "1 Double Bed",
     amenities: ["Private kitchenette", "Private bathroom", "Balcony", "Landmark view", "City view", "Air conditioning", "Patio", "Flat-screen TV", "Free WiFi"],
     detailedAmenities: [
@@ -98,7 +98,7 @@ export const roomContent: Record<string, RoomContent> = {
     description:
       "The spacious apartment features 2 bedrooms and 2 bathrooms with a shower and free toiletries. The apartment's kitchenette, which has a refrigerator, is available for cooking and storing food. The air-conditioned apartment provides a flat-screen TV, a seating area, a wardrobe, an electric kettle as well as city views. The unit offers 3 beds.",
     area: "80",
-    maxGuests: 6,
+    maxGuests: 4,
     bedType: "2 Single + 1 Double Bed",
     amenities: ["Private kitchenette", "Private bathroom", "Balcony", "Landmark view", "City view", "Air conditioning", "Patio", "Flat-screen TV", "Free WiFi"],
     detailedAmenities: [

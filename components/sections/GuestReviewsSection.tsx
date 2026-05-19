@@ -1,53 +1,37 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Star, ArrowUpRight } from "lucide-react";
+import { Star, ArrowUpRight } from "lucide-react";
 
-interface Review {
-  id: number;
-  name: string;
-  text: string;
-  rating: number;
-  image: string;
-}
-
-const reviews: Review[] = [
+const platforms = [
   {
-    id: 1,
-    name: "Abdullah Q.",
-    text: "Seamless check-ins, high-speed fiber WiFi, and dedicated workspaces thoughtfully designed for productivity, comfort, and rest. Highly recommend for business travellers.",
-    rating: 5,
-    image: "/review-person-1.png",
+    name: "Booking.com",
+    icon: "/booking.svg",
+    rating: "5.0",
+    reviews: 3,
+    href: "https://www.booking.com/hotel/pk/cyrus-one-by-trivelles.html",
   },
   {
-    id: 2,
-    name: "Sara M.",
-    text: "Perfect location for a transit stay. The room was spotless, the bed was comfortable, and I felt completely rested before my next flight. Will definitely stay again.",
-    rating: 5,
-    image: "/review-person-2.png",
+    name: "Agoda",
+    icon: "/agoda.svg",
+    rating: "4.0",
+    reviews: 3,
+    href: "https://www.agoda.com/cyrus-one-by-trivelles/hotel/islamabad-pk.html",
   },
   {
-    id: 3,
-    name: "Usman K.",
-    text: "Great value for money in Islamabad. The staff were incredibly helpful and the amenities were top notch. The proximity to the airport made everything so convenient.",
-    rating: 5,
-    image: "/review-person-1.png",
+    name: "Trip.com",
+    icon: "/trip.svg",
+    rating: "5.0",
+    reviews: 3,
+    href: "https://www.trip.com/hotels/detail/?cityEnName=Islamabad&cityId=531&hotelId=134035371",
   },
   {
-    id: 4,
-    name: "Aisha R.",
-    text: "We stayed as a family and the spacious suite was perfect for us. The kids loved it and we had everything we needed. A genuinely comfortable and stylish hotel.",
-    rating: 5,
-    image: "/review-person-2.png",
-  },
-  {
-    id: 5,
-    name: "Bilal T.",
-    text: "Modern, clean, and ideally placed on Srinagar Highway. Quick check-in, fast Wi-Fi, great coffee. Exactly what you need when you have an early morning flight.",
-    rating: 5,
-    image: "/review-person-1.png",
+    name: "Expedia",
+    icon: "/expedia.svg",
+    rating: "-",
+    reviews: "No",
+    href: "https://www.expedia.com/Cyrus-One-By-Trivelles.h128379625.Hotel-Information",
   },
 ];
 
@@ -65,51 +49,39 @@ function StarRating({ count }: { count: number }) {
 }
 
 export default function GuestReviewsSection() {
-  const [current, setCurrent] = useState(0);
-
-  function prev() {
-    setCurrent((i) => (i === 0 ? reviews.length - 1 : i - 1));
-  }
-
-  function next() {
-    setCurrent((i) => (i === reviews.length - 1 ? 0 : i + 1));
-  }
-
-  const review = reviews[current];
-
   return (
     <section
       className="pb-12 md:py-20 px-6 md:px-10 lg:px-16"
       aria-label="Guest reviews"
     >
       {/* Section header */}
-      <div className="text-center mb-4 md:mb-16">
+      <div className="text-center mb-4 md:mb-10 hidden">
         <h2 className="font-bold text-3xl md:text-5xl text-neutral-900">
           Guest Reviews
         </h2>
-        <p className="text-neutral-900 mt-3 text-md md:text-lg max-w-2xl mx-auto">
+        <p className="text-neutral-500 mt-3 text-sm md:text-base max-w-2xl mx-auto">
           Hear from our guests — business travellers, families, and transit
           passengers who chose Cyrus One for their Islamabad stay.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-[4fr_6fr] gap-4 md:gap-6 items-stretch">
         {/* Left — Google rating card */}
-        <div className="relative rounded-3xl overflow-hidden min-h-[340px] md:min-h-[400px]">
+        <div className="relative rounded-3xl overflow-hidden min-h-[250px]">
           <Image
-            src="/hotel-exterior.png"
+            src="/reviews-bg.png"
             alt="Cyrus One Hotel exterior — Islamabad"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/45" />
 
           <div className="absolute inset-0 p-8 flex flex-col justify-between">
             <div>
-              <p className="font-bold text-white text-lg">Google Reviews</p>
+              <p className="font-bold text-white text-2xl">Google Reviews</p>
               <div className="flex items-center gap-2 mt-2">
-                <span className="font-playfair font-bold text-white text-5xl">
+                <span className="font-roboto font-bold text-white text-5xl">
                   4.7
                 </span>
                 <StarRating count={5} />
@@ -117,11 +89,13 @@ export default function GuestReviewsSection() {
             </div>
 
             <Link
-              href="#availability"
+              href="https://www.google.com/search?q=Cyrus+One+By+Trivelles%2C+Sector+A+Main+Boulevard%2C+Airport+Enclave+Islamabad%2C+44000#lrd=0x38df99b28f3e888d:0x59e247730416d56,3,,,,"
+              target="_blank"
+              rel="noopener noreferrer"
               className="self-start flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full bg-white font-semibold text-md text-neutral-900 hover:bg-neutral-100 transition-colors"
-              aria-label="Check room availability"
+              aria-label="Leave a review on Google"
             >
-              <span>Check Availability</span>
+              <span>Leave a Review</span>
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 text-white shrink-0">
                 <ArrowUpRight className="w-5 h-5" />
               </span>
@@ -129,53 +103,40 @@ export default function GuestReviewsSection() {
           </div>
         </div>
 
-        {/* Right — Review slider */}
-        <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-            {/* Reviewer photo */}
-            <div className="relative rounded-3xl overflow-hidden aspect-[3/4] min-h-[280px]">
-              <Image
-                src={review.image}
-                alt={`Photo of ${review.name}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, 25vw"
-              />
-            </div>
+        {/* Right — Platform ratings card */}
+        <div className="bg-neutral-900 rounded-3xl p-8 flex items-center">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4 w-full">
+            {platforms.filter((p) => p.rating !== "-").map((p) => (
+              <div key={p.name} className="flex flex-col items-center gap-3">
+                {/* Icon circle */}
+                <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center shrink-0 p-3">
+                  <Image
+                    src={p.icon}
+                    alt={p.name}
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
 
-            {/* Review content + arrows */}
-            <div className="flex flex-col gap-4 justify-center md:justify-between">
-              <div
-                className="flex gap-2 order-last sm:order-first"
-                aria-label="Review navigation"
-              >
-                <button
-                  type="button"
-                  onClick={prev}
-                  className="w-10 h-10 rounded-full bg-input flex items-center justify-center text-white hover:bg-neutral-300 transition-colors"
-                  aria-label="Previous review"
+                {/* Rating */}
+                <div className="flex items-center gap-1 text-white font-bold text-3xl">
+                  <span className="font-roboto">{p.rating}</span>
+                  {p.rating !== "-" && <StarRating count={1} />}
+                </div>
+
+                {/* Review count pill */}
+                <Link
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-roboto text-sm text-white border border-white rounded-full px-3 py-1 whitespace-nowrap hover:bg-white/10 transition-colors"
+                  aria-label={`${p.name} — ${p.reviews} reviews`}
                 >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={next}
-                  className="w-10 h-10 rounded-full bg-input flex items-center justify-center text-white hover:bg-neutral-300 transition-colors"
-                  aria-label="Next review"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
+                  {p.reviews} reviews
+                </Link>
               </div>
-              <div className="flex flex-col gap-2 md:gap-4">
-                <h3 className="font-bold text-xl text-neutral-900">
-                  {review.name}
-                </h3>
-                <p className="text-md md:text-lg text-neutral-900 leading-relaxed">
-                  {review.text}
-                </p>
-                <StarRating count={review.rating} />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -519,19 +519,19 @@ export default function BookingPageClient() {
                 <div className="flex justify-between text-sm">
                   <span className="text-neutral-600">{roomName}</span>
                   <span className="font-semibold text-neutral-800">
-                    PKR {formatPKR(subtotal)}
+                    PKR <span className="font-roboto">{formatPKR(subtotal)}</span>
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-neutral-600">Taxes &amp; Fees</span>
                   <span className="font-semibold text-neutral-800">
-                    PKR {formatPKR(taxes)}
+                    PKR <span className="font-roboto">{formatPKR(taxes)}</span>
                   </span>
                 </div>
                 <div className="flex justify-between text-sm pt-2 border-t border-neutral-100">
                   <span className="font-bold text-[#8B1A1A]">Total Amount</span>
                   <span className="font-bold text-[#8B1A1A]">
-                    PKR {formatPKR(total)}
+                    PKR <span className="font-roboto">{formatPKR(total)}</span>
                   </span>
                 </div>
               </div>

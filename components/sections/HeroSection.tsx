@@ -1,9 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Header from "@/components/layout/Header";
 import BookingBar from "@/components/ui/BookingBar";
 import type { GuestCounts } from "@/components/ui/GuestCounter";
+
+const heroImages = [
+  {
+    src: "/hero-bg.png",
+    alt: "Cyrus One Hotel interior — modern architecture near Islamabad airport",
+  },
+  { src: "/hotel-exterior.png", alt: "Cyrus One Hotel exterior — Islamabad" },
+  { src: "/travellers-bg.png", alt: "Cyrus One Hotel — guest experience" },
+];
 
 interface HeroSectionProps {
   onSearch: (fromDate: string, toDate: string, guests: GuestCounts) => void;
@@ -11,22 +21,34 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col"
       aria-label="Hero — hotel introduction"
     >
-      {/* Background image */}
+      {/* Background carousel */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero-bg.png"
-          alt="Cyrus One Hotel interior — modern architecture near Islamabad airport"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        {heroImages.map((img, i) => (
+          <Image
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            fill
+            priority={i === 0}
+            className={`object-cover transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
+            sizes="100vw"
+          />
+        ))}
         <div className="absolute inset-0 bg-black/55" />
       </div>
 
@@ -36,14 +58,14 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-36 pb-8">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-normal text-white leading-tight">
+          <h1 className="text-4xl md:text-7xl font-normal text-white leading-tight">
             Your British Haven,
             <br /> Minutes from the Runway
           </h1>
           <p className="text-md md:text-lg text-white/80 mt-6 max-w-lg leading-tight">
-            Just 4.5km from Islamabad International Airport, we bring exacting
-            UK hospitality standards to expansive, balcony-lined hotel
-            apartments.
+            Just <span className="font-roboto">5.6</span>km from Islamabad
+            International Airport, we bring exacting UK hospitality standards to
+            expansive, balcony-lined hotel apartments.
           </p>
         </div>
       </div>

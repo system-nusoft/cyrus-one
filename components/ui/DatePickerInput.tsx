@@ -45,7 +45,7 @@ export default function DatePickerInput({
         <span className="flex items-center gap-2">
           <CalendarDays className="w-4 h-4 text-neutral-400" />
           {value ? (
-            <span className="font-medium text-neutral-900">{format(value, "MMM d, yyyy")}</span>
+            <span className="font-roboto font-medium text-neutral-900">{format(value, "MMM d, yyyy")}</span>
           ) : (
             <span className="text-neutral-400">{label}</span>
           )}
@@ -67,7 +67,7 @@ export default function DatePickerInput({
             }}
             disabled={minDate ? { before: minDate } : undefined}
             defaultMonth={value ?? minDate ?? new Date()}
-            className="text-sm"
+            className="text-sm font-roboto"
           />
         </div>
       )}
