@@ -75,7 +75,7 @@ export default function GuestReviewsSection() {
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
 
           <div className="absolute inset-0 p-8 flex flex-col justify-between">
             <div>
