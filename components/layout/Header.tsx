@@ -73,13 +73,17 @@ export default function Header({ dark = false }: HeaderProps) {
             <p className="text-xs font-bold text-white tracking-widest uppercase">
               Book Your Stay
             </p>
-            <p className="text-xs text-white/90 mt-0.5 font-bold">
+            <p className="text-xs text-[#1db6ea] mt-0.5 font-bold">
               <a href="tel:923412205252">
-                <span className="font-roboto block md:inline">+92 341-2205252</span>
+                <span className="font-roboto block md:inline">
+                  +92 341-2205252
+                </span>
               </a>
               <span className="hidden md:inline">&nbsp;&nbsp;</span>
               <a href="tel:933052201888">
-                <span className="font-roboto block md:inline">+92 305-2201888</span>
+                <span className="font-roboto block md:inline">
+                  +92 305-2201888
+                </span>
               </a>
             </p>
           </div>

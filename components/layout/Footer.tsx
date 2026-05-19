@@ -9,9 +9,21 @@ import {
 } from "@/components/ui/SocialIcons";
 
 const socialLinks = [
-  { href: "https://www.linkedin.com/company/cyrus-one-by-trivelles/", label: "LinkedIn", Icon: LinkedInIcon },
-  { href: "https://www.instagram.com/cyrusonebytrivelles?igsh=MTlmMW15NXp5NHNneA==", label: "Instagram", Icon: InstagramIcon },
-  { href: "https://www.facebook.com/profile.php?id=61579446300255", label: "Facebook", Icon: FacebookIcon },
+  {
+    href: "https://www.linkedin.com/company/cyrus-one-by-trivelles/",
+    label: "LinkedIn",
+    Icon: LinkedInIcon,
+  },
+  {
+    href: "https://www.instagram.com/cyrusonebytrivelles?igsh=MTlmMW15NXp5NHNneA==",
+    label: "Instagram",
+    Icon: InstagramIcon,
+  },
+  {
+    href: "https://www.facebook.com/profile.php?id=61579446300255",
+    label: "Facebook",
+    Icon: FacebookIcon,
+  },
   { href: "https://wa.me/923224770222", label: "WhatsApp", Icon: WhatsAppIcon },
 ];
 
@@ -19,7 +31,6 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-950 text-white" aria-label="Site footer">
       <div className="px-6 md:px-10 lg:px-16 py-12 md:py-16">
-
         {/* Top row — logo + CTA (same on all breakpoints) */}
         <div className="grid grid-cols-2 items-start">
           <div>
@@ -70,12 +81,25 @@ export default function Footer() {
 
           {/* Phone */}
           <p className="font-roboto font-bold text-sm text-white text-center">
-            +92 341-2205252&nbsp;&nbsp;+92 305-2201888
+            <a
+              href="tel:923412205252"
+              className="text-[#1db6ea] transition-colors"
+            >
+              +92 341-2205252
+            </a>
+            &nbsp;&nbsp;
+            <a
+              href="tel:923052201888"
+              className="text-[#1db6ea] transition-colors"
+            >
+              +92 305-2201888
+            </a>
           </p>
 
           {/* Address */}
           <address className="not-italic text-sm text-neutral-300 leading-relaxed text-center">
-            Main Boulevard, near Mumtaz City<br />
+            Main Boulevard, near Mumtaz City
+            <br />
             Airport Enclave Block A<br />
             Islamabad, 44000, Pakistan
           </address>
@@ -85,9 +109,11 @@ export default function Footer() {
         <div className="hidden md:grid grid-cols-2 items-end mt-32">
           {/* Address */}
           <address className="not-italic text-sm text-neutral-300 leading-relaxed">
-            Main Boulevard, near Mumtaz City<br />
+            Main Boulevard, near Mumtaz City
+            <br />
             Airport Enclave Block A<br />
-            Islamabad, 44000,<br />
+            Islamabad, 44000,
+            <br />
             Pakistan
           </address>
 
@@ -115,7 +141,19 @@ export default function Footer() {
                 Book Your Stay
               </p>
               <p className="font-roboto text-xs text-neutral-400 mt-0.5">
-                +92 341-2205252&nbsp;&nbsp;+92 305-2201888
+                <a
+                  href="tel:923412205252"
+                  className="text-[#1db6ea] transition-colors"
+                >
+                  +92 341-2205252
+                </a>
+                &nbsp;&nbsp;
+                <a
+                  href="tel:923052201888"
+                  className="text-[#1db6ea] transition-colors"
+                >
+                  +92 305-2201888
+                </a>
               </p>
             </div>
           </div>
@@ -124,7 +162,8 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-white/10 mt-8 pt-6">
           <p className="text-xs text-neutral-500 text-center">
-            © {new Date().getFullYear()} Cyrus One by Trivelles. All rights reserved.
+            © {new Date().getFullYear()} Cyrus One by Trivelles. All rights
+            reserved.
           </p>
         </div>
       </div>
