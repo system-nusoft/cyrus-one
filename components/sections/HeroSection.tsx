@@ -11,8 +11,8 @@ const heroImages = [
     src: "/hero-bg-1.webp",
     alt: "Cyrus One Hotel exterior — modern architecture near Islamabad airport",
   },
-  { src: "/travellers-bg.png", alt: "Cyrus One Hotel — guest experience" },
-  { src: "/hero-bg.png", alt: "Cyrus One Hotel exterior — Islamabad" },
+  { src: "/hero-bg-2.webp", alt: "Cyrus One Hotel — guest experience" },
+  { src: "/hero-bg-3.webp", alt: "Cyrus One Hotel interior — Islamabad" },
 ];
 
 interface HeroSectionProps {
