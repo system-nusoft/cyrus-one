@@ -116,10 +116,27 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
 
         {images.length > 1 && (
           <>
+            {/* Mobile arrows — no stopPropagation, click bubbles up to open modal */}
+            <button
+              type="button"
+              className="flex lg:hidden absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-neutral-700 items-center justify-center transition-colors shadow"
+              aria-label="View room photos"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              type="button"
+              className="flex lg:hidden absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-neutral-700 items-center justify-center transition-colors shadow"
+              aria-label="View room photos"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Desktop arrows — navigate images, stopPropagation prevents modal opening */}
             <button
               type="button"
               onClick={(e) => { e.stopPropagation(); prevImage(); }}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-neutral-700 flex items-center justify-center hover:bg-white transition-colors shadow"
+              className="hidden lg:flex absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-neutral-700 items-center justify-center hover:bg-white transition-colors shadow"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -127,14 +144,14 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
             <button
               type="button"
               onClick={(e) => { e.stopPropagation(); nextImage(); }}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-neutral-700 flex items-center justify-center hover:bg-white transition-colors shadow"
+              className="hidden lg:flex absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-neutral-700 items-center justify-center hover:bg-white transition-colors shadow"
               aria-label="Next image"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
 
             {/* Dots */}
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5" role="tablist" aria-label="Image navigation">
+            <div className="hidden lg:flex absolute bottom-4 left-0 right-0 justify-center gap-1.5" role="tablist" aria-label="Image navigation">
               {images.map((_, i) => (
                 <button
                   key={i}
