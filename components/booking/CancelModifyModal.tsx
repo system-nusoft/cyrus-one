@@ -7,6 +7,8 @@ import { X } from "lucide-react";
 interface CancelModifyModalProps {
   type: "modify" | "cancel";
   roomName: string;
+  checkIn?: string;
+  checkOut?: string;
   onClose: () => void;
 }
 
@@ -19,9 +21,8 @@ const COUNTRY_CODES = [
   { code: "+91", flag: "🇮🇳", label: "IN" },
 ];
 
-export default function CancelModifyModal({ type, roomName, onClose }: CancelModifyModalProps) {
+export default function CancelModifyModal({ type, roomName, checkIn, checkOut, onClose }: CancelModifyModalProps) {
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", countryCode: "+92", phone: "", reason: "" });
-  const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -29,34 +30,32 @@ export default function CancelModifyModal({ type, roomName, onClose }: CancelMod
     setForm((prev) => ({ ...prev, [field]: value }));
   }
 
-  async function handleSend() {
-    if (!form.firstName || !form.lastName || !form.email || !form.phone || !form.reason) {
-      setError("Please fill in all fields.");
+  function handleSend() {
+    if (!form.firstName || !form.lastName || !form.phone || !form.reason) {
+      setError("Please fill in all required fields.");
       return;
     }
-    setLoading(true);
     setError(null);
-    try {
-      const res = await fetch("/api/send-cancellation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          firstName: form.firstName,
-          lastName: form.lastName,
-          email: form.email,
-          phoneNumber: `${form.countryCode} ${form.phone}`,
-          reason: form.reason,
-          type,
-          roomName,
-        }),
-      });
-      if (!res.ok) throw new Error("Failed to send");
-      setSent(true);
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+
+    const requestType = type === "cancel" ? "Cancellation" : "Modification";
+    const message = [
+      `*Booking ${requestType} Request*`,
+      ``,
+      `Name: ${form.firstName} ${form.lastName}`,
+      form.email ? `Email: ${form.email}` : null,
+      `Phone: ${form.countryCode} ${form.phone}`,
+      `Room: ${roomName}`,
+      checkIn ? `Check-in: ${checkIn}` : null,
+      checkOut ? `Check-out: ${checkOut}` : null,
+      ``,
+      `${type === "cancel" ? "Reason for Cancellation" : "Modification Request"}:`,
+      form.reason,
+    ]
+      .filter((line) => line !== null)
+      .join("\n");
+
+    window.open(`https://wa.me/923224770222?text=${encodeURIComponent(message)}`, "_blank");
+    setSent(true);
   }
 
   const inputCls = "w-full px-5 py-3.5 rounded-full border border-black text-sm text-black placeholder:text-black focus:outline-none bg-white";
@@ -129,10 +128,9 @@ export default function CancelModifyModal({ type, roomName, onClose }: CancelMod
             <button
               type="button"
               onClick={handleSend}
-              disabled={loading}
-              className="w-full py-4 rounded-full bg-neutral-900 text-white font-semibold text-sm hover:bg-neutral-700 transition-colors disabled:opacity-50"
+              className="w-full py-4 rounded-full bg-neutral-900 text-white font-semibold text-sm hover:bg-neutral-700 transition-colors"
             >
-              {loading ? "Sending…" : "Send"}
+              Send via WhatsApp
             </button>
           </>
         )}

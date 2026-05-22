@@ -122,6 +122,7 @@ export default function BookingPageClient() {
     cardNumber: "",
     expiry: "",
     zip: "",
+    airportPickup: false,
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -158,16 +159,9 @@ export default function BookingPageClient() {
     const e: Record<string, string> = {};
     if (!form.firstName.trim()) e.firstName = "First name is required";
     if (!form.lastName.trim()) e.lastName = "Last name is required";
-    if (!form.email.trim()) e.email = "Email address is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      e.email = "Enter a valid email address";
     if (!form.phone.trim()) e.phone = "Phone number is required";
-    if (form.adults === "") e.adults = "Please select number of adults";
-    if (form.children === "") e.children = "Please select number of children";
-    if (form.rooms === "") e.rooms = "Please select number of rooms";
-    if (!form.country) e.country = "Please select a country";
-    if (!form.city.trim()) e.city = "City is required";
-    if (!form.address.trim()) e.address = "Address is required";
+    if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      e.email = "Enter a valid email address";
     return e;
   }
 
@@ -196,6 +190,7 @@ export default function BookingPageClient() {
           city: form.city,
           address: form.address,
           notes: form.notes,
+          airportPickup: form.airportPickup,
           totalAmount: total,
           noOfRooms: roomCount,
           planId,
@@ -269,7 +264,7 @@ export default function BookingPageClient() {
                     <input
                       className={fc("email")}
                       type="email"
-                      placeholder="Email Address *"
+                      placeholder="Email Address"
                       value={form.email}
                       onChange={(e) => update("email", e.target.value)}
                     />
@@ -343,7 +338,7 @@ export default function BookingPageClient() {
                           )
                         }
                       >
-                        <option value="">Total Adults *</option>
+                        <option value="">Total Adults</option>
                         {Array.from({ length: 10 }, (_, i) => i + 1).map(
                           (n) => (
                             <option key={n} value={n}>
@@ -372,7 +367,7 @@ export default function BookingPageClient() {
                           )
                         }
                       >
-                        <option value="">Total Children *</option>
+                        <option value="">Total Children</option>
                         {Array.from({ length: 11 }, (_, i) => i).map((n) => (
                           <option key={n} value={n}>
                             {n}
@@ -399,7 +394,7 @@ export default function BookingPageClient() {
                           )
                         }
                       >
-                        <option value="">No. of Rooms *</option>
+                        <option value="">No. of Rooms</option>
                         {Array.from({ length: 5 }, (_, i) => i + 1).map((n) => (
                           <option key={n} value={n}>
                             {n}
@@ -425,7 +420,7 @@ export default function BookingPageClient() {
                         onChange={(e) => update("country", e.target.value)}
                         className={`${fc("country")} cursor-pointer appearance-none pr-10`}
                       >
-                        <option value="">Guest Country *</option>
+                        <option value="">Guest Country</option>
                         {COUNTRIES.map((c) => (
                           <option key={c} value={c}>
                             {c}
@@ -443,7 +438,7 @@ export default function BookingPageClient() {
                   <div>
                     <input
                       className={fc("city")}
-                      placeholder="Guest City *"
+                      placeholder="Guest City"
                       value={form.city}
                       onChange={(e) => update("city", e.target.value)}
                     />
@@ -459,7 +454,7 @@ export default function BookingPageClient() {
                 <div>
                   <input
                     className={fc("address")}
-                    placeholder="Address *"
+                    placeholder="Address"
                     value={form.address}
                     onChange={(e) => update("address", e.target.value)}
                   />
@@ -469,6 +464,19 @@ export default function BookingPageClient() {
                     </p>
                   )}
                 </div>
+
+                {/* Airport Pickup */}
+                <label className="flex items-center gap-3 cursor-pointer select-none pl-1">
+                  <input
+                    type="checkbox"
+                    checked={form.airportPickup}
+                    onChange={(e) => update("airportPickup", e.target.checked)}
+                    className="w-5 h-5 rounded border-black accent-neutral-900 cursor-pointer"
+                  />
+                  <span className="text-sm font-medium text-neutral-900">
+                    Do you require airport pickup?
+                  </span>
+                </label>
               </div>
             </section>
 
@@ -488,7 +496,6 @@ export default function BookingPageClient() {
                 onChange={(e) => update("notes", e.target.value)}
               />
             </section>
-
           </div>
 
           {/* ── RIGHT COLUMN ── */}
@@ -519,7 +526,8 @@ export default function BookingPageClient() {
                 <div className="flex justify-between text-sm">
                   <span className="text-neutral-600">{roomName}</span>
                   <span className="font-semibold text-neutral-800">
-                    PKR <span className="font-roboto">{formatPKR(subtotal)}</span>
+                    PKR{" "}
+                    <span className="font-roboto">{formatPKR(subtotal)}</span>
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
@@ -554,7 +562,7 @@ export default function BookingPageClient() {
 
             {/* Payment Method (UI only) */}
             <section
-              className="rounded-3xl p-6"
+              className="hidden rounded-3xl p-6"
               style={{ backgroundColor: "#f5f5f5" }}
             >
               <h2 className="font-bold text-2xl text-neutral-900 text-center uppercase mb-6">
@@ -638,204 +646,213 @@ export default function BookingPageClient() {
               Policies
             </h2>
 
-              {/* Check-in */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <LogIn className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Check-in
-                  </span>
-                </div>
-                <div className="text-sm text-neutral-900 space-y-1">
-                  <p>From 12:00 to 00:00</p>
-                  <p>
-                    Guests are required to show a photo identification and
-                    credit card upon check-in
-                  </p>
-                  <p>
-                    You&apos;ll need to let the property know in advance what
-                    time you&apos;ll arrive.
-                  </p>
-                </div>
+            {/* Check-in */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <LogIn className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  Check-in
+                </span>
               </div>
-
-              {/* Check-out */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <LogOut className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Check-out
-                  </span>
-                </div>
-                <p className="text-sm text-neutral-900">From 00:00 to 14:00</p>
-              </div>
-
-              {/* Cancellation / prepayment */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <Info className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Cancellation/ prepayment
-                  </span>
-                </div>
-                <p className="text-sm text-neutral-900">
-                  Cancellation and prepayment policies vary according to
-                  accommodation type. Please enter the dates of your stay and
-                  check the conditions of your required option.
+              <div className="text-sm text-neutral-900 space-y-1">
+                <p>3pm</p>
+                <p>
+                  Guests are required to show a valid identification card upon
+                  check-in
+                </p>
+                <p>
+                  You&apos;ll need to let the property know in advance what time
+                  you&apos;ll arrive.
                 </p>
               </div>
+            </div>
 
-              {/* Children and beds */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <Users className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Children and beds
-                  </span>
-                </div>
-                <div className="text-sm text-neutral-900 space-y-3">
-                  <p className="font-bold">Child policies</p>
-                  <p>Children of any age are welcome.</p>
-                  <p>
-                    Children 13 years and above will be charged as adults at
-                    this property.
-                  </p>
-                  <p>
-                    To see correct prices and occupancy information, please add
-                    the number of children in your group and their ages to your
-                    search.
-                  </p>
+            {/* Check-out */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <LogOut className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  Check-out
+                </span>
+              </div>
+              <p className="text-sm text-neutral-900">12pm</p>
+            </div>
 
-                  <p className="font-bold pt-1">Cot and extra bed policies</p>
-                  <div className="border border-neutral-300 rounded-lg overflow-hidden text-sm">
-                    <div className="px-4 py-2 bg-neutral-100 font-medium">
-                      0 – 12 years
-                    </div>
-                    <div className="px-4 py-3 flex items-center justify-between gap-4 border-t border-neutral-200">
-                      <span className="flex items-center gap-2">
-                        <BedSingle className="w-4 h-4 shrink-0" />
-                        Extra bed upon request
-                      </span>
-                      <span>PKR 3,000 per child, per night</span>
-                    </div>
+            {/* Cancellation / prepayment */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <Info className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  Cancellation/ prepayment
+                </span>
+              </div>
+              <p className="text-sm text-neutral-900">
+                Cancellation and prepayment policies vary according to
+                accommodation type. Please enter the dates of your stay and
+                check the conditions of your required option.
+              </p>
+            </div>
+
+            {/* Children and beds */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <Users className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  Children and beds
+                </span>
+              </div>
+              <div className="text-sm text-neutral-900 space-y-3">
+                <p className="font-bold">Child policies</p>
+                <p>Children of any age are welcome.</p>
+                <p>
+                  Children 13 years and above will be charged as adults at this
+                  property.
+                </p>
+                <p>
+                  To see correct prices and occupancy information, please add
+                  the number of children in your group and their ages to your
+                  search.
+                </p>
+
+                <p className="font-bold pt-1">
+                  Cot and extra mattress policies
+                </p>
+                <div className="border border-neutral-300 rounded-lg overflow-hidden text-sm">
+                  <div className="px-4 py-2 bg-neutral-100 font-medium">
+                    0 – 12 years
                   </div>
-
-                  <p>
-                    Prices for extra beds are not included in the total price,
-                    and will have to be paid for separately during your stay.
-                  </p>
-                  <p>
-                    The number of extra beds allowed is dependent on the option
-                    you choose. Please check your selected option for more
-                    information.
-                  </p>
-                  <p>There are no cots available at this property.</p>
-                  <p>All extra beds are subject to availability.</p>
+                  <div className="px-4 py-3 flex items-center justify-between gap-4 border-t border-neutral-200">
+                    <span className="flex items-center gap-2">
+                      <BedSingle className="w-4 h-4 shrink-0" />
+                      Extra mattress upon request (1 per room)
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* No age restriction */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <User className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    No age restriction
-                  </span>
-                </div>
-                <p className="text-sm text-neutral-900">
-                  There is no age requirement for check-in
+                <p>
+                  Prices for extra mattresses are not included in the total
+                  price, and will have to be paid for separately during your
+                  stay.
                 </p>
-              </div>
-
-              {/* Groups */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <Users className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Groups
-                  </span>
-                </div>
-                <p className="text-sm text-neutral-900">
-                  When booking more than 3 rooms, different policies and
-                  additional supplements may apply.
+                <p>
+                  The number of extra mattresses allowed is dependent on the
+                  option you choose. Please check your selected option for more
+                  information.
                 </p>
+                <p>There are no cots available at this property.</p>
+                <p>All extra mattresses are subject to availability.</p>
               </div>
+            </div>
 
-              {/* Accepted payment methods */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <CreditCard className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Accepted payment methods
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 flex-wrap">
-                  <Image
-                    src="/Visa.svg"
-                    alt="Visa"
-                    width={48}
-                    height={30}
-                    className="object-contain"
-                  />
-                  <Image
-                    src="/UnionPay.svg"
-                    alt="UnionPay"
-                    width={48}
-                    height={30}
-                    className="object-contain"
-                  />
-                  <span className="px-3 py-2 bg-green-800 text-white text-xs font-semibold rounded">
-                    Cash
-                  </span>
-                </div>
+            {/* No age restriction */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <User className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  No age restriction
+                </span>
               </div>
+              <p className="text-sm text-neutral-900">
+                There is no age requirement for check-in
+              </p>
+            </div>
 
-              {/* Smoking */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <CigaretteOff className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Smoking
-                  </span>
-                </div>
-                <p className="text-sm text-neutral-900">
-                  Smoking is not allowed.
-                </p>
+            {/* Groups */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <Users className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  Groups
+                </span>
               </div>
+              <p className="text-sm text-neutral-900">
+                When booking more than 3 rooms, different policies and
+                additional supplements may apply.
+              </p>
+            </div>
 
-              {/* Parties */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
-                <div className="flex items-start gap-2">
-                  <PartyPopper className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Parties
-                  </span>
-                </div>
-                <p className="text-sm text-neutral-900">
-                  Parties/events are not allowed
-                </p>
+            {/* Accepted payment methods */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <CreditCard className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  Accepted payment methods
+                </span>
               </div>
+              <div className="flex items-center gap-3 flex-wrap">
+                <Image
+                  src="/Visa.svg"
+                  alt="Visa"
+                  width={48}
+                  height={30}
+                  className="object-contain"
+                />
+                <Image
+                  src="/UnionPay.svg"
+                  alt="UnionPay"
+                  width={48}
+                  height={30}
+                  className="object-contain"
+                />
+                <span className="px-3 py-2 bg-green-800 text-white text-xs font-semibold rounded">
+                  Cash
+                </span>
+              </div>
+            </div>
 
-              {/* Pets */}
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5">
-                <div className="flex items-start gap-2">
-                  <PawPrint className="w-5 h-5 shrink-0 mt-0.5" />
-                  <span className="font-bold text-sm text-neutral-900">
-                    Pets
-                  </span>
-                </div>
-                <p className="text-sm text-neutral-900">
-                  Pets are not allowed.
-                </p>
+            {/* Smoking */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <CigaretteOff className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  Smoking
+                </span>
               </div>
-            </section>
+              <p className="text-sm text-neutral-900">
+                Smoking is not allowed.
+              </p>
+            </div>
+
+            {/* Parties */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5 border-b border-neutral-200">
+              <div className="flex items-start gap-2">
+                <PartyPopper className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">
+                  Parties
+                </span>
+              </div>
+              <p className="text-sm text-neutral-900">
+                Parties/events are not allowed
+              </p>
+            </div>
+
+            {/* Pets */}
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 py-5">
+              <div className="flex items-start gap-2">
+                <PawPrint className="w-5 h-5 shrink-0 mt-0.5" />
+                <span className="font-bold text-sm text-neutral-900">Pets</span>
+              </div>
+              <p className="text-sm text-neutral-900">Pets are not allowed.</p>
+            </div>
+          </section>
         </div>
       </main>
 
       <Footer />
       <RibbonSection />
 
-      {success && <BookingSuccessModal roomName={roomName} />}
+      {success && (
+        <BookingSuccessModal
+          roomName={roomName}
+          checkIn={toDisplayDate(checkIn)}
+          checkOut={toDisplayDate(checkOut)}
+          nights={nights}
+          adults={Number(form.adults) || 1}
+          children={Number(form.children) || 0}
+          rooms={roomCount}
+          total={total}
+        />
+      )}
     </>
   );
 }

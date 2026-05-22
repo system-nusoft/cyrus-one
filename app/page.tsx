@@ -37,7 +37,7 @@ const hotelJsonLd = {
     worstRating: "1",
   },
   numberOfRooms: "55",
-  checkinTime: "14:00",
+  checkinTime: "15:00",
   checkoutTime: "12:00",
 };
 

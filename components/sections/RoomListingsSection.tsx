@@ -34,9 +34,20 @@ export default function RoomListingsSection({
   const [showAll, setShowAll] = useState(false);
   const viewMoreRef = useRef<HTMLDivElement>(null);
 
-  const sortedRooms = [...rooms].sort(
-    (a, b) => a.TotalRate / a.Nights - b.TotalRate / b.Nights,
-  );
+  const totalGuests = searchContext.guests.adults + searchContext.guests.children;
+  const numberOfRooms = searchContext.guests.rooms;
+  const guestsPerRoom = Math.ceil(totalGuests / numberOfRooms);
+
+  const sortedRooms = [...rooms]
+    .filter((room) => {
+      const content = roomContent[room.Category];
+      if (!content) return true;
+      const extraMattress = content.slug !== "standard-double" ? 1 : 0;
+      const effectiveCapacity = content.maxGuests + extraMattress;
+      return guestsPerRoom <= effectiveCapacity;
+    })
+    .sort((a, b) => b.TotalRate / b.Nights - a.TotalRate / a.Nights);
+
   const visibleRooms = showAll
     ? sortedRooms
     : sortedRooms.slice(0, INITIAL_VISIBLE);
@@ -95,8 +106,20 @@ export default function RoomListingsSection({
         </div>
       )}
 
+      {/* No rooms match occupancy */}
+      {!loading && !error && sortedRooms.length === 0 && rooms.length > 0 && (
+        <div className="flex flex-col items-center gap-3 py-16 text-center">
+          <p className="font-semibold text-neutral-700 text-lg">
+            No rooms available for your selection
+          </p>
+          <p className="text-sm text-neutral-500 max-w-sm">
+            Try reducing the number of guests or increasing the number of rooms.
+          </p>
+        </div>
+      )}
+
       {/* Room cards */}
-      {!loading && !error && (
+      {!loading && !error && sortedRooms.length > 0 && (
         <>
           <div className="flex flex-col gap-8 md:gap-12">
             {visibleRooms.map((room) => {
