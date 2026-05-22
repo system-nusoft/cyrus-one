@@ -11,11 +11,12 @@ interface BookingSummary {
   checkOut: string;
   nights: number;
   adults: number;
-  children: number;
+  childGuests: number;
   rooms: number;
   total: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface BookingSuccessModalProps extends BookingSummary {}
 
 function formatPKR(n: number) {
@@ -32,7 +33,7 @@ export default function BookingSuccessModal(props: BookingSuccessModalProps) {
     checkOut,
     nights,
     adults,
-    children,
+    childGuests,
     rooms,
     total,
   } = props;
@@ -102,8 +103,8 @@ export default function BookingSuccessModal(props: BookingSuccessModalProps) {
               <span className="text-sm text-neutral-500">Guests</span>
               <span className="font-roboto text-sm font-semibold text-neutral-900">
                 {adults} {adults === 1 ? "Adult" : "Adults"}
-                {children > 0
-                  ? `, ${children} ${children === 1 ? "Child" : "Children"}`
+                {childGuests > 0
+                  ? `, ${childGuests} ${childGuests === 1 ? "Child" : "Children"}`
                   : ""}
               </span>
             </div>

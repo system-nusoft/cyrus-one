@@ -848,7 +848,7 @@ export default function BookingPageClient() {
           checkOut={toDisplayDate(checkOut)}
           nights={nights}
           adults={Number(form.adults) || 1}
-          children={Number(form.children) || 0}
+          childGuests={Number(form.children) || 0}
           rooms={roomCount}
           total={total}
         />
