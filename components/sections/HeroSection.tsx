@@ -63,9 +63,9 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
             <br /> Minutes from the Runway
           </h1>
           <p className="text-md md:text-lg text-white/80 mt-6 max-w-lg leading-tight">
-            Just <span className="font-roboto">5.6</span>km from Islamabad
-            International Airport, we bring exacting UK hospitality standards to
-            expansive, balcony-lined hotel apartments.
+            Experience our expansive, balcony-lined hotel apartments. Perfectly
+            positioned near the M1/M2 interchange, just <span className="font-roboto">5</span>km from Islamabad
+            International Airport.
           </p>
         </div>
       </div>
