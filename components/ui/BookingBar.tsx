@@ -55,7 +55,7 @@ export default function BookingBar({
         </div>
         <div className="hidden md:flex items-center justify-end">
           <p className="text-sm text-neutral-900">
-            Free cancellation · No payment upfront · Instant confirmation
+            Free Airport Pickup · Complimentary Breakfast · Direct M1/M2 Access
           </p>
         </div>
       </div>
@@ -88,8 +88,8 @@ export default function BookingBar({
         </button>
       </div>
 
-      <p className="md:hidden text-xs text-neutral-400 mt-3 text-center">
-        Free cancellation · No payment upfront · Instant confirmation
+      <p className="md:hidden text-xs text-neutral-900 mt-3 text-center">
+        Free Airport Pickup · Complimentary Breakfast · Direct M1/M2 Access
       </p>
     </div>
   );

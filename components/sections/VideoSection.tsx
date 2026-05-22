@@ -4,8 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 
-// Replace with the real YouTube video ID when available
-const YOUTUBE_VIDEO_ID = "wyL1GRRlg3I";
+const YOUTUBE_VIDEO_ID = "U6SVLXL8Bec";
 
 export default function VideoSection() {
   const [playing, setPlaying] = useState(false);
