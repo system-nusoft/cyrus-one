@@ -21,6 +21,7 @@ export async function POST(req: NextRequest) {
       city: string;
       address: string;
       notes: string;
+      airportPickup?: boolean;
       totalAmount: number;
       noOfRooms: number;
       planId: string;
@@ -35,16 +36,11 @@ export async function POST(req: NextRequest) {
       phoneNumber: body.phoneNumber,
       checkInDate: body.checkIn,
       checkOutDate: body.checkOut,
-      adults: String(body.adults),
-      child: String(body.children),
-      Country: body.country,
-      city: body.city,
-      address: body.address,
       total_amount: String(body.totalAmount),
       noofrooms: String(body.noOfRooms),
-      notes: body.notes,
       planid: body.planId,
       category_id: body.categoryId,
+      isShuttleService: body.airportPickup ? "true" : "false",
     });
 
     const res = await fetch(`${ORA_API_URL}?${params.toString()}`, {
