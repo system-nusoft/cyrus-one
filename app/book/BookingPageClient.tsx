@@ -160,7 +160,8 @@ export default function BookingPageClient() {
     if (!form.firstName.trim()) e.firstName = "First name is required";
     if (!form.lastName.trim()) e.lastName = "Last name is required";
     if (!form.phone.trim()) e.phone = "Phone number is required";
-    if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+    if (!form.email.trim()) e.email = "Email address is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Enter a valid email address";
     return e;
   }
@@ -264,7 +265,7 @@ export default function BookingPageClient() {
                     <input
                       className={fc("email")}
                       type="email"
-                      placeholder="Email Address"
+                      placeholder="Email Address *"
                       value={form.email}
                       onChange={(e) => update("email", e.target.value)}
                     />
@@ -655,7 +656,7 @@ export default function BookingPageClient() {
                 </span>
               </div>
               <div className="text-sm text-neutral-900 space-y-1">
-                <p>3pm</p>
+                <p>3pm-4pm</p>
                 <p>
                   Guests are required to show a valid identification card upon
                   check-in
@@ -675,7 +676,7 @@ export default function BookingPageClient() {
                   Check-out
                 </span>
               </div>
-              <p className="text-sm text-neutral-900">12pm</p>
+              <p className="text-sm text-neutral-900">11am-12pm</p>
             </div>
 
             {/* Cancellation / prepayment */}
