@@ -656,7 +656,7 @@ export default function BookingPageClient() {
                 </span>
               </div>
               <div className="text-sm text-neutral-900 space-y-1">
-                <p>3pm-4pm</p>
+                <p>From 2:00pm</p>
                 <p>
                   Guests are required to show a valid identification card upon
                   check-in
@@ -676,7 +676,7 @@ export default function BookingPageClient() {
                   Check-out
                 </span>
               </div>
-              <p className="text-sm text-neutral-900">11am-12pm</p>
+              <p className="text-sm text-neutral-900">11:00am-12:00pm</p>
             </div>
 
             {/* Cancellation / prepayment */}
