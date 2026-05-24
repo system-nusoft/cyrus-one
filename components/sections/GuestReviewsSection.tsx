@@ -15,7 +15,7 @@ const platforms = [
   {
     name: "Agoda",
     icon: "/agoda.svg",
-    rating: "4.0",
+    rating: "5.0",
     reviews: 3,
     href: "https://www.agoda.com/cyrus-one-by-trivelles/hotel/islamabad-pk.html",
   },
