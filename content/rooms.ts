@@ -109,7 +109,7 @@ export const roomContent: Record<string, RoomContent> = {
       { category: "Accessibility", items: ["Entire unit wheelchair accessible", "Baby safety gates"] },
       { category: "Smoking Policy", items: ["No smoking"] },
     ],
-    images: ["/images/rooms/3-bed-executive/1.png"],
+    images: ["/images/rooms/3-bed-executive/1.webp"],
   },
   "2 Bed Suite": {
     slug: "2-bed-suite",
@@ -128,7 +128,7 @@ export const roomContent: Record<string, RoomContent> = {
       { category: "Accessibility", items: ["Entire unit wheelchair accessible", "Baby safety gates"] },
       { category: "Smoking Policy", items: ["No smoking"] },
     ],
-    images: ["/images/rooms/2-bed-suite/1.png"],
+    images: ["/images/rooms/2-bed-suite/1.webp"],
   },
   "2 Bed Presendential Suites": {
     slug: "2-bed-presidential-suite",
@@ -147,6 +147,6 @@ export const roomContent: Record<string, RoomContent> = {
       { category: "Accessibility", items: ["Entire unit wheelchair accessible", "Baby safety gates"] },
       { category: "Smoking Policy", items: ["No smoking"] },
     ],
-    images: ["/images/rooms/2-bed-presidential-suite/1.png"],
+    images: ["/images/rooms/2-bed-presidential-suite/1.webp"],
   },
 };
