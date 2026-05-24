@@ -265,7 +265,7 @@ export default function BookingPageClient() {
                     <input
                       className={fc("email")}
                       type="email"
-                      placeholder="Email Address *"
+                      placeholder="Email Address"
                       value={form.email}
                       onChange={(e) => update("email", e.target.value)}
                     />
