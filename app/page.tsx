@@ -21,7 +21,7 @@ const hotelJsonLd = {
   description:
     "Experience the perfect blend of British hospitality standards and bold design at Cyrus One by Trivelles, a premium UK hotel chain. Conveniently located just minutes from Islamabad International Airport and the M2 Motorway, our thoughtfully curated hotel apartments offer spacious, premium comfort for business travelers and families alike. Step inside, unwind, and experience a space that truly welcomes you home.",
   url: "https://cyrusonehotel.com",
-  telephone: ["+92-341-2205252", "+92-305-2201888"],
+  telephone: ["+923224770222"],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Main Boulevard, near Mumtaz City, Airport Enclave Block A",
@@ -34,7 +34,7 @@ const hotelJsonLd = {
     ratingValue: "4.7",
     reviewCount: "5",
     bestRating: "5",
-    worstRating: "1",
+    worstRating: "-",
   },
   numberOfRooms: "55",
   checkinTime: "14:00",
