@@ -69,7 +69,7 @@ export default function GuestReviewsSection() {
         {/* Left — Google rating card */}
         <div className="relative rounded-3xl overflow-hidden min-h-[250px]">
           <Image
-            src="/reviews-bg.png"
+            src="/reviews-bg.webp"
             alt="Cyrus One Hotel exterior — Islamabad"
             fill
             className="object-cover"
