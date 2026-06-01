@@ -38,8 +38,11 @@ export default function RoomListingsSection({
   const numberOfRooms = searchContext.guests.rooms;
   const guestsPerRoom = Math.ceil(totalGuests / numberOfRooms);
 
+  const HIDDEN_CATEGORIES = new Set(["2 Bed Presendential Suites", "3 Bed Executive", "2 Bed Suite"]);
+
   const sortedRooms = [...rooms]
     .filter((room) => {
+      if (HIDDEN_CATEGORIES.has(room.Category)) return false;
       const content = roomContent[room.Category];
       if (!content) return true;
       const extraMattress = content.slug !== "standard-double" ? 1 : 0;
