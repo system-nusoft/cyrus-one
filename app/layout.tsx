@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Raleway, Roboto } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -45,7 +46,8 @@ export const metadata: Metadata = {
     locale: "en_PK",
     url: "https://cyrusonehotel.com",
     siteName: "Cyrus One by Trivelles",
-    title: "Cyrus One by Trivelles | Premium Hotel Apartments Near Islamabad Airport",
+    title:
+      "Cyrus One by Trivelles | Premium Hotel Apartments Near Islamabad Airport",
     description:
       "Discover elegant spaces and premium hospitality in our luxury hotel apartments, located just minutes from Islamabad International Airport and the M2 Motorway.",
     images: [
@@ -73,8 +75,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${raleway.variable} ${roboto.variable} scroll-smooth`}>
-      <body className="font-raleway antialiased">{children}</body>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${raleway.variable} ${roboto.variable} scroll-smooth`}
+    >
+      <body className="font-raleway antialiased">
+        {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18205737022"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18205737022');
+        `}</Script>
+      </body>
     </html>
   );
 }
