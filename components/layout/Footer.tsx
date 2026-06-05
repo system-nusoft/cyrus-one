@@ -103,6 +103,33 @@ export default function Footer() {
             Airport Enclave Block A<br />
             Islamabad, 44000, Pakistan
           </address>
+
+          {/* App store badges */}
+          <div className="flex items-center gap-3">
+            <a
+              href="https://apps.apple.com/us/app/cyrus-one/id6773423509"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download on the App Store"
+            >
+              <Image
+                src="/app-store.svg"
+                alt="Download on the App Store"
+                width={130}
+                height={40}
+                className="h-10 w-auto bg-white rounded-lg"
+              />
+            </a>
+            {/* <a href="#" aria-label="Get it on Google Play">
+              <Image
+                src="/google-play.webp"
+                alt="Get it on Google Play"
+                width={130}
+                height={40}
+                className="h-10 w-auto bg-white rounded-lg"
+              />
+            </a> */}
+          </div>
         </div>
 
         {/* ── DESKTOP bottom section (hidden on mobile) ── */}
@@ -117,8 +144,34 @@ export default function Footer() {
             Pakistan
           </address>
 
-          {/* Social + phone */}
+          {/* App badges + social + phone */}
           <div className="flex flex-col items-end gap-3">
+            {/* App store badges */}
+            <div className="flex items-center gap-2">
+              <a
+                target="_blank"
+                href="https://apps.apple.com/us/app/cyrus-one/id6773423509"
+                aria-label="Download on the App Store"
+              >
+                <Image
+                  src="/app-store.svg"
+                  alt="Download on the App Store"
+                  width={120}
+                  height={36}
+                  className="h-12 w-auto bg-white rounded-lg"
+                />
+              </a>
+              {/* <a href="#" aria-label="Get it on Google Play">
+                <Image
+                  src="/google-play.webp"
+                  alt="Get it on Google Play"
+                  width={120}
+                  height={36}
+                  className="h-9 w-auto bg-white rounded-lg"
+                />
+              </a> */}
+            </div>
+
             <nav aria-label="Footer social media links">
               <ul className="flex items-center gap-2">
                 {socialLinks.map(({ href, label, Icon }) => (
