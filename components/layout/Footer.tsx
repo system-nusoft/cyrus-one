@@ -134,15 +134,42 @@ export default function Footer() {
 
         {/* ── DESKTOP bottom section (hidden on mobile) ── */}
         <div className="hidden md:grid grid-cols-2 items-end mt-32">
-          {/* Address */}
-          <address className="not-italic text-sm text-neutral-300 leading-relaxed">
-            Main Boulevard, near Mumtaz City
-            <br />
-            Airport Enclave Block A<br />
-            Islamabad, 44000,
-            <br />
-            Pakistan
-          </address>
+          {/* App store badges + Address */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://apps.apple.com/us/app/cyrus-one/id6773423509"
+                aria-label="Download on the App Store"
+              >
+                <Image
+                  src="/app-store.svg"
+                  alt="Download on the App Store"
+                  width={120}
+                  height={36}
+                  className="h-12 w-auto bg-white rounded-lg"
+                />
+              </a>
+              {/* <a href="#" aria-label="Get it on Google Play">
+                <Image
+                  src="/google-play.webp"
+                  alt="Get it on Google Play"
+                  width={120}
+                  height={36}
+                  className="h-9 w-auto bg-white rounded-lg"
+                />
+              </a> */}
+            </div>
+            <address className="not-italic text-sm text-neutral-300 leading-relaxed">
+              Main Boulevard, near Mumtaz City
+              <br />
+              Airport Enclave Block A<br />
+              Islamabad, 44000,
+              <br />
+              Pakistan
+            </address>
+          </div>
 
           {/* App badges + social + phone */}
           <div className="flex flex-col items-end gap-3">
