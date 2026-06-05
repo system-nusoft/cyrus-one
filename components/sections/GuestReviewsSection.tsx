@@ -9,21 +9,21 @@ const platforms = [
     name: "Booking.com",
     icon: "/booking.svg",
     rating: "5.0",
-    reviews: 3,
+    reviews: "3 reviews",
     href: "https://www.booking.com/hotel/pk/cyrus-one-by-trivelles.html",
   },
   {
     name: "Agoda",
     icon: "/agoda.svg",
-    rating: "5.0",
-    reviews: 3,
+    rating: "4.8",
+    reviews: "5 reviews",
     href: "https://www.agoda.com/cyrus-one-by-trivelles/hotel/islamabad-pk.html",
   },
   {
     name: "Trip.com",
     icon: "/trip.svg",
     rating: "5.0",
-    reviews: 3,
+    reviews: "1 review",
     href: "https://www.trip.com/hotels/detail/?cityEnName=Islamabad&cityId=531&hotelId=134035371",
   },
   {
@@ -133,7 +133,7 @@ export default function GuestReviewsSection() {
                   className="font-roboto text-sm text-white border border-white rounded-full px-3 py-1 whitespace-nowrap hover:bg-white/10 transition-colors"
                   aria-label={`${p.name} — ${p.reviews} reviews`}
                 >
-                  {p.reviews} reviews
+                  {p.reviews}
                 </Link>
               </div>
             ))}
