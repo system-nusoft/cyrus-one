@@ -134,22 +134,12 @@ export default function Footer() {
 
         {/* ── DESKTOP bottom section (hidden on mobile) ── */}
         <div className="hidden md:grid grid-cols-2 items-end mt-32">
-          {/* Address */}
-          <address className="not-italic text-sm text-neutral-300 leading-relaxed">
-            Main Boulevard, near Mumtaz City
-            <br />
-            Airport Enclave Block A<br />
-            Islamabad, 44000,
-            <br />
-            Pakistan
-          </address>
-
-          {/* App badges + social + phone */}
-          <div className="flex flex-col items-end gap-3">
-            {/* App store badges */}
+          {/* App store badges + Address */}
+          <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://apps.apple.com/us/app/cyrus-one/id6773423509"
                 aria-label="Download on the App Store"
               >
@@ -171,7 +161,18 @@ export default function Footer() {
                 />
               </a> */}
             </div>
+            <address className="not-italic text-sm text-neutral-300 leading-relaxed">
+              Main Boulevard, near Mumtaz City
+              <br />
+              Airport Enclave Block A<br />
+              Islamabad, 44000,
+              <br />
+              Pakistan
+            </address>
+          </div>
 
+          {/* Social + phone */}
+          <div className="flex flex-col items-end gap-3">
             <nav aria-label="Footer social media links">
               <ul className="flex items-center gap-2">
                 {socialLinks.map(({ href, label, Icon }) => (
