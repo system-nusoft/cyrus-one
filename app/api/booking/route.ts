@@ -4,7 +4,7 @@ import sgMail from "@sendgrid/mail";
 const ORA_API_URL =
   "https://www.smartpmspro.com/smartapi/api/reservation/create-new-Booking";
 const HOTEL_ID = process.env.ORA_PMS_HOTEL_ID!;
-const HOTEL_EMAIL = "contact@cyrusonehotel.com";
+const HOTEL_EMAIL = "reservations@cyrusonehotel.com";
 
 export async function POST(req: NextRequest) {
   try {

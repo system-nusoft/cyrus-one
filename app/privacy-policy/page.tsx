@@ -10,12 +10,11 @@ const sections = [
   {
     title: "1. Information We Collect",
     content: [
-      "When you make a booking or enquiry through our website, we may collect the following personal information:",
+      "When you make a booking or inquiry through our website, we may collect the following personal information:",
       "• Full name",
       "• Email address",
       "• Phone number",
       "• Postal address",
-      "• Payment details (processed securely and not stored on our servers)",
       "• Check-in and check-out dates",
       "• Number of guests",
       "• Special requests and preferences",
@@ -93,7 +92,7 @@ const sections = [
       "Cyrus One by Trivelles",
       "Main Boulevard, near Mumtaz City, Airport Enclave Block A",
       "Islamabad, 44000, Pakistan",
-      "Email: contact@cyrusonehotel.com",
+      "Email: reservations@cyrusonehotel.com",
       "Phone: +92 341-2205252",
     ],
   },

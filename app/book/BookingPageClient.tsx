@@ -105,6 +105,9 @@ export default function BookingPageClient() {
   const nights = Number(params.get("nights") ?? 1);
   const ratePerStay = Number(params.get("rate") ?? 0);
   const taxPerStay = Number(params.get("tax") ?? 0);
+  const adults = Number(params.get("adults") ?? 1);
+  const children = Number(params.get("children") ?? 0);
+  const rooms = Number(params.get("rooms") ?? 1);
 
   const [form, setForm] = useState({
     firstName: "",
@@ -112,9 +115,6 @@ export default function BookingPageClient() {
     email: "",
     countryCode: "+92",
     phone: "",
-    adults: "" as string | number,
-    children: "" as string | number,
-    rooms: "" as string | number,
     country: "",
     city: "",
     address: "",
@@ -130,9 +130,8 @@ export default function BookingPageClient() {
   const [apiError, setApiError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const roomCount = Number(form.rooms) || 1;
-  const subtotal = ratePerStay * roomCount;
-  const taxes = taxPerStay * roomCount;
+  const subtotal = ratePerStay * rooms;
+  const taxes = taxPerStay * rooms;
   const total = subtotal + taxes;
 
   const fc = (field: string) =>
@@ -185,15 +184,15 @@ export default function BookingPageClient() {
           phoneNumber: `${form.countryCode} ${form.phone}`,
           checkIn: toApiDate(checkIn),
           checkOut: toApiDate(checkOut),
-          adults: Number(form.adults) || 1,
-          children: Number(form.children) || 0,
+          adults,
+          children,
           country: form.country,
           city: form.city,
           address: form.address,
           notes: form.notes,
           airportPickup: form.airportPickup,
           totalAmount: total,
-          noOfRooms: roomCount,
+          noOfRooms: rooms,
           planId,
           categoryId,
         }),
@@ -307,112 +306,10 @@ export default function BookingPageClient() {
                   </div>
                 </div>
 
-                {/* Dates — locked; changing dates requires a new search */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div
-                    className="w-full px-5 py-3.5 rounded-full border border-black text-sm text-neutral-700 cursor-not-allowed select-none"
-                    style={{ backgroundColor: "#e0e0e0" }}
-                    title="To change dates, return to the homepage and search again"
-                  >
-                    {toDisplayDate(checkIn)}
-                  </div>
-                  <div
-                    className="w-full px-5 py-3.5 rounded-full border border-black text-sm text-neutral-700 cursor-not-allowed select-none"
-                    style={{ backgroundColor: "#e0e0e0" }}
-                    title="To change dates, return to the homepage and search again"
-                  >
-                    {toDisplayDate(checkOut)}
-                  </div>
-                </div>
-
-                {/* Adults, Children, Rooms */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <div className="relative">
-                      <select
-                        className={`${fc("adults")} cursor-pointer appearance-none pr-10`}
-                        value={form.adults}
-                        onChange={(e) =>
-                          update(
-                            "adults",
-                            e.target.value === "" ? "" : Number(e.target.value),
-                          )
-                        }
-                      >
-                        <option value="">Total Adults</option>
-                        {Array.from({ length: 10 }, (_, i) => i + 1).map(
-                          (n) => (
-                            <option key={n} value={n}>
-                              {n}
-                            </option>
-                          ),
-                        )}
-                      </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-black pointer-events-none" />
-                    </div>
-                    {errors.adults && (
-                      <p className="text-xs text-red-500 mt-1 pl-4">
-                        {errors.adults}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <div className="relative">
-                      <select
-                        className={`${fc("children")} cursor-pointer appearance-none pr-10`}
-                        value={form.children}
-                        onChange={(e) =>
-                          update(
-                            "children",
-                            e.target.value === "" ? "" : Number(e.target.value),
-                          )
-                        }
-                      >
-                        <option value="">Total Children</option>
-                        {Array.from({ length: 11 }, (_, i) => i).map((n) => (
-                          <option key={n} value={n}>
-                            {n}
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-black pointer-events-none" />
-                    </div>
-                    {errors.children && (
-                      <p className="text-xs text-red-500 mt-1 pl-4">
-                        {errors.children}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <div className="relative">
-                      <select
-                        className={`${fc("rooms")} cursor-pointer appearance-none pr-10`}
-                        value={form.rooms}
-                        onChange={(e) =>
-                          update(
-                            "rooms",
-                            e.target.value === "" ? "" : Number(e.target.value),
-                          )
-                        }
-                      >
-                        <option value="">No. of Rooms</option>
-                        {Array.from({ length: 5 }, (_, i) => i + 1).map((n) => (
-                          <option key={n} value={n}>
-                            {n}
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-black pointer-events-none" />
-                    </div>
-                    {errors.rooms && (
-                      <p className="text-xs text-red-500 mt-1 pl-4">
-                        {errors.rooms}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                {/* Country + City */}
+                {/* Country + City + Address — optional */}
+                <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide pl-1 -mb-1">
+                  Optional
+                </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <div className="relative">
@@ -513,19 +410,20 @@ export default function BookingPageClient() {
               <p className="text-sm font-semibold text-neutral-700 mb-1">
                 {toDisplayDate(checkIn)} – {toDisplayDate(checkOut)}
               </p>
-              <p className="text-xs text-neutral-500 mb-5">
-                {Number(form.adults) || 1} adult
-                {(Number(form.adults) || 1) !== 1 ? "s" : ""}
-                {Number(form.children) > 0
-                  ? ` · ${form.children} child${Number(form.children) !== 1 ? "ren" : ""}`
+              <p className="text-sm text-neutral-700 font-semibold mb-5">
+                {adults} adult{adults !== 1 ? "s" : ""}
+                {children > 0
+                  ? ` · ${children} child${children !== 1 ? "ren" : ""}`
                   : ""}{" "}
-                · {nights} night{nights !== 1 ? "s" : ""} · {roomCount} room
-                {roomCount !== 1 ? "s" : ""}
+                · {nights} night{nights !== 1 ? "s" : ""} · {rooms} room
+                {rooms !== 1 ? "s" : ""}
               </p>
 
               <div className="border-t border-neutral-100 pt-4 space-y-2 mb-4">
                 <div className="flex justify-between text-sm">
-                  <span className="text-neutral-600">{roomName}</span>
+                  <span className="text-neutral-600">
+                    {roomName}{rooms > 1 ? ` ×${rooms}` : ""}
+                  </span>
                   <span className="font-semibold text-neutral-800">
                     PKR{" "}
                     <span className="font-roboto">{formatPKR(subtotal)}</span>
@@ -848,9 +746,9 @@ export default function BookingPageClient() {
           checkIn={toDisplayDate(checkIn)}
           checkOut={toDisplayDate(checkOut)}
           nights={nights}
-          adults={Number(form.adults) || 1}
-          childGuests={Number(form.children) || 0}
-          rooms={roomCount}
+          adults={adults}
+          childGuests={children}
+          rooms={rooms}
           total={total}
         />
       )}

@@ -8,8 +8,8 @@ const platforms = [
   {
     name: "Booking.com",
     icon: "/booking.svg",
-    rating: "5.0",
-    reviews: "3 reviews",
+    rating: "4.6",
+    reviews: "6 reviews",
     href: "https://www.booking.com/hotel/pk/cyrus-one-by-trivelles.html",
   },
   {
@@ -29,8 +29,8 @@ const platforms = [
   {
     name: "Expedia",
     icon: "/expedia.svg",
-    rating: "-",
-    reviews: "No",
+    rating: "5.0",
+    reviews: "3 reviews",
     href: "https://www.expedia.com/Cyrus-One-By-Trivelles.h128379625.Hotel-Information",
   },
 ];
@@ -89,7 +89,7 @@ export default function GuestReviewsSection() {
             </div>
 
             <Link
-              href="https://www.google.com/search?q=Cyrus+One+By+Trivelles%2C+Sector+A+Main+Boulevard%2C+Airport+Enclave+Islamabad%2C+44000#lrd=0x38df99b28f3e888d:0x59e247730416d56,3,,,,"
+              href="https://g.page/r/CVZtQTB3JJ4FEBM/review"
               target="_blank"
               rel="noopener noreferrer"
               className="self-start flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full bg-white font-semibold text-md text-neutral-900 hover:bg-neutral-100 transition-colors"
@@ -105,7 +105,7 @@ export default function GuestReviewsSection() {
 
         {/* Right — Platform ratings card */}
         <div className="bg-neutral-900 rounded-3xl p-8 flex items-center">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4 w-full">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 w-full">
             {platforms.filter((p) => p.rating !== "-").map((p) => (
               <div key={p.name} className="flex flex-col items-center gap-3">
                 {/* Icon circle */}
