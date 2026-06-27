@@ -1,4 +1,4 @@
-import type { OraAvailabilityResponse } from "./types";
+import type { OraAvailabilityResponse, OraRoomCategory } from "./types";
 
 export async function fetchRoomAvailability(
   fromDate: string,
@@ -28,8 +28,15 @@ export async function fetchRoomAvailability(
   }
 
   const data = await response.json() as OraAvailabilityResponse;
-  return {
-    ...data,
-    Data: data.Data.filter((room) => room.PlanName === "WEBSITE RATE"),
-  };
+  const byCategory = new Map<string, { website?: OraRoomCategory; roFlexi?: OraRoomCategory }>();
+  for (const room of data.Data) {
+    const entry = byCategory.get(room.CategoryId) ?? {};
+    if (room.PlanName === "WEBSITE RATE") entry.website = room;
+    else entry.roFlexi = room;
+    byCategory.set(room.CategoryId, entry);
+  }
+  const merged = Array.from(byCategory.values())
+    .filter((e) => e.website)
+    .map((e) => ({ ...e.website!, roFlexiRate: e.roFlexi?.TotalRate }));
+  return { ...data, Data: merged };
 }

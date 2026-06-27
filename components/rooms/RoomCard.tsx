@@ -70,6 +70,7 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
   const isUnavailable = availability.AvailableRooms === 0;
   const bookingUrl = buildBookingUrl(content, availability, searchContext);
   const pricePerNight = availability.TotalRate / availability.Nights;
+  const roFlexiPerNight = availability.roFlexiRate != null ? availability.roFlexiRate / availability.Nights : null;
 
   function prevImage() {
     setImageIndex((i) => (i === 0 ? images.length - 1 : i - 1));
@@ -201,6 +202,11 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
         {/* Pricing bar */}
         <div className="mt-auto rounded-3xl border-[1px] border-black bg-white px-3 md:px-5 py-4 flex items-center justify-between gap-4">
           <div>
+            {roFlexiPerNight != null && (
+              <p className="text-sm text-neutral-500 line-through">
+                PKR <span className="font-roboto">{formatPKR(roFlexiPerNight)}</span>
+              </p>
+            )}
             <p className="font-bold text-lg text-neutral-900">
               PKR <span className="font-roboto">{formatPKR(pricePerNight)}</span>
               <span className="font-bold text-sm md:text-lg text-neutral-900"> + Tax</span>
