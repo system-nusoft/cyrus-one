@@ -27,5 +27,9 @@ export async function fetchRoomAvailability(
     );
   }
 
-  return response.json() as Promise<OraAvailabilityResponse>;
+  const data = await response.json() as OraAvailabilityResponse;
+  return {
+    ...data,
+    Data: data.Data.filter((room) => room.PlanName === "WEBSITE RATE"),
+  };
 }
