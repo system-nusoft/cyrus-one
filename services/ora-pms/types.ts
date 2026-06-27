@@ -11,6 +11,7 @@ export interface OraRoomCategory {
   Nights: number;
   Currency: string;
   PlanName: string;
+  roFlexiRate?: number;
 }
 
 export interface OraAvailabilityResponse {
