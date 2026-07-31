@@ -38,7 +38,7 @@ export default function RoomListingsSection({
   const numberOfRooms = searchContext.guests.rooms;
   const guestsPerRoom = Math.ceil(totalGuests / numberOfRooms);
 
-  const HIDDEN_CATEGORIES = new Set(["2 Bed Presendential Suites", "3 Bed Executive", "2 Bed Suite"]);
+  const HIDDEN_CATEGORIES = new Set(["3 Bed Executive", "2 Bed Suite"]);
 
   const sortedRooms = [...rooms]
     .filter((room) => {

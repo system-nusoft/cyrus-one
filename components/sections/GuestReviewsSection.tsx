@@ -8,29 +8,29 @@ const platforms = [
   {
     name: "Booking.com",
     icon: "/booking.svg",
-    rating: "4.7",
-    reviews: "11 reviews",
+    rating: "4.6",
+    reviews: "45 reviews",
     href: "https://www.booking.com/hotel/pk/cyrus-one-by-trivelles.html",
   },
   {
     name: "Agoda",
     icon: "/agoda.svg",
-    rating: "4.3",
-    reviews: "25 reviews",
+    rating: "4.5",
+    reviews: "78 reviews",
     href: "https://www.agoda.com/cyrus-one-by-trivelles/hotel/islamabad-pk.html",
   },
   {
     name: "Trip.com",
     icon: "/trip.svg",
-    rating: "5.0",
-    reviews: "9 reviews",
+    rating: "4.7",
+    reviews: "12 reviews",
     href: "https://www.trip.com/hotels/detail/?cityEnName=Islamabad&cityId=531&hotelId=134035371",
   },
   {
     name: "Expedia",
     icon: "/expedia.svg",
-    rating: "5.0",
-    reviews: "3 reviews",
+    rating: "4.8",
+    reviews: "10 reviews",
     href: "https://www.expedia.com/Cyrus-One-By-Trivelles.h128379625.Hotel-Information",
   },
 ];
@@ -82,7 +82,7 @@ export default function GuestReviewsSection() {
               <p className="font-bold text-white text-2xl">Google Reviews</p>
               <div className="flex items-center gap-2 mt-2">
                 <span className="font-roboto font-bold text-white text-5xl">
-                  4.6
+                  4.7
                 </span>
                 <StarRating count={5} />
               </div>
