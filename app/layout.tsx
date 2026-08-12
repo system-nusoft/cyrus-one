@@ -25,18 +25,21 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cyrusonehotel.com"),
   title: {
-    default: "Cyrus One | Premium Hotel Apartments Near Islamabad Airport",
+    default: "Cyrus One by Trivelles | Hotels Near Islamabad Airport",
     template: "%s | Cyrus One Hotel Islamabad",
   },
   description:
-    "Experience premium comfort at Cyrus One by Trivelles. Elegant luxury hotel apartments conveniently located near Islamabad International Airport and the M2.",
+    "Looking for hotels near Islamabad Airport? Cyrus One by Trivelles offers premium hotel apartments just 5km from Islamabad International Airport and the M2 Motorway. Book your stay today.",
   keywords: [
-    "hotel islamabad",
+    "hotels near islamabad airport",
     "hotel near islamabad airport",
+    "hotels near islamabad international airport",
+    "islamabad airport hotel",
+    "hotels in islamabad near airport",
+    "hotel islamabad",
     "cyrus one hotel",
     "trivelles",
     "srinagar highway hotel",
-    "islamabad airport hotel",
     "business hotel islamabad",
     "transit hotel islamabad",
   ],
@@ -46,10 +49,9 @@ export const metadata: Metadata = {
     locale: "en_PK",
     url: "https://cyrusonehotel.com",
     siteName: "Cyrus One by Trivelles",
-    title:
-      "Cyrus One by Trivelles | Premium Hotel Apartments Near Islamabad Airport",
+    title: "Hotels Near Islamabad Airport | Cyrus One by Trivelles",
     description:
-      "Discover elegant spaces and premium hospitality in our luxury hotel apartments, located just minutes from Islamabad International Airport and the M2 Motorway.",
+      "Discover elegant spaces and premium hospitality in our luxury hotel apartments, located just 5km from Islamabad International Airport and the M2 Motorway.",
     images: [
       {
         url: "/og-image.jpg",
@@ -85,11 +87,12 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=AW-18205737022"
           strategy="afterInteractive"
         />
-        <Script id="google-ads" strategy="afterInteractive">{`
+        <Script id="google-tags" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'AW-18205737022');
+          gtag('config', 'G-0ZKNWYNFCJ');
         `}</Script>
       </body>
     </html>
