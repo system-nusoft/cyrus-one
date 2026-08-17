@@ -11,6 +11,7 @@ import {
   WhatsAppIcon,
 } from "@/components/ui/SocialIcons";
 import ContactModal from "./ContactModal";
+import { trackConversion } from "@/lib/analytics";
 
 const socialLinks = [
   {
@@ -79,6 +80,11 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
+                      onClick={
+                        label === "WhatsApp"
+                          ? () => trackConversion("whatsapp_click")
+                          : undefined
+                      }
                     >
                       <Icon className="w-10 h-10" />
                     </a>
@@ -190,6 +196,11 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={label}
+                        onClick={
+                          label === "WhatsApp"
+                            ? () => trackConversion("whatsapp_click")
+                            : undefined
+                        }
                         className="flex items-center justify-center w-9 h-9 rounded-full transition-colors"
                       >
                         <Icon className="w-9 h-9" />
