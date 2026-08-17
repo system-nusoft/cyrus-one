@@ -21,6 +21,7 @@ import Header from "@/components/layout/Header";
 import RibbonSection from "@/components/sections/RibbonSection";
 import Footer from "@/components/layout/Footer";
 import BookingSuccessModal from "@/components/booking/BookingSuccessModal";
+import { trackConversion } from "@/lib/analytics";
 
 const COUNTRIES = [
   "Pakistan",
@@ -202,6 +203,7 @@ export default function BookingPageClient() {
         throw new Error(body.error ?? "Booking failed");
       }
       setSuccess(true);
+      trackConversion("booking_complete");
     } catch (err) {
       setApiError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {

@@ -23,6 +23,7 @@ import {
 import type { OraRoomCategory } from "@/services/ora-pms/types";
 import type { RoomContent } from "@/content/rooms";
 import type { SearchContext } from "@/components/sections/RoomListingsSection";
+import { trackConversion } from "@/lib/analytics";
 
 const AMENITY_ICONS: Record<string, React.ReactNode> = {
   "Private kitchenette": <UtensilsCrossed className="w-5 h-5" />,
@@ -221,6 +222,7 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
           ) : (
             <Link
               href={bookingUrl}
+              onClick={() => trackConversion("book_now_click")}
               className="shrink-0 px-6 py-3 rounded-full bg-neutral-900 text-white font-semibold text-sm hover:bg-neutral-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
               aria-label={`Book ${content.displayName}`}
             >

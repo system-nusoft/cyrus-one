@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -6,6 +8,7 @@ import {
   FacebookIcon,
   WhatsAppIcon,
 } from "@/components/ui/SocialIcons";
+import { trackConversion } from "@/lib/analytics";
 
 const socialLinks = [
   {
@@ -61,6 +64,11 @@ export default function Header({ dark = false }: HeaderProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
+                    onClick={
+                      label === "WhatsApp"
+                        ? () => trackConversion("whatsapp_click")
+                        : undefined
+                    }
                     className="flex items-center justify-center w-9 h-9 rounded-full transition-colors"
                   >
                     <Icon className="w-9 h-9" />

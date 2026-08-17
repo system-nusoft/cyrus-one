@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
+import { trackConversion } from "@/lib/analytics";
 import {
   X,
   ChevronLeft,
@@ -233,6 +234,7 @@ export default function RoomDetailModal({ content, isUnavailable, bookingUrl, on
           ) : (
             <Link
               href={bookingUrl}
+              onClick={() => trackConversion("book_now_click")}
               className="mt-8 block w-full py-3.5 rounded-full bg-neutral-900 text-white font-semibold text-sm text-center hover:bg-neutral-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
               aria-label={`Book ${content.displayName}`}
             >
