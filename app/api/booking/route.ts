@@ -65,30 +65,34 @@ export async function POST(req: NextRequest) {
     // Send emails — non-blocking, don't fail the booking if email fails
     const apiKey = process.env.SENDGRID_API_KEY;
     if (apiKey) {
-      sgMail.setApiKey(apiKey);
+      try {
+        sgMail.setApiKey(apiKey);
 
-      const adminHtml = `
-        <h2>New Booking — Cyrus One Hotel</h2>
-        <p><strong>Guest:</strong> ${body.firstName} ${body.lastName}</p>
-        <p><strong>Email:</strong> ${body.email}</p>
-        <p><strong>Phone:</strong> ${body.phoneNumber}</p>
-        <p><strong>Check-in:</strong> ${body.checkIn}</p>
-        <p><strong>Check-out:</strong> ${body.checkOut}</p>
-        <p><strong>Adults:</strong> ${body.adults} &nbsp; <strong>Children:</strong> ${body.children}</p>
-        <p><strong>Rooms:</strong> ${body.noOfRooms}</p>
-        <p><strong>Country:</strong> ${body.country} &nbsp; <strong>City:</strong> ${body.city}</p>
-        <p><strong>Address:</strong> ${body.address}</p>
-        <p><strong>Total Amount:</strong> PKR ${body.totalAmount.toLocaleString("en-PK")}</p>
-        ${body.notes ? `<p><strong>Special Requests:</strong> ${body.notes}</p>` : ""}
-      `;
+        const adminHtml = `
+          <h2>New Booking — Cyrus One Hotel</h2>
+          <p><strong>Guest:</strong> ${body.firstName} ${body.lastName}</p>
+          <p><strong>Email:</strong> ${body.email}</p>
+          <p><strong>Phone:</strong> ${body.phoneNumber}</p>
+          <p><strong>Check-in:</strong> ${body.checkIn}</p>
+          <p><strong>Check-out:</strong> ${body.checkOut}</p>
+          <p><strong>Adults:</strong> ${body.adults} &nbsp; <strong>Children:</strong> ${body.children}</p>
+          <p><strong>Rooms:</strong> ${body.noOfRooms}</p>
+          <p><strong>Country:</strong> ${body.country} &nbsp; <strong>City:</strong> ${body.city}</p>
+          <p><strong>Address:</strong> ${body.address}</p>
+          <p><strong>Total Amount:</strong> PKR ${body.totalAmount.toLocaleString("en-PK")}</p>
+          ${body.notes ? `<p><strong>Special Requests:</strong> ${body.notes}</p>` : ""}
+        `;
 
-      await sgMail.send({
-        to: HOTEL_EMAIL,
-        from: HOTEL_EMAIL,
-        replyTo: body.email,
-        subject: `New Booking — ${body.firstName} ${body.lastName} (${body.checkIn} → ${body.checkOut})`,
-        html: adminHtml,
-      });
+        await sgMail.send({
+          to: HOTEL_EMAIL,
+          from: HOTEL_EMAIL,
+          replyTo: body.email,
+          subject: `New Booking — ${body.firstName} ${body.lastName} (${body.checkIn} → ${body.checkOut})`,
+          html: adminHtml,
+        });
+      } catch (emailErr) {
+        console.error("Booking confirmation email failed:", emailErr);
+      }
     }
 
     return NextResponse.json({ success: true, data });
