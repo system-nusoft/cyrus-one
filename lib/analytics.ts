@@ -12,7 +12,11 @@ const GADS_LABELS: Record<ConversionEvent, string> = {
   booking_complete: "AW-18205737022/By57CMqy6eIcEL6AlulD",
 };
 
-export function trackConversion(event: ConversionEvent) {
+export function trackConversion(
+  event: ConversionEvent,
+  params?: Record<string, unknown>,
+) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
   window.gtag("event", "conversion", { send_to: GADS_LABELS[event] });
+  window.gtag("event", event, params);
 }
