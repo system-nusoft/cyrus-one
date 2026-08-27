@@ -13,7 +13,7 @@ export default function DiningSection() {
         <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
           <Image
             src="/breakfast.png"
-            alt="Cyrus One dining — a thoughtfully composed breakfast spread"
+            alt="Plated French toast with banana, apple, and berry garnish from Cyrus One's complimentary breakfast buffet in Islamabad."
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 55vw"

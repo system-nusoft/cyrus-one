@@ -8,14 +8,14 @@ import Button from "@/components/ui/Button";
 const PLACEHOLDER_IMAGE = "/hotel-exterior.png";
 
 const experiences = [
-  { title: "Spacious Luxury Rooms", alt: "Spacious luxury room interior at Cyrus One Hotel", image: "/spacious-luxury-rooms.png" },
-  { title: "Complimentary Breakfast", alt: "Complimentary breakfast spread at Cyrus One Hotel", image: "/complimentary-breakfast.png" },
-  { title: "Airport Pick-up Available", alt: "Cyrus One Hotel exterior — airport pick-up available", image: "/airport-pickup-available.png" },
-  { title: "Free High-Speed Wi-Fi", alt: "Guest room with free high-speed WiFi at Cyrus One Hotel", image: "/free-hi-speed-wifi.png" },
-  { title: "24/7 Front Desk", alt: "24/7 front desk service at Cyrus One Hotel", image: "/front-desk-24-7.png" },
-  { title: "Family-Friendly Accommodation", alt: "Family-friendly hotel apartment at Cyrus One Hotel", image: "/family-friendly-accommodation.png" },
-  { title: "Business-Friendly Facilities", alt: "Business-friendly facilities at Cyrus One Hotel", image: "/business-friendly-facilities.png" },
-  { title: "Easy M1/M2 Access", alt: "Quick access to the M1/M2 Interchange from Cyrus One Hotel", image: "/m1-m2-access.jpeg" },
+  { title: "Spacious Luxury Rooms", alt: "Living room area of a Cyrus One luxury suite with a kitchenette, cozy armchairs, and a view into the bedroom near Islamabad Airport.", image: "/spacious-luxury-rooms.png" },
+  { title: "Complimentary Breakfast", alt: "Breakfast buffet at Cyrus One with labeled dishes including Chicken Qorma and Lahori Chana, part of the hotel's complimentary breakfast.", image: "/complimentary-breakfast.png" },
+  { title: "Airport Pick-up Available", alt: "Cyrus One by Trivelles airport shuttle van parked outside Islamabad International Airport, offering complimentary guest pick-up service.", image: "/airport-pickup-available.png" },
+  { title: "Free High-Speed Wi-Fi", alt: "Cyrus One lounge with complimentary Wi-Fi and comfortable workspace", image: "/free-hi-speed-wifi.png" },
+  { title: "24/7 Front Desk", alt: "Three uniformed staff at the Cyrus One by Trivelles front desk, reflecting the hotel's 24/7 reception service near Islamabad Airport.", image: "/front-desk-24-7.png" },
+  { title: "Family-Friendly Accommodation", alt: "Aerial view of a family dining together at Cyrus One's tiled courtyard, reflecting the hotel's family-friendly accommodation in Islamabad.", image: "/family-friendly-accommodation.png" },
+  { title: "Business-Friendly Facilities", alt: "Balcony seating area with plants and city views at Cyrus One, part of the hotel's business-friendly facilities near Islamabad Airport.", image: "/business-friendly-facilities.png" },
+  { title: "Easy M1/M2 Access", alt: "Cyrus One near Islamabad M1 and M2 motorways with scenic mountain views", image: "/m1-m2-access.jpeg" },
 ];
 
 export default function ExperienceSection() {

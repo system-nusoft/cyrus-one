@@ -24,7 +24,7 @@ export default function LocationSection() {
         <div className="relative w-full rounded-3xl overflow-hidden">
           <Image
             src="/map-reference.png"
-            alt="Map showing Cyrus One Hotel location and nearby landmarks"
+            alt="Map showing Cyrus One's distance from Islamabad Airport, the M1/M2 Motorway, Pakistan Monument, Centaurus, and Faisal Mosque."
             width={800}
             height={600}
             className="w-full h-auto object-contain"

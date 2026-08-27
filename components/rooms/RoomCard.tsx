@@ -96,15 +96,15 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
         aria-label={`View ${content.displayName} photos and details`}
         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setModalOpen(true); }}
       >
-        {images.map((src, i) => {
+        {images.map((img, i) => {
           const prev = (imageIndex - 1 + images.length) % images.length;
           const next = (imageIndex + 1) % images.length;
           if (i !== imageIndex && i !== prev && i !== next) return null;
           return (
             <Image
-              key={src}
-              src={src}
-              alt={`${content.displayName} — photo ${i + 1} of ${images.length}`}
+              key={img.src}
+              src={img.src}
+              alt={img.alt ?? `${content.displayName} — photo ${i + 1} of ${images.length}`}
               fill
               priority={i === 0}
               className={`object-cover transition-opacity duration-300 group-hover:scale-[1.02] ${

@@ -33,6 +33,9 @@ export default function BookingBar({
       format(checkOut, "yyyy-MM-dd"),
       guests,
     );
+    requestAnimationFrame(() => {
+      document.getElementById("rooms")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   }
 
   function handleCheckInChange(date: Date | undefined) {

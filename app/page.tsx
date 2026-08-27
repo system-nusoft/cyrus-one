@@ -140,7 +140,6 @@ export default function HomePage() {
   ) {
     setLastSearch({ fromDate, toDate, guests });
     fetchRooms(fromDate, toDate);
-    document.getElementById("rooms")?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (

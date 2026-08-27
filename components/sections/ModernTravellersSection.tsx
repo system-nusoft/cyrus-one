@@ -43,7 +43,7 @@ export default function ModernTravellersSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/travellers-bg.png"
-          alt="Cyrus One Hotel corridor with colourful doors"
+          alt="Hotel corridor with colorful doors at Cyrus One, showcasing stays tailored for business travellers, transit guests, and families in Islamabad."
           fill
           className="object-cover object-left md:object-center"
           sizes="100vw"

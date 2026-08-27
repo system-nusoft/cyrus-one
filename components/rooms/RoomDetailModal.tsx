@@ -88,15 +88,15 @@ export default function RoomDetailModal({ content, isUnavailable, bookingUrl, on
 
         {/* Image slider */}
         <div className="relative aspect-[16/9] rounded-t-3xl overflow-hidden bg-neutral-950">
-          {images.map((src, i) => {
+          {images.map((img, i) => {
             const prev = (imageIndex - 1 + images.length) % images.length;
             const next = (imageIndex + 1) % images.length;
             if (i !== imageIndex && i !== prev && i !== next) return null;
             return (
               <Image
-                key={src}
-                src={src}
-                alt={`${content.displayName} — photo ${i + 1} of ${images.length}`}
+                key={img.src}
+                src={img.src}
+                alt={img.alt ?? `${content.displayName} — photo ${i + 1} of ${images.length}`}
                 fill
                 priority={i === 0}
                 className={`object-cover transition-opacity duration-300 ${

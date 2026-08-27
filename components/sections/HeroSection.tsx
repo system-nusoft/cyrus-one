@@ -9,19 +9,19 @@ import type { GuestCounts } from "@/components/ui/GuestCounter";
 const heroSlides = [
   {
     src: "/hero-bg-1.webp",
-    alt: "Cyrus One Hotel exterior — modern architecture near islamabad airport",
+    alt: "Aerial view of Cyrus One Hotel's tiled courtyard lounge with seating and plants, a luxury hotel just 5 km from Islamabad International Airport.",
     heading: "Luxury Hotel Near Islamabad Airport",
     copy: "Experience premium comfort just 5 km from Islamabad International Airport, offering elegant accommodations for business travellers, families, and convenient airport stays.",
   },
   {
     src: "/hero-bg-2.webp",
-    alt: "Cyrus One Hotel — guest experience near islamabad airport",
+    alt: "Cyrus One by Trivelles hotel lobby with fresh flowers and lounge seating, where British hospitality meets Pakistani warmth in Islamabad.",
     heading: "A British Standard of Hospitality",
     copy: "Experience elevated comfort through our partnership with Trivelles Hotels, bringing British-inspired hospitality and exceptional service to every stay.",
   },
   {
     src: "/hero-bg-3.webp",
-    alt: "Cyrus One Hotel interior — near islamabad Airport",
+    alt: "Cyrus One by Trivelles reception desk and staff welcoming guests, a hotel near Islamabad Airport with easy access via the M1/M2 Interchange.",
     heading: "Stay Connected to Every Journey",
     copy: "Perfectly positioned near the M1/M2 Interchange, our hotel offers seamless access to Islamabad, making every business trip, holiday, or stopover effortless.",
   },
@@ -69,7 +69,7 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-36 pb-8">
-        <div className="max-w-3xl">
+        <div className="max-w-2xl">
           <h1
             key={`heading-${current}`}
             className="text-4xl md:text-7xl font-normal text-white leading-tight animate-[fadeIn_1.5s_ease]"
