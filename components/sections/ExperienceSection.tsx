@@ -8,14 +8,14 @@ import Button from "@/components/ui/Button";
 const PLACEHOLDER_IMAGE = "/hotel-exterior.png";
 
 const experiences = [
-  { title: "Easy M1/M2 Access", alt: "Quick access to the M1/M2 Interchange from Cyrus One Hotel" },
   { title: "Spacious Luxury Rooms", alt: "Spacious luxury room interior at Cyrus One Hotel", image: "/spacious-luxury-rooms.png" },
   { title: "Complimentary Breakfast", alt: "Complimentary breakfast spread at Cyrus One Hotel", image: "/complimentary-breakfast.png" },
   { title: "Airport Pick-up Available", alt: "Cyrus One Hotel exterior — airport pick-up available", image: "/airport-pickup-available.png" },
-  { title: "Free High-Speed Wi-Fi", alt: "Guest room with free high-speed WiFi at Cyrus One Hotel" },
+  { title: "Free High-Speed Wi-Fi", alt: "Guest room with free high-speed WiFi at Cyrus One Hotel", image: "/free-hi-speed-wifi.png" },
   { title: "24/7 Front Desk", alt: "24/7 front desk service at Cyrus One Hotel", image: "/front-desk-24-7.png" },
   { title: "Family-Friendly Accommodation", alt: "Family-friendly hotel apartment at Cyrus One Hotel", image: "/family-friendly-accommodation.png" },
   { title: "Business-Friendly Facilities", alt: "Business-friendly facilities at Cyrus One Hotel", image: "/business-friendly-facilities.png" },
+  { title: "Easy M1/M2 Access", alt: "Quick access to the M1/M2 Interchange from Cyrus One Hotel", image: "/m1-m2-access.jpeg" },
 ];
 
 export default function ExperienceSection() {

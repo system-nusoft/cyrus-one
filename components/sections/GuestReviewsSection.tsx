@@ -8,28 +8,28 @@ const platforms = [
   {
     name: "Booking.com",
     icon: "/booking.svg",
-    rating: "4.6",
-    reviews: "46 reviews",
+    rating: "4.7",
+    reviews: "66 reviews",
     href: "https://www.booking.com/hotel/pk/cyrus-one-by-trivelles.html",
   },
   {
     name: "Agoda",
     icon: "/agoda.svg",
     rating: "4.5",
-    reviews: "78 reviews",
+    reviews: "111 reviews",
     href: "https://www.agoda.com/cyrus-one-by-trivelles/hotel/islamabad-pk.html",
   },
   {
     name: "Trip.com",
     icon: "/trip.svg",
-    rating: "4.7",
-    reviews: "12 reviews",
+    rating: "4.8",
+    reviews: "14 reviews",
     href: "https://www.trip.com/hotels/detail/?cityEnName=Islamabad&cityId=531&hotelId=134035371",
   },
   {
     name: "Expedia",
     icon: "/expedia.svg",
-    rating: "4.6",
+    rating: "4.7",
     reviews: "34 reviews",
     href: "https://www.expedia.com/Cyrus-One-By-Trivelles.h128379625.Hotel-Information",
   },
@@ -85,7 +85,6 @@ export default function GuestReviewsSection() {
                   4.7
                 </span>
                 <StarRating count={5} />
-              <p className="text-white text-sm mt-1">(<span className="font-roboto">74</span> reviews)</p>
               </div>
             </div>
 

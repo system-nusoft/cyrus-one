@@ -16,7 +16,7 @@ const heroSlides = [
   {
     src: "/hero-bg-2.webp",
     alt: "Cyrus One Hotel — guest experience near islamabad airport",
-    heading: "Where British Hospitality Meets Pakistani Warmth",
+    heading: "A British Standard of Hospitality",
     copy: "Experience elevated comfort through our partnership with Trivelles Hotels, bringing British-inspired hospitality and exceptional service to every stay.",
   },
   {
