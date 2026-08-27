@@ -32,6 +32,15 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* react-day-picker overrides — replace default blue with site dark colour */
 .rdp-root {
   --rdp-accent-color: #171717;

@@ -9,7 +9,7 @@ const platforms = [
     name: "Booking.com",
     icon: "/booking.svg",
     rating: "4.6",
-    reviews: "45 reviews",
+    reviews: "46 reviews",
     href: "https://www.booking.com/hotel/pk/cyrus-one-by-trivelles.html",
   },
   {
@@ -29,8 +29,8 @@ const platforms = [
   {
     name: "Expedia",
     icon: "/expedia.svg",
-    rating: "4.8",
-    reviews: "10 reviews",
+    rating: "4.6",
+    reviews: "34 reviews",
     href: "https://www.expedia.com/Cyrus-One-By-Trivelles.h128379625.Hotel-Information",
   },
 ];
@@ -70,7 +70,7 @@ export default function GuestReviewsSection() {
         <div className="relative rounded-3xl overflow-hidden min-h-[250px]">
           <Image
             src="/reviews-bg.webp"
-            alt="Cyrus One Hotel exterior — Islamabad"
+            alt="Cyrus One Hotel exterior — near islamabad airport"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -85,6 +85,7 @@ export default function GuestReviewsSection() {
                   4.7
                 </span>
                 <StarRating count={5} />
+              <p className="text-white text-sm mt-1">(<span className="font-roboto">74</span> reviews)</p>
               </div>
             </div>
 

@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { format, addDays } from "date-fns";
 import HeroSection from "@/components/sections/HeroSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import { roomContent } from "@/content/rooms";
 import RibbonSection from "@/components/sections/RibbonSection";
 import RoomListingsSection from "@/components/sections/RoomListingsSection";
 import ModernTravellersSection from "@/components/sections/ModernTravellersSection";
@@ -10,6 +12,8 @@ import VideoSection from "@/components/sections/VideoSection";
 import GuestReviewsSection from "@/components/sections/GuestReviewsSection";
 import LocationSection from "@/components/sections/LocationSection";
 import DiningSection from "@/components/sections/DiningSection";
+import FAQSection from "@/components/sections/FAQSection";
+import BookingBandSection from "@/components/sections/BookingBandSection";
 import Footer from "@/components/layout/Footer";
 import type { OraRoomCategory } from "@/services/ora-pms/types";
 import type { GuestCounts } from "@/components/ui/GuestCounter";
@@ -29,16 +33,57 @@ const hotelJsonLd = {
     postalCode: "44000",
     addressCountry: "PK",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 33.59375427115376,
+    longitude: 72.85417187419414,
+  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.7",
-    reviewCount: "5",
+    reviewCount: "244",
     bestRating: "5",
-    worstRating: "-",
+    worstRating: "1",
   },
   numberOfRooms: "55",
   checkinTime: "14:00",
   checkoutTime: "12:00",
+  amenityFeature: [
+    "Free WiFi",
+    "Free Airport Pickup",
+    "Complimentary Breakfast",
+    "Air Conditioning",
+    "Private Kitchenette in Every Room",
+    "24/7 Check-in",
+  ].map((name) => ({
+    "@type": "LocationFeatureSpecification",
+    name,
+    value: true,
+  })),
+  containsPlace: Object.values(roomContent).map((room) => ({
+    "@type": "HotelRoom",
+    name: room.displayName,
+    description: room.description,
+    occupancy: {
+      "@type": "QuantitativeValue",
+      maxValue: room.maxGuests,
+    },
+    bed: {
+      "@type": "BedDetails",
+      typeOfBed: room.bedType,
+    },
+    floorSize: {
+      "@type": "QuantitativeValue",
+      value: room.area,
+      unitCode: "MTK",
+    },
+    amenityFeature: room.amenities.map((amenity) => ({
+      "@type": "LocationFeatureSpecification",
+      name: amenity,
+      value: true,
+    })),
+    photo: room.images.map((img) => `https://cyrusonehotel.com${img}`),
+  })),
 };
 
 export default function HomePage() {
@@ -108,6 +153,7 @@ export default function HomePage() {
       <main>
         <HeroSection onSearch={handleSearch} searching={loading} />
         <RibbonSection />
+        <ExperienceSection />
         <RoomListingsSection
           rooms={rooms}
           loading={loading}
@@ -120,6 +166,8 @@ export default function HomePage() {
         <DiningSection />
         <GuestReviewsSection />
         <LocationSection />
+        <FAQSection />
+        <BookingBandSection />
       </main>
 
       <Footer />

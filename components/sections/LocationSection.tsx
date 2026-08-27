@@ -10,13 +10,13 @@ export default function LocationSection() {
         {/* Left — heading + description */}
         <div className="flex flex-col gap-4 md:gap-6">
           <h2 className="font-playfair font-bold text-4xl md:text-5xl lg:text-6xl text-neutral-900 leading-tight">
-            A Strategic Vantage Point
+            Minutes from Islamabad&apos;s Key Destinations
           </h2>
           <p className="text-md md:text-lg text-neutral-900 leading-relaxed max-w-lg">
-            Cyrus One places you moments away from key transport hubs, ensuring
-            your arrivals and departures are entirely effortless, whilst keeping
-            the capital&apos;s premier retail and cultural destinations within easy
-            reach.
+            Located just 5 km from Islamabad International Airport and close
+            to the M1/M2 Interchange, our hotel places you within easy reach
+            of Islamabad&apos;s leading business hubs, shopping destinations,
+            and cultural landmarks, making every journey more convenient.
           </p>
         </div>
 

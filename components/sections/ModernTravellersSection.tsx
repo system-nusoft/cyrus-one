@@ -3,10 +3,10 @@ import Image from "next/image";
 const travellers = [
   {
     icon: "/modern-travellers-1.svg",
-    title: "Business Travelers",
+    title: "Business Travellers",
     description:
-      "Work without interruption. Enjoy fast fiber WiFi, dedicated desks, and 24/7 check-in so you can stay on schedule.",
-    tagline: "High-Speed Fiber WiFi",
+      "Work without interruption. Enjoy high-speed Wi-Fi, comfortable workspaces, and a convenient location near the airport.",
+    tagline: "High-Speed Wi-Fi",
     stat: "98.2%",
     statLabel: "uptime",
     bg: "bg-rose-100/70",
@@ -15,7 +15,7 @@ const travellers = [
     icon: "/modern-travellers-2.svg",
     title: "Transit & Layovers",
     description:
-      "Escape the airport. Book a flexible short stay to shower, sleep in a real bed, and reset before your next flight.",
+      "Escape the airport and unwind in comfort with quick airport access, restful spaces, and a seamless stopover experience.",
     tagline: "24/7 Express Check-in",
     stat: "93.1%",
     statLabel: "satisfaction",
@@ -25,8 +25,8 @@ const travellers = [
     icon: "/modern-travellers-3.svg",
     title: "Families & Groups",
     description:
-      "Give everyone room to breathe. Kitchenettes and spacious living areas so the whole family can stretch out.",
-    tagline: "Standard Double to 2-Bed Suites",
+      "Enjoy spacious accommodations and a welcoming atmosphere designed for families and groups of all sizes.",
+    tagline: "Spacious Family Rooms",
     stat: "7",
     statLabel: "room types",
     bg: "bg-sky-100/70",
@@ -55,11 +55,13 @@ export default function ModernTravellersSection() {
         {/* Heading */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-bold text-3xl md:text-5xl text-white">
-            A Stay Tailored to Your Itinerary
+            A Stay Tailored to Your Journey
           </h2>
           <p className="text-md md:text-lg text-white/80 mt-4 max-w-lg mx-auto">
-            Every trip is different. That’s why our hotel apartments are
-            equipped to match your exact travel needs in Islamabad.
+            Every journey is different. That&apos;s why our rooms and suites
+            are thoughtfully designed to meet the needs of every traveller,
+            whether you&apos;re visiting for business, a short layover, or a
+            family getaway.
           </p>
         </div>
 

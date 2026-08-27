@@ -23,13 +23,13 @@ export default function DiningSection() {
         {/* Text content */}
         <div className="flex flex-col gap-4 md:gap-6">
           <h2 className="font-bold text-3xl lg:text-5xl text-neutral-900 leading-tight">
-            A Masterclass in Morning Refinement
+            Mornings at Cyrus One
           </h2>
 
           <p className="text-md md:text-lg text-neutral-900 leading-relaxed">
-            Our breakfast service combines exceptional flavours with an
-            atmosphere of quiet sophistication, providing the perfect
-            environment to pause, reflect, and prepare for your schedule.
+            Wake up to a freshly prepared breakfast made with quality
+            ingredients, served in a relaxed setting that makes every morning
+            feel a little more special.
           </p>
 
           <Link

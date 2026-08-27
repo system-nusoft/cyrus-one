@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "outline" | "ghost";
+  variant?: "primary" | "outline" | "ghost" | "white";
   withArrow?: boolean;
   children: React.ReactNode;
 }
@@ -21,6 +21,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         "bg-white text-neutral-900 border border-neutral-300 hover:bg-neutral-50 focus-visible:ring-neutral-900",
       ghost:
         "bg-transparent text-white hover:bg-white/10 focus-visible:ring-white",
+      white:
+        "bg-white text-sky-500 hover:bg-sky-50 focus-visible:ring-white",
     };
 
     return (
