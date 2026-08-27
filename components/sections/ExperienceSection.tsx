@@ -9,13 +9,13 @@ const PLACEHOLDER_IMAGE = "/hotel-exterior.png";
 
 const experiences = [
   { title: "Easy M1/M2 Access", alt: "Quick access to the M1/M2 Interchange from Cyrus One Hotel" },
-  { title: "Spacious Luxury Rooms", alt: "Spacious luxury room interior at Cyrus One Hotel" },
-  { title: "Complimentary Breakfast", alt: "Complimentary breakfast spread at Cyrus One Hotel" },
-  { title: "Airport Pick-up Available", alt: "Cyrus One Hotel exterior — airport pick-up available" },
+  { title: "Spacious Luxury Rooms", alt: "Spacious luxury room interior at Cyrus One Hotel", image: "/spacious-luxury-rooms.png" },
+  { title: "Complimentary Breakfast", alt: "Complimentary breakfast spread at Cyrus One Hotel", image: "/complimentary-breakfast.png" },
+  { title: "Airport Pick-up Available", alt: "Cyrus One Hotel exterior — airport pick-up available", image: "/airport-pickup-available.png" },
   { title: "Free High-Speed Wi-Fi", alt: "Guest room with free high-speed WiFi at Cyrus One Hotel" },
-  { title: "24/7 Front Desk", alt: "24/7 front desk service at Cyrus One Hotel" },
-  { title: "Family-Friendly Accommodation", alt: "Family-friendly hotel apartment at Cyrus One Hotel" },
-  { title: "Business-Friendly Facilities", alt: "Business-friendly facilities at Cyrus One Hotel" },
+  { title: "24/7 Front Desk", alt: "24/7 front desk service at Cyrus One Hotel", image: "/front-desk-24-7.png" },
+  { title: "Family-Friendly Accommodation", alt: "Family-friendly hotel apartment at Cyrus One Hotel", image: "/family-friendly-accommodation.png" },
+  { title: "Business-Friendly Facilities", alt: "Business-friendly facilities at Cyrus One Hotel", image: "/business-friendly-facilities.png" },
 ];
 
 export default function ExperienceSection() {
@@ -31,7 +31,7 @@ export default function ExperienceSection() {
 
   return (
     <section
-      className="py-12 md:py-20"
+      className="pt-12 md:pt-20"
       aria-label="The Cyrus One Experience"
     >
       <div className="text-center mb-6 md:mb-10 px-6 md:px-10 lg:px-16">
@@ -75,7 +75,7 @@ export default function ExperienceSection() {
             >
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100">
                 <Image
-                  src={PLACEHOLDER_IMAGE}
+                  src={item.image ?? PLACEHOLDER_IMAGE}
                   alt={item.alt}
                   fill
                   className="object-cover"

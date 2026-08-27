@@ -57,13 +57,13 @@ export default function FAQSection() {
     <section aria-label="Frequently asked questions">
       <div className="bg-neutral-900 py-10 md:py-16 text-center">
         <h2 className="font-bold text-4xl md:text-6xl text-white tracking-wide">
-          FAQs
+          Frequently Asked Questions
         </h2>
       </div>
 
       <div className="px-6 md:px-10 lg:px-16 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-16">
         <h3 className="font-bold text-4xl md:text-5xl text-neutral-900 leading-tight">
-          Frequently Asked Questions
+          Plan Your Stay With Confidence
         </h3>
 
         <div>
