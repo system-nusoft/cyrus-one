@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const faqs = [
+export const faqs = [
   {
     question: "How far is Cyrus One from Islamabad International Airport?",
     answer:

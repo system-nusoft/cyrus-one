@@ -6,7 +6,7 @@ import Header from "@/components/layout/Header";
 import BookingBar from "@/components/ui/BookingBar";
 import type { GuestCounts } from "@/components/ui/GuestCounter";
 
-const heroSlides = [
+export const heroSlides = [
   {
     src: "/hero-bg-1.webp",
     alt: "Aerial view of Cyrus One Hotel's tiled courtyard lounge with seating and plants, a luxury hotel just 5 km from Islamabad International Airport.",

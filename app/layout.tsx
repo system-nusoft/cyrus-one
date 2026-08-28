@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       "Discover elegant spaces and premium hospitality in our luxury hotel apartments, located just 5km from Islamabad International Airport and the M2 Motorway.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/reviews-bg.webp",
         width: 1200,
         height: 630,
         alt: "Cyrus One Hotel Islamabad exterior",
