@@ -13,7 +13,7 @@ export default function DiningSection() {
         <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
           <Image
             src="/breakfast.png"
-            alt="Cyrus One dining — a thoughtfully composed breakfast spread"
+            alt="Plated French toast with banana, apple, and berry garnish from Cyrus One's complimentary breakfast buffet in Islamabad."
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 55vw"
@@ -23,13 +23,13 @@ export default function DiningSection() {
         {/* Text content */}
         <div className="flex flex-col gap-4 md:gap-6">
           <h2 className="font-bold text-3xl lg:text-5xl text-neutral-900 leading-tight">
-            A Masterclass in Morning Refinement
+            Mornings at Cyrus One
           </h2>
 
           <p className="text-md md:text-lg text-neutral-900 leading-relaxed">
-            Our breakfast service combines exceptional flavours with an
-            atmosphere of quiet sophistication, providing the perfect
-            environment to pause, reflect, and prepare for your schedule.
+            Wake up to a freshly prepared breakfast made with quality
+            ingredients, served in a relaxed setting that makes every morning
+            feel a little more special.
           </p>
 
           <Link

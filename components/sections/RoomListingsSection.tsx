@@ -68,8 +68,11 @@ export default function RoomListingsSection({
           Our Signature Hotel Apartment Collections
         </h2>
         <p className="text-neutral-900 mt-3 text-md md:text-lg">
-          Thoughtfully designed layouts, premium amenities, and the space you
-          need to unwind in style.
+          Choose from a selection of elegantly designed rooms and suites, each
+          created to provide the perfect retreat after a long journey.
+          Whether you&apos;re travelling solo, with family, or for business,
+          every room combines modern comfort with thoughtful amenities to
+          ensure a relaxing stay.
         </p>
       </div>
 

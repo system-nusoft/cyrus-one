@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -10,7 +10,7 @@ import {
   FacebookIcon,
   WhatsAppIcon,
 } from "@/components/ui/SocialIcons";
-import ContactModal from "./ContactModal";
+// import ContactModal from "./ContactModal";
 import { trackConversion } from "@/lib/analytics";
 
 const socialLinks = [
@@ -33,7 +33,7 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const [contactOpen, setContactOpen] = useState(false);
+  // const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <>
@@ -54,9 +54,12 @@ export default function Footer() {
             </div>
 
             <div className="flex justify-end">
-              <button
-                type="button"
-                onClick={() => setContactOpen(true)}
+              <a
+                href="https://wa.me/923224770222"
+                target="_blank"
+                rel="noopener noreferrer"
+                // onClick={() => setContactOpen(true)}
+                onClick={() => trackConversion("whatsapp_click")}
                 className="flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full bg-white text-neutral-900 font-semibold text-md hover:bg-neutral-100 transition-colors"
                 aria-label="Contact us"
               >
@@ -64,7 +67,7 @@ export default function Footer() {
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 text-white shrink-0">
                   <ArrowUpRight className="w-5 h-5" />
                 </span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -241,7 +244,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
+      {/* {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />} */}
     </>
   );
 }

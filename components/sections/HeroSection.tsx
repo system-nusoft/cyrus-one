@@ -6,13 +6,25 @@ import Header from "@/components/layout/Header";
 import BookingBar from "@/components/ui/BookingBar";
 import type { GuestCounts } from "@/components/ui/GuestCounter";
 
-const heroImages = [
+export const heroSlides = [
   {
     src: "/hero-bg-1.webp",
-    alt: "Cyrus One Hotel exterior — modern architecture near Islamabad airport",
+    alt: "Aerial view of Cyrus One Hotel's tiled courtyard lounge with seating and plants, a luxury hotel just 5 km from Islamabad International Airport.",
+    heading: "Luxury Hotel Near Islamabad Airport",
+    copy: "Experience premium comfort just 5 km from Islamabad International Airport, offering elegant accommodations for business travellers, families, and convenient airport stays.",
   },
-  { src: "/hero-bg-2.webp", alt: "Cyrus One Hotel — guest experience" },
-  { src: "/hero-bg-3.webp", alt: "Cyrus One Hotel interior — Islamabad" },
+  {
+    src: "/hero-bg-2.webp",
+    alt: "Cyrus One by Trivelles hotel lobby with fresh flowers and lounge seating, where British hospitality meets Pakistani warmth in Islamabad.",
+    heading: "A British Standard of Hospitality",
+    copy: "Experience elevated comfort through our partnership with Trivelles Hotels, bringing British-inspired hospitality and exceptional service to every stay.",
+  },
+  {
+    src: "/hero-bg-3.webp",
+    alt: "Cyrus One by Trivelles reception desk and staff welcoming guests, a hotel near Islamabad Airport with easy access via the M1/M2 Interchange.",
+    heading: "Stay Connected to Every Journey",
+    copy: "Perfectly positioned near the M1/M2 Interchange, our hotel offers seamless access to Islamabad, making every business trip, holiday, or stopover effortless.",
+  },
 ];
 
 interface HeroSectionProps {
@@ -25,7 +37,7 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % heroImages.length);
+      setCurrent((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -38,11 +50,11 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
     >
       {/* Background carousel */}
       <div className="absolute inset-0 z-0">
-        {heroImages.map((img, i) => (
+        {heroSlides.map((slide, i) => (
           <Image
-            key={img.src}
-            src={img.src}
-            alt={img.alt}
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
             fill
             priority={i === 0}
             className={`object-cover transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
@@ -57,15 +69,18 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
 
       {/* Hero content */}
       <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-36 pb-8">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-7xl font-normal text-white leading-tight">
-            Your British Haven,
-            <br /> Minutes from the Runway
+        <div className="max-w-2xl">
+          <h1
+            key={`heading-${current}`}
+            className="text-4xl md:text-7xl font-normal text-white leading-tight animate-[fadeIn_1.5s_ease]"
+          >
+            {heroSlides[current].heading}
           </h1>
-          <p className="text-md md:text-lg text-white/80 mt-6 max-w-lg leading-tight">
-            Experience our expansive, balcony-lined hotel apartments. Perfectly
-            positioned near the M1/M2 interchange, just <span className="font-roboto">5</span>km from Islamabad
-            International Airport.
+          <p
+            key={`copy-${current}`}
+            className="text-md md:text-lg text-white/80 mt-6 max-w-lg leading-tight animate-[fadeIn_1.5s_ease]"
+          >
+            {heroSlides[current].copy}
           </p>
         </div>
       </div>
