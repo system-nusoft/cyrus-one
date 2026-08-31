@@ -41,6 +41,22 @@
   }
 }
 
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 35s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
 /* react-day-picker overrides — replace default blue with site dark colour */
 .rdp-root {
   --rdp-accent-color: #171717;

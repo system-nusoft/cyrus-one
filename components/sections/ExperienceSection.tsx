@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Button from "@/components/ui/Button";
 
 const PLACEHOLDER_IMAGE = "/hotel-exterior.png";
 
@@ -31,7 +31,8 @@ export default function ExperienceSection() {
 
   return (
     <section
-      className="pt-12 md:pt-20"
+      id="experience"
+      className="pt-12 md:pt-20 scroll-mt-24"
       aria-label="The Cyrus One Experience"
     >
       <div className="text-center mb-6 md:mb-10 px-6 md:px-10 lg:px-16">
@@ -91,15 +92,12 @@ export default function ExperienceSection() {
       </div>
 
       <div className="text-center mt-6 md:mt-10 px-6 md:px-10 lg:px-16">
-        <Button
-          variant="primary"
-          className="px-8 py-3.5 rounded-full text-md md:text-lg"
-          onClick={() =>
-            document.getElementById("rooms")?.scrollIntoView({ behavior: "smooth" })
-          }
+        <Link
+          href="/about-us"
+          className="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 bg-neutral-900 text-white hover:bg-neutral-700 px-8 py-3.5 rounded-full text-md md:text-lg"
         >
           Explore Our Journey
-        </Button>
+        </Link>
       </div>
     </section>
   );
