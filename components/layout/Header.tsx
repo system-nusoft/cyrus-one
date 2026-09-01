@@ -7,7 +7,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { trackConversion } from "@/lib/analytics";
 
 const navLinks = [
-  { href: "/about-us", label: "About" },
+  { href: "/about-us", label: "About Us" },
   // Coming soon: Rooms & Suites, Gallery, Contact
 ];
 

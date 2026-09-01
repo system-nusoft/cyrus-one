@@ -73,8 +73,7 @@ export default function AboutUsWhyChoose() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/about-us-why-choose-us.png"
-          alt=""
-          aria-hidden="true"
+          alt="Curtained bedroom window with a colorful geometric bed runner, the background photo behind Cyrus One's room features section, Islamabad."
           fill
           className="object-cover"
           sizes="100vw"

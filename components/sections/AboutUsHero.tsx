@@ -13,7 +13,7 @@ export default function AboutUsHero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/about-us-hero.png"
-          alt="A guest in relaxed neutral loungewear leaning on the balustrade of Cyrus One's interior balcony in Islamabad."
+          alt="Woman standing on a private balcony at Cyrus One, capturing the hotel's spacious apartment-style accommodation near Islamabad Airport."
           fill
           priority
           className="object-cover"

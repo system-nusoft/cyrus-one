@@ -1,14 +1,13 @@
-import { MapPin, ExternalLink } from "lucide-react";
+import { MapPin } from "lucide-react";
 
-// Keyless coordinate embed (no API key). A coords-only `q` keeps the map clean —
-// it drops a single pin without Google's expanded place info card (which carries
-// its own "Open in Maps" button and would collide with our overlay). The
-// "Cyrus One Hotel & Apartments" label still appears as a normal Google POI.
-const MAP_EMBED_SRC =
-  "https://maps.google.com/maps?q=33.59374754180226,72.85159887500258&z=15&output=embed";
-
-// Deep link to the same listing (CID from the embed's place reference).
-const MAPS_URL = "https://www.google.com/maps?cid=404801110839225686";
+// Keyless embed (no API key). Query by the exact business name so the pin lands
+// on the Cyrus One listing itself — a raw lat/lng only centres the map and drops
+// the pin on the centre point, not the venue. This form still avoids Google's
+// expanded place card (which has its own "Open in Maps" button).
+const MAP_QUERY = "Cyrus One Hotel & Apartments - near Islamabad Airport";
+const MAP_EMBED_SRC = `https://maps.google.com/maps?q=${encodeURIComponent(
+  MAP_QUERY,
+)}&z=16&output=embed`;
 
 const points = [
   "5 km from Islamabad International Airport",
@@ -33,17 +32,6 @@ export default function AboutUsLocation() {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
-
-          {/* Open in Maps */}
-          <a
-            href={MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-neutral-900 shadow-md transition-colors hover:bg-neutral-50"
-          >
-            Open in Maps
-            <ExternalLink className="h-4 w-4" />
-          </a>
 
           {/* Distance pill */}
           <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-neutral-900 shadow-md">

@@ -1,8 +1,28 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import GalleryModal, { type GalleryImage } from "@/components/ui/GalleryModal";
+
+const galleryImages: GalleryImage[] = [
+  {
+    src: "/about-us-gallery-1.png",
+    alt: "Living area with a kitchenette and a doorway into the bedroom at Cyrus One, showing the apartment-style layout of the suite in Islamabad.",
+  },
+  {
+    src: "/about-us-gallery-2.png",
+    alt: "Cyrus One lobby seating area with green and cream armchairs, a wooden console table, fresh flowers, and a mirrored wall in Islamabad.",
+  },
+  {
+    src: "/about-us-gallery-3.png",
+    alt: "A guest checking her phone at a café table at Cyrus One, surrounded by greenery and artwork in the hotel's shared spaces, Islamabad.",
+  },
+];
 
 export default function AboutUsGallery() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section
       className="px-6 md:px-10 lg:px-16 py-12 md:py-20"
@@ -23,42 +43,47 @@ export default function AboutUsGallery() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
         {/* Left — two stacked images */}
         <div className="flex flex-col gap-4">
-          <div className="relative aspect-[3/2] overflow-hidden bg-neutral-100">
-            <Image
-              src="/about-us-gallery-1.png"
-              alt="Cyrus One suite interior showing the kitchenette, a lounge chair, and a view through to the bedroom."
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="relative aspect-[3/2] overflow-hidden bg-neutral-100">
-            <Image
-              src="/about-us-gallery-2.png"
-              alt="Cyrus One shared lounge with green accent armchairs, a wooden console table, and a staircase beyond."
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          {[0, 1].map((i) => (
+            <button
+              key={galleryImages[i].src}
+              type="button"
+              onClick={() => setOpenIndex(i)}
+              className="group relative aspect-[3/2] overflow-hidden bg-neutral-100"
+              aria-label={`Open gallery at image ${i + 1}`}
+            >
+              <Image
+                src={galleryImages[i].src}
+                alt={galleryImages[i].alt ?? ""}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </button>
+          ))}
         </div>
 
         {/* Right — one tall image */}
-        <div className="relative aspect-[3/4] lg:aspect-auto overflow-hidden bg-neutral-100">
+        <button
+          type="button"
+          onClick={() => setOpenIndex(2)}
+          className="group relative aspect-[3/4] lg:aspect-auto overflow-hidden bg-neutral-100"
+          aria-label="Open gallery at image 3"
+        >
           <Image
-            src="/about-us-gallery-3.png"
-            alt="A guest seated at a table checking her phone in Cyrus One's plant-filled courtyard lounge with turquoise chairs."
+            src={galleryImages[2].src}
+            alt={galleryImages[2].alt ?? ""}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-        </div>
+        </button>
       </div>
 
       {/* CTA */}
       <div className="flex justify-center mt-10 md:mt-12">
-        <Link
-          href="/#rooms"
+        <button
+          type="button"
+          onClick={() => setOpenIndex(0)}
           className="flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full bg-neutral-900 text-white font-semibold text-md hover:bg-neutral-700 transition-colors"
           aria-label="View the Cyrus One gallery"
         >
@@ -66,8 +91,17 @@ export default function AboutUsGallery() {
           <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white text-neutral-900 shrink-0">
             <ArrowUpRight className="w-5 h-5" />
           </span>
-        </Link>
+        </button>
       </div>
+
+      {openIndex !== null && (
+        <GalleryModal
+          images={galleryImages}
+          startIndex={openIndex}
+          label="Cyrus One gallery"
+          onClose={() => setOpenIndex(null)}
+        />
+      )}
     </section>
   );
 }

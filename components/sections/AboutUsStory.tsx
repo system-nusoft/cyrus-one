@@ -57,7 +57,7 @@ export default function AboutUsStory() {
           <div className="relative w-full aspect-[4/5] overflow-hidden">
             <Image
               src="/about-us-2.jpg"
-              alt="A guest checking her phone at a table in Cyrus One's plant-filled courtyard dining area with turquoise chairs, near Islamabad Airport."
+              alt="Lounge seating area at Cyrus One with a curved rust-colored sofa, mustard armchairs, and framed artwork, part of the hotel's interiors."
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -70,7 +70,7 @@ export default function AboutUsStory() {
           <div className="relative w-full aspect-[4/5] overflow-hidden lg:order-1 order-2">
             <Image
               src="/about-us-3.png"
-              alt="A Cyrus One server in a brown apron taking an order from a seated guest in the hotel's courtyard restaurant in Islamabad."
+              alt="A Cyrus One staff member attending to a seated guest at a café table, reflecting the hotel's attentive hospitality in Islamabad."
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
