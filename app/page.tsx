@@ -52,13 +52,6 @@ const hotelJsonLd = {
     latitude: 33.59375427115376,
     longitude: 72.85417187419414,
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.7",
-    reviewCount: "244",
-    bestRating: "5",
-    worstRating: "1",
-  },
   numberOfRooms: "55",
   checkinTime: "14:00",
   checkoutTime: "12:00",

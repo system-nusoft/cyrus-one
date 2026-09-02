@@ -18,6 +18,28 @@ const galleryImages: GalleryImage[] = [
     src: "/about-us-gallery-3.png",
     alt: "A guest checking her phone at a café table at Cyrus One, surrounded by greenery and artwork in the hotel's shared spaces, Islamabad.",
   },
+  // Grid shows images 1–3; these extra shots appear only in the "View Gallery" modal.
+  // They reuse photos from elsewhere on the site, so the alt text is shared:
+  {
+    // same photo as hero-bg-1
+    src: "/about-us-gallery-4.webp",
+    alt: "Aerial view of Cyrus One Hotel's tiled courtyard lounge with seating and plants, a luxury hotel just 5 km from Islamabad International Airport.",
+  },
+  {
+    // same photo as Executive Suite image 13
+    src: "/about-us-gallery-5.webp",
+    alt: "Living room with a ceiling fan, sheer curtains, and a wall-mounted TV in the Cyrus One Executive Suite near Islamabad Airport.",
+  },
+  {
+    // same photo as Executive Suite image 1
+    src: "/about-us-gallery-6.webp",
+    alt: "Bed with a padded headboard and bedside lamps in the Cyrus One Executive Suite, a 46 sqm suite near Islamabad International Airport.",
+  },
+  {
+    // same photo as Executive Suite image 16
+    src: "/about-us-gallery-7.webp",
+    alt: "Balcony seating with a potted orchid overlooking the neighborhood from the Cyrus One Executive Suite at Cyrus One Hotel, Islamabad.",
+  },
 ];
 
 export default function AboutUsGallery() {
