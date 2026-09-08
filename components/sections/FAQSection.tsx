@@ -46,7 +46,35 @@ export const faqs = [
   },
 ];
 
-export default function FAQSection() {
+/** Renders `**bold**` markdown-style segments within an FAQ answer as <strong>. */
+function renderAnswer(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={i} className="font-bold text-neutral-900">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
+  );
+}
+
+interface Faq {
+  question: string;
+  answer: string;
+}
+
+interface FAQSectionProps {
+  heading?: string;
+  leftHeading?: string;
+  faqs?: Faq[];
+}
+
+export default function FAQSection({
+  heading = "Frequently Asked Questions",
+  leftHeading = "Plan Your Stay With Confidence",
+  faqs: faqItems = faqs,
+}: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   function toggle(index: number) {
@@ -57,17 +85,17 @@ export default function FAQSection() {
     <section aria-label="Frequently asked questions">
       <div className="bg-neutral-900 py-10 md:py-16 text-center">
         <h2 className="font-bold text-4xl md:text-6xl text-white tracking-wide">
-          Frequently Asked Questions
+          {heading}
         </h2>
       </div>
 
       <div className="px-6 md:px-10 lg:px-16 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-16">
         <h3 className="font-bold text-4xl md:text-5xl text-neutral-900 leading-tight">
-          Plan Your Stay With Confidence
+          {leftHeading}
         </h3>
 
         <div>
-          {faqs.map((faq, index) => {
+          {faqItems.map((faq, index) => {
             const isOpen = index === openIndex;
             return (
               <div key={index} className="border-b border-neutral-200 py-5">
@@ -92,7 +120,7 @@ export default function FAQSection() {
                   }`}
                 >
                   <p className="text-md text-neutral-600 leading-relaxed overflow-hidden pt-3">
-                    {faq.answer}
+                    {renderAnswer(faq.answer)}
                   </p>
                 </div>
               </div>

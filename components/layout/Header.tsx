@@ -8,7 +8,8 @@ import { trackConversion } from "@/lib/analytics";
 
 const navLinks = [
   { href: "/about-us", label: "About Us" },
-  // Coming soon: Rooms & Suites, Gallery, Contact
+  { href: "/rooms", label: "Rooms & Suites" },
+  // Coming soon: Gallery, Contact
 ];
 
 interface HeaderProps {

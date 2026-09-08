@@ -4,9 +4,27 @@ import { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 
-const YOUTUBE_VIDEO_ID = "U6SVLXL8Bec";
+interface VideoSectionProps {
+  videoId?: string;
+  videoTitle?: string;
+  thumbnailSrc?: string;
+  thumbnailAlt?: string;
+  heading?: React.ReactNode;
+  body?: string;
+}
 
-export default function VideoSection() {
+export default function VideoSection({
+  videoId = "U6SVLXL8Bec",
+  videoTitle = "Cyrus One Hotel — From the moment you arrive, the pace begins to ease",
+  thumbnailSrc = "/video-thumbnail.png",
+  thumbnailAlt = "Cyrus One Hotel room — warm interiors near Islamabad airport",
+  heading = (
+    <>
+      A New Standard <br /> of Hospitality
+    </>
+  ),
+  body = "Whether you're staying for a night or an extended visit, every space has been thoughtfully designed to deliver comfort, convenience, and a welcoming atmosphere from the moment you arrive.",
+}: VideoSectionProps) {
   const [playing, setPlaying] = useState(false);
 
   return (
@@ -18,8 +36,8 @@ export default function VideoSection() {
         {playing ? (
           <iframe
             className="absolute inset-0 w-full h-full"
-            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
-            title="Cyrus One Hotel — From the moment you arrive, the pace begins to ease"
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+            title={videoTitle}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
@@ -27,8 +45,8 @@ export default function VideoSection() {
           <>
             {/* Thumbnail */}
             <Image
-              src="/video-thumbnail.png"
-              alt="Cyrus One Hotel room — warm interiors near Islamabad airport"
+              src={thumbnailSrc}
+              alt={thumbnailAlt}
               fill
               className="object-cover"
               sizes="100vw"
@@ -40,13 +58,10 @@ export default function VideoSection() {
             {/* Text overlay */}
             <div className="absolute top-4 left-4 md:top-12 md:left-12 max-w-xs md:max-w-xl">
               <h2 className="font-bold text-2xl md:text-4xl lg:text-6xl text-white leading-tight">
-                A New Standard <br /> of Hospitality
+                {heading}
               </h2>
               <p className="text-sm md:text-lg text-white/80 mt-3 leading-relaxed hidden md:block">
-                Whether you&apos;re staying for a night or an extended visit,
-                every space has been thoughtfully designed to deliver
-                comfort, convenience, and a welcoming atmosphere from the
-                moment you arrive.
+                {body}
               </p>
             </div>
 

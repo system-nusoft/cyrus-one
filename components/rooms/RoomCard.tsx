@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import RoomDetailModal from "./RoomDetailModal";
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 import {
   ChevronLeft,
   ChevronRight,
@@ -45,6 +46,10 @@ interface RoomCardProps {
   content: RoomContent;
   availability: OraRoomCategory;
   searchContext: SearchContext;
+  /** Clicking the image carousel opens the details modal. Default true. */
+  imageClickOpensModal?: boolean;
+  /** Show an outlined "View Details" button next to Book Now that opens the details modal. Default false. */
+  showViewDetailsButton?: boolean;
 }
 
 function buildBookingUrl(content: RoomContent, availability: OraRoomCategory, ctx: SearchContext) {
@@ -64,7 +69,13 @@ function buildBookingUrl(content: RoomContent, availability: OraRoomCategory, ct
   return `/book?${p.toString()}`;
 }
 
-export default function RoomCard({ content, availability, searchContext }: RoomCardProps) {
+export default function RoomCard({
+  content,
+  availability,
+  searchContext,
+  imageClickOpensModal = true,
+  showViewDetailsButton = false,
+}: RoomCardProps) {
   const [imageIndex, setImageIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const images = content.images;
@@ -89,12 +100,20 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
     >
       {/* Image carousel */}
       <div
-        className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] bg-neutral-100 lg:rounded-3xl lg:overflow-hidden cursor-pointer group"
-        onClick={() => setModalOpen(true)}
-        role="button"
-        tabIndex={0}
-        aria-label={`View ${content.displayName} photos and details`}
-        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setModalOpen(true); }}
+        className={`relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] bg-neutral-100 lg:rounded-3xl lg:overflow-hidden group ${
+          imageClickOpensModal ? "cursor-pointer" : ""
+        }`}
+        {...(imageClickOpensModal
+          ? {
+              onClick: () => setModalOpen(true),
+              role: "button" as const,
+              tabIndex: 0,
+              "aria-label": `View ${content.displayName} photos and details`,
+              onKeyDown: (e: React.KeyboardEvent) => {
+                if (e.key === "Enter" || e.key === " ") setModalOpen(true);
+              },
+            }
+          : {})}
       >
         {images.map((img, i) => {
           const prev = (imageIndex - 1 + images.length) % images.length;
@@ -201,7 +220,7 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
         </div>
 
         {/* Pricing bar */}
-        <div className="mt-auto rounded-3xl border-[1px] border-black bg-white px-3 md:px-5 py-4 flex items-center justify-between gap-4">
+        <div className="mt-auto rounded-3xl border-[1px] border-black bg-white px-3 md:px-5 py-4 flex flex-wrap items-center justify-between gap-3 md:gap-4">
           <div>
             {roFlexiPerNight != null && (
               <p className="text-sm text-neutral-500 line-through">
@@ -215,20 +234,34 @@ export default function RoomCard({ content, availability, searchContext }: RoomC
             <p className="text-sm md:text-lg font-bold text-neutral-900 mt-0.5">per night</p>
           </div>
 
-          {isUnavailable ? (
-            <span className="shrink-0 px-6 py-3 rounded-full bg-neutral-900 text-white font-semibold text-sm opacity-40 cursor-not-allowed">
-              Unavailable
-            </span>
-          ) : (
-            <Link
-              href={bookingUrl}
-              onClick={() => trackConversion("book_now_click")}
-              className="shrink-0 px-6 py-3 rounded-full bg-neutral-900 text-white font-semibold text-sm hover:bg-neutral-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
-              aria-label={`Book ${content.displayName}`}
-            >
-              Book Now
-            </Link>
-          )}
+          <div className="flex items-center gap-3 shrink-0">
+            {showViewDetailsButton && (
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setModalOpen(true)}
+                className="px-6 py-3 rounded-full text-sm"
+                aria-label={`View details for ${content.displayName}`}
+              >
+                View Details
+              </Button>
+            )}
+
+            {isUnavailable ? (
+              <span className="px-6 py-3 rounded-full bg-neutral-900 text-white font-semibold text-sm opacity-40 cursor-not-allowed">
+                Unavailable
+              </span>
+            ) : (
+              <Link
+                href={bookingUrl}
+                onClick={() => trackConversion("book_now_click")}
+                className="px-6 py-3 rounded-full bg-neutral-900 text-white font-semibold text-sm hover:bg-neutral-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+                aria-label={`Book ${content.displayName}`}
+              >
+                Book Now
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </article>
