@@ -2,8 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
+import BookingBar from "@/components/ui/BookingBar";
+import type { GuestCounts } from "@/components/ui/GuestCounter";
 
-export default function RoomsHero() {
+interface RoomsHeroProps {
+  onSearch: (fromDate: string, toDate: string, guests: GuestCounts) => void;
+  searching: boolean;
+}
+
+export default function RoomsHero({ onSearch, searching }: RoomsHeroProps) {
   return (
     <section
       className="relative min-h-screen flex flex-col"
@@ -39,18 +46,15 @@ export default function RoomsHero() {
             visits. Enjoy modern 5-star comfort, thoughtful amenities and the
             flexibility to make your stay your own.
           </p>
-
-          <Link
-            href="#rooms"
-            className="mt-8 self-start flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full bg-neutral-900 text-white font-semibold text-md hover:bg-neutral-700 transition-colors w-fit"
-            aria-label="Explore rooms and suites"
-          >
-            <span>Explore Rooms &amp; Suites</span>
-            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white text-neutral-900 shrink-0">
-              <ArrowUpRight className="w-5 h-5" />
-            </span>
-          </Link>
         </div>
+      </div>
+
+      {/* Booking bar — anchored to bottom, overlaps hero/content boundary */}
+      <div
+        id="availability"
+        className="relative md:w-[85%] mx-auto z-20 px-4 md:px-10 lg:px-16 pb-0 mb-6 md:mb-8"
+      >
+        <BookingBar onSearch={onSearch} loading={searching} />
       </div>
     </section>
   );

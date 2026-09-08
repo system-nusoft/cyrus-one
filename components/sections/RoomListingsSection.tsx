@@ -24,6 +24,8 @@ interface RoomListingsSectionProps {
   searchContext: SearchContext;
   heading?: string;
   subheading?: string;
+  /** Extra classes applied to the subheading <p>, e.g. a max-width to narrow the wrap. */
+  subheadingClassName?: string;
   /** Show an outlined "View Details" button on each room card instead of opening the modal via the image carousel. */
   showViewDetailsButton?: boolean;
 }
@@ -36,6 +38,7 @@ export default function RoomListingsSection({
   searchContext,
   heading = "Our Signature Hotel Apartment Collections",
   subheading = "Choose from a selection of elegantly designed rooms and suites, each created to provide the perfect retreat after a long journey. Whether you're travelling solo, with family, or for business, every room combines modern comfort with thoughtful amenities to ensure a relaxing stay.",
+  subheadingClassName = "",
   showViewDetailsButton = false,
 }: RoomListingsSectionProps) {
   const [showAll, setShowAll] = useState(false);
@@ -74,7 +77,7 @@ export default function RoomListingsSection({
         <h2 className="font-bold text-3xl md:text-5xl text-neutral-900">
           {heading}
         </h2>
-        <p className="text-neutral-900 mt-3 text-md md:text-lg">
+        <p className={`text-neutral-900 mt-3 text-md md:text-lg ${subheadingClassName}`}>
           {subheading}
         </p>
       </div>

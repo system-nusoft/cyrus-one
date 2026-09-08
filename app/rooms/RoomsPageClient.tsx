@@ -9,6 +9,8 @@ import RoomsWhyChoose from "@/components/sections/RoomsWhyChoose";
 import VideoSection from "@/components/sections/VideoSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layout/Footer";
+import type { OraRoomCategory } from "@/services/ora-pms/types";
+import type { GuestCounts } from "@/components/ui/GuestCounter";
 
 const roomsFaqs = [
   {
@@ -52,8 +54,6 @@ const roomsFaqs = [
       "Yes. **Free airport pick-up** is available for Cyrus One guests. We recommend contacting the team in advance to arrange your transfer and ensure a smooth arrival.",
   },
 ];
-import type { OraRoomCategory } from "@/services/ora-pms/types";
-import type { GuestCounts } from "@/components/ui/GuestCounter";
 
 export default function RoomsPageClient() {
   const today = new Date();
@@ -62,8 +62,7 @@ export default function RoomsPageClient() {
   const [rooms, setRooms] = useState<OraRoomCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  // No booking bar on this page — search context is fixed to the default availability window.
-  const [searchContext] = useState({
+  const [lastSearch, setLastSearch] = useState({
     fromDate: format(today, "yyyy-MM-dd"),
     toDate: format(addDays(today, 1), "yyyy-MM-dd"),
     guests: { rooms: 1, adults: 1, children: 0 } as GuestCounts,
@@ -100,22 +99,28 @@ export default function RoomsPageClient() {
 
   // Auto-fetch on mount with default dates
   useEffect(() => {
-    fetchRooms(searchContext.fromDate, searchContext.toDate);
+    fetchRooms(lastSearch.fromDate, lastSearch.toDate);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function handleSearch(fromDate: string, toDate: string, guests: GuestCounts) {
+    setLastSearch({ fromDate, toDate, guests });
+    fetchRooms(fromDate, toDate);
+  }
 
   return (
     <>
       <main>
-        <RoomsHero />
+        <RoomsHero onSearch={handleSearch} searching={loading} />
         <RibbonSection />
         <RoomListingsSection
           rooms={rooms}
           loading={loading}
           error={error}
-          onRetry={() => fetchRooms(searchContext.fromDate, searchContext.toDate)}
-          searchContext={searchContext}
+          onRetry={() => fetchRooms(lastSearch.fromDate, lastSearch.toDate)}
+          searchContext={lastSearch}
           heading="Find The Right Space For Your Stay"
           subheading="Whether you're travelling for business, staying with family or looking for a comfortable place near Islamabad airport, our rooms are designed around the way you travel."
+          subheadingClassName="max-w-2xl mx-auto"
           showViewDetailsButton
         />
         <RoomsWhyChoose />
