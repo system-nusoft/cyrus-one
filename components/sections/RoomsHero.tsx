@@ -13,7 +13,7 @@ export default function RoomsHero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/rooms-hero-section.png"
-          alt="Close-up of a made bed at Cyrus One with layered white pillows, a colorful geometric accent pillow, and a padded tan headboard."
+          alt="Hero section showing a comfortable hotel bed with white pillows and a colourful accent cushion in a Cyrus One room."
           fill
           priority
           className="object-cover"

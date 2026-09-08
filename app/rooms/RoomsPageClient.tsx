@@ -123,7 +123,7 @@ export default function RoomsPageClient() {
           videoId="s5YC-jfyQbk"
           videoTitle="Cyrus One Hotel — More than a room, a space that works around you"
           thumbnailSrc="/rooms-video-thumbnail.png"
-          thumbnailAlt="Cyrus One room interior — video thumbnail"
+          thumbnailAlt="Cyrus One room interior featuring a kitchenette with refrigerator and kettle, seating area, flat-screen TV and comfortable furnishings."
           heading={
             <>
               More Than a Room. <br /> A Space That Works Around You.

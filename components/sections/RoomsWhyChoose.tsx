@@ -70,7 +70,7 @@ export default function RoomsWhyChoose() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/rooms-why-choose-us.png"
-            alt="Cozy living room corner at Cyrus One with a floor lamp, curtained window and framed wall art, the background photo behind the room amenities section."
+            alt="Cyrus One room amenities section highlighting free Wi-Fi, air conditioning, private balconies, kitchenette, flat-screen TV and 24/7 support."
             fill
             className="object-cover"
             sizes="100vw"
