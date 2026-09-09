@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import BookingBar from "@/components/ui/BookingBar";
 import type { GuestCounts } from "@/components/ui/GuestCounter";
