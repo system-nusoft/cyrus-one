@@ -234,7 +234,11 @@ export default function RoomCard({
             <p className="text-sm md:text-lg font-bold text-neutral-900 mt-0.5">per night</p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div
+            className={`flex items-center gap-3 shrink-0 ${
+              showViewDetailsButton ? "w-full justify-center md:w-auto md:justify-end" : ""
+            }`}
+          >
             {showViewDetailsButton && (
               <Button
                 type="button"
