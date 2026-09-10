@@ -22,6 +22,12 @@ interface RoomListingsSectionProps {
   error: string | null;
   onRetry: () => void;
   searchContext: SearchContext;
+  heading?: string;
+  subheading?: string;
+  /** Extra classes applied to the subheading <p>, e.g. a max-width to narrow the wrap. */
+  subheadingClassName?: string;
+  /** Show an outlined "View Details" button on each room card instead of opening the modal via the image carousel. */
+  showViewDetailsButton?: boolean;
 }
 
 export default function RoomListingsSection({
@@ -30,6 +36,10 @@ export default function RoomListingsSection({
   error,
   onRetry,
   searchContext,
+  heading = "Our Signature Hotel Apartment Collections",
+  subheading = "Choose from a selection of elegantly designed rooms and suites, each created to provide the perfect retreat after a long journey. Whether you're travelling solo, with family, or for business, every room combines modern comfort with thoughtful amenities to ensure a relaxing stay.",
+  subheadingClassName = "",
+  showViewDetailsButton = false,
 }: RoomListingsSectionProps) {
   const [showAll, setShowAll] = useState(false);
   const viewMoreRef = useRef<HTMLDivElement>(null);
@@ -65,14 +75,10 @@ export default function RoomListingsSection({
       {/* Section header */}
       <div className="text-center mb-12 md:mb-16">
         <h2 className="font-bold text-3xl md:text-5xl text-neutral-900">
-          Our Signature Hotel Apartment Collections
+          {heading}
         </h2>
-        <p className="text-neutral-900 mt-3 text-md md:text-lg">
-          Choose from a selection of elegantly designed rooms and suites, each
-          created to provide the perfect retreat after a long journey.
-          Whether you&apos;re travelling solo, with family, or for business,
-          every room combines modern comfort with thoughtful amenities to
-          ensure a relaxing stay.
+        <p className={`text-neutral-900 mt-3 text-md md:text-lg ${subheadingClassName}`}>
+          {subheading}
         </p>
       </div>
 
@@ -154,6 +160,8 @@ export default function RoomListingsSection({
                   content={content}
                   availability={room}
                   searchContext={searchContext}
+                  imageClickOpensModal={!showViewDetailsButton}
+                  showViewDetailsButton={showViewDetailsButton}
                 />
               );
             })}
