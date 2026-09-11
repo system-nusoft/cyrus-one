@@ -38,7 +38,7 @@ export default function AboutUsHero() {
           </p>
 
           <Link
-            href="/#rooms"
+            href="/rooms"
             className="mt-8 self-start flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full bg-neutral-900 text-white font-semibold text-md hover:bg-neutral-700 transition-colors w-fit"
             aria-label="Explore rooms and suites"
           >

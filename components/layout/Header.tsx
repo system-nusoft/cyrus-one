@@ -27,7 +27,7 @@ function BookNowButton({
 }) {
   return (
     <Link
-      href="/#availability"
+      href="/rooms"
       onClick={() => {
         trackConversion("book_now_click");
         onClick?.();
