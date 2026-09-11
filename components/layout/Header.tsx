@@ -9,6 +9,7 @@ import { trackConversion } from "@/lib/analytics";
 const navLinks = [
   { href: "/about-us", label: "About Us" },
   { href: "/rooms", label: "Rooms & Suites" },
+  { href: "/explore-islamabad", label: "Explore Islamabad" },
   // Coming soon: Gallery, Contact
 ];
 
