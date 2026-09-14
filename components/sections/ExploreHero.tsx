@@ -22,14 +22,14 @@ export default function ExploreHero() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/60 to-black/20" />
       </div>
 
       {/* Header overlaid */}
       <Header />
 
       {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-36 pb-8">
+      <div className="relative z-10 flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-24 md:pt-36 pb-8">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-7xl font-normal text-white leading-tight">
             Your Gateway To Islamabad
