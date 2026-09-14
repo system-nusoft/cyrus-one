@@ -9,6 +9,7 @@ import { trackConversion } from "@/lib/analytics";
 const navLinks = [
   { href: "/about-us", label: "About Us" },
   { href: "/rooms", label: "Rooms & Suites" },
+  { href: "/explore-islamabad", label: "Explore Islamabad" },
   // Coming soon: Gallery, Contact
 ];
 
@@ -26,7 +27,7 @@ function BookNowButton({
 }) {
   return (
     <Link
-      href="/#availability"
+      href="/rooms"
       onClick={() => {
         trackConversion("book_now_click");
         onClick?.();
