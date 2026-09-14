@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface Restaurant {
+export interface Restaurant {
   name: string;
   drive: string;
   body: string;
@@ -9,34 +9,34 @@ interface Restaurant {
   alt?: string;
 }
 
-const RESTAURANTS: Restaurant[] = [
+export const RESTAURANTS: Restaurant[] = [
   {
     name: "The Monal",
     drive: "40–50 MIN",
     body: "Head to the rooftop at Mall of IMARAT for The Monal's signature food, relaxed atmosphere and sweeping views of the city.",
     image: "/explore-dining-monal.jpg",
-    alt: "The Monal restaurant in Islamabad with rooftop seating and a sweeping view of the city.",
+    alt: "The Monal restaurant at Mall of IMARAT in Islamabad, a dining option featured in the Cyrus One Islamabad guide.",
   },
   {
     name: "The Dome – Daman-e-Koh",
     drive: "45–55 MIN",
     body: "Set in the Margalla Hills, The Dome combines Pakistani, continental and Chinese cuisine with sweeping views over Islamabad.",
     image: "/explore-dining-dome.jpg",
-    alt: "The Dome restaurant at Daman-e-Koh overlooking the Margalla Hills and Islamabad.",
+    alt: "The Dome restaurant in the Margalla Hills, featured as a dining recommendation in the Cyrus One Islamabad guide.",
   },
   {
     name: "Tuscany Courtyard",
     drive: "40–45 MIN",
     body: "A popular F-6/F-7 dining spot with an Italian-inspired menu and a quieter courtyard setting.",
     image: "/explore-dining-tuscany.jpg",
-    alt: "Tuscany Courtyard restaurant in Islamabad with its Italian-inspired courtyard seating.",
+    alt: "Tuscany Courtyard restaurant in Islamabad, featured as a dining recommendation for Cyrus One guests.",
   },
   {
     name: "1969 Restaurant",
     drive: "35–45 MIN",
     body: "Surrounded by the greenery of Shakarparian, a great stop when exploring the Pakistan Monument and nearby cultural attractions.",
     image: "/explore-dining-1969.jpg",
-    alt: "1969 Restaurant in Islamabad surrounded by the greenery of Shakarparian.",
+    alt: "1969 Restaurant in Shakarparian, Islamabad, featured as a dining recommendation in the Cyrus One guide.",
   },
 ];
 

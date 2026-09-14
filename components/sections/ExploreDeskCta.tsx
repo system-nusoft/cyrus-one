@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { trackConversion } from "@/lib/analytics";
+import { EXPLORE_DESK_CTA_IMAGE } from "@/content/explore-desk-cta";
 
 export default function ExploreDeskCta() {
   return (
@@ -13,8 +14,8 @@ export default function ExploreDeskCta() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/explore-desk-cta.png"
-          alt="Cyrus One front desk staff assisting guests beneath the Cyrus One by Trivelles sign at the hotel reception."
+          src={EXPLORE_DESK_CTA_IMAGE.src}
+          alt={EXPLORE_DESK_CTA_IMAGE.alt}
           fill
           className="object-cover"
           sizes="100vw"

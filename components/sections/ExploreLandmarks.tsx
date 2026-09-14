@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface Landmark {
+export interface Landmark {
   name: string;
   tagline: string;
   body: string;
@@ -10,14 +10,14 @@ interface Landmark {
 }
 
 // Alt text is assistant-written — replace with client-supplied descriptions when available.
-const LANDMARKS: Landmark[] = [
+export const LANDMARKS: Landmark[] = [
   {
     name: "Faisal Mosque",
     tagline: "For architecture, culture & first-time visitors",
     body: "One of Islamabad's most recognisable landmarks, Faisal Mosque sits at the foot of the Margalla Hills and is one of the defining sights of the capital. Its distinctive, dome-less design gives it a character unlike most major mosques.",
     tip: "Combine it with a visit to Daman-e-Koh rather than making two separate trips across the city.",
     image: "/explore-faisal-1.png",
-    alt: "Faisal Mosque lit up at dusk with the sprawl of Islamabad and the Margalla Hills behind it.",
+    alt: "Faisal Mosque in Islamabad at night, featured in the Cyrus One guide to landmarks worth the drive.",
   },
   {
     name: "Daman-e-Koh",
@@ -25,7 +25,7 @@ const LANDMARKS: Landmark[] = [
     body: "Head into the Margalla Hills for a different perspective of Islamabad. Daman-e-Koh is one of the city's established viewpoints and a good choice when you want to trade city streets for mountain air.",
     tip: "Give yourself more time than you think you need. The drive up is part of the experience.",
     image: "/explore-daman-koh-1.png",
-    alt: "The view over Islamabad from the Daman-e-Koh viewpoint in the Margalla Hills, framed by trees.",
+    alt: "Panoramic view of Islamabad from Daman-e-Koh, featured in the Cyrus One guide to Islamabad landmarks.",
   },
   {
     name: "Pakistan Monument & Lok Virsa",
@@ -33,7 +33,7 @@ const LANDMARKS: Landmark[] = [
     body: "These two attractions work particularly well together. Visit the Pakistan Monument for one of Islamabad's most recognisable landmarks, then head to Lok Virsa to explore Pakistan's folk and traditional heritage.",
     tip: "Make this your cultural half-day rather than rushing through both.",
     image: "/explore-momument-1.png",
-    alt: "The petal-shaped Pakistan Monument on Shakarparian Hill in Islamabad.",
+    alt: "Pakistan Monument and surrounding cultural area in Islamabad, featured in the Cyrus One travel guide.",
   },
   {
     name: "Centaurus Mall",
@@ -41,7 +41,7 @@ const LANDMARKS: Landmark[] = [
     body: "Not every day needs to be about sightseeing. Centaurus is a convenient option when you want shopping, food or some time indoors.",
     tip: "It's an easy addition to an itinerary when you're already heading towards central Islamabad.",
     image: "/explore-centaurus-1.png",
-    alt: "The Centaurus Mall towers rising over central Islamabad at dusk.",
+    alt: "Centaurus Mall in Islamabad with its distinctive high-rise towers, featured in the Cyrus One travel guide.",
   },
   {
     name: "Taxila",
@@ -49,7 +49,7 @@ const LANDMARKS: Landmark[] = [
     body: "Have more time? Go beyond Islamabad. Taxila offers a completely different experience, with ancient archaeological sites and a connection to the Gandhara civilisation. It's better suited to travellers who can dedicate several hours rather than those squeezing in a quick stop.",
     tip: "If history is your thing, don't rush Taxila. Give yourself a few hours to explore its ancient sites and discover more of its Gandhara heritage.",
     image: "/explore-taxila-1.png",
-    alt: "Ancient stone ruins at the Taxila archaeological site near Islamabad.",
+    alt: "Ancient archaeological ruins at Taxila near Islamabad, featured in the Cyrus One guide for longer stays.",
   },
 ];
 

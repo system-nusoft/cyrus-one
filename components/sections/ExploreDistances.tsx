@@ -3,75 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-
-interface Destination {
-  name: string;
-  drive: string;
-  image: string;
-  alt: string;
-  /** Google Maps URL — client to supply. Rendered as a plain span until set. */
-  mapUrl?: string;
-}
-
-// Alt text is assistant-written — replace with client-supplied descriptions when available.
-const DESTINATIONS: Destination[] = [
-  {
-    name: "Islamabad International Airport",
-    drive: "5–10 min",
-    image: "/explore-airport.png",
-    alt: "Islamabad International Airport terminal at dusk, its glass façade and steel canopy lit up beside the signage.",
-    mapUrl: "https://maps.app.goo.gl/FpguJUZEFyXn9ZRH7",
-  },
-  {
-    name: "Centaurus Mall",
-    drive: "30–35 min",
-    image: "/explore-centaurus.png",
-    alt: "The Centaurus Mall towers in Islamabad glowing at sunset against the Margalla Hills.",
-    mapUrl: "https://maps.app.goo.gl/sLfeUXAWB2AbCYuk8",
-  },
-  {
-    name: "Pakistan Monument",
-    drive: "35–45 min",
-    image: "/explore-pak-monument.png",
-    alt: "The petal-shaped Pakistan Monument on Shakarparian Hill in Islamabad.",
-    mapUrl: "https://maps.app.goo.gl/QksB4kwq7HcaaFHX9",
-  },
-  {
-    name: "Lok Virsa Museum",
-    drive: "30–35 min",
-    image: "/explore-lok-virsa.png",
-    alt: "The Lok Virsa Museum of folk and traditional heritage in Islamabad.",
-    mapUrl: "https://maps.app.goo.gl/6Mh6U83yTpB8h3wo8",
-  },
-  {
-    name: "Faisal Mosque",
-    drive: "40–50 min",
-    image: "/explore-faisal-mosque.png",
-    alt: "Faisal Mosque in Islamabad with its tent-shaped prayer hall and four minarets below the Margalla Hills.",
-    mapUrl: "https://maps.app.goo.gl/UrV6o8jfULi9ChcU7",
-  },
-  {
-    name: "Daman-e-Koh",
-    drive: "45–55 min",
-    image: "/explore-damn-e-koh.png",
-    alt: "The Daman-e-Koh viewpoint in the Margalla Hills overlooking Islamabad.",
-    mapUrl: "https://maps.app.goo.gl/QV1veerduzsZa39o7",
-  },
-  {
-    name: "F-6 / F-7",
-    drive: "35–45 min",
-    image: "/explore-f6-f7.png",
-    alt: "Tree-lined streets and markets of the F-6 and F-7 sectors in central Islamabad.",
-    mapUrl: "https://maps.app.goo.gl/th33QNJM7XDn2thH6",
-  },
-  {
-    name: "Taxila Museum",
-    drive: "40–45 min",
-    image: "/explore-taxila-museum.png",
-    alt: "The Taxila Museum housing Gandhara-era artefacts near Islamabad.",
-    mapUrl: "https://maps.app.goo.gl/oAfBLAEEFPr7fqbU6",
-  },
-];
+import { DESTINATIONS, type Destination } from "@/content/explore-destinations";
 
 const DASH =
   "repeating-linear-gradient(to bottom, #c9ad78 0 6px, transparent 6px 15px)";

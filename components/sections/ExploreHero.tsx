@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import { trackConversion } from "@/lib/analytics";
+import { EXPLORE_HERO_IMAGE } from "@/content/explore-hero";
 
 export default function ExploreHero() {
   return (
@@ -14,8 +15,8 @@ export default function ExploreHero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/explore-hero-bg.png"
-          alt="Faisal Mosque in Islamabad at dusk, its four minarets and tent-shaped prayer hall set against a dramatic purple sky below the Margalla Hills."
+          src={EXPLORE_HERO_IMAGE.src}
+          alt={EXPLORE_HERO_IMAGE.alt}
           fill
           priority
           className="object-cover"
