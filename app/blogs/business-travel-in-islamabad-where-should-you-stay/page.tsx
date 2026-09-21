@@ -38,7 +38,6 @@ export default function BusinessTravelBlogPostPage() {
         <BlogPostIntro />
 
         <BlogPostSection
-          number="01"
           title="Start With Location"
           image={{
             src: "/blog-1-image-2.png",
@@ -70,7 +69,6 @@ export default function BusinessTravelBlogPostPage() {
         </BlogPostSection>
 
         <BlogPostSection
-          number="02"
           title="Think About Your Daily Schedule"
           image={{
             src: "/blog-1-image-3.png",
@@ -97,10 +95,9 @@ export default function BusinessTravelBlogPostPage() {
         </BlogPostSection>
 
         <BlogPostSection
-          number="03"
           title="Reliable Wi-Fi Is A Must"
           image={{
-            src: "/blog-1-image-4.png",
+            src: "/free-hi-speed-wifi.png",
             // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
             alt: "A wireless router with its signal lights on, representing reliable in-room Wi-Fi for business travellers.",
           }}
@@ -120,7 +117,6 @@ export default function BusinessTravelBlogPostPage() {
         </BlogPostSection>
 
         <BlogPostSection
-          number="04"
           title="Don't Underestimate Room Size"
           image={{
             src: "/blog-1-image-5.png",
@@ -155,7 +151,6 @@ export default function BusinessTravelBlogPostPage() {
         </BlogPostSection>
 
         <BlogPostSection
-          number="05"
           title="Consider What You Need For A Longer Stay"
           imageAspectClassName="aspect-[16/9]"
           image={{
@@ -185,7 +180,6 @@ export default function BusinessTravelBlogPostPage() {
         </BlogPostSection>
 
         <BlogPostSection
-          number="06"
           title="Make Your Airport Journey Simple"
           image={{
             src: "/blog-1-image-7.png",
@@ -213,7 +207,6 @@ export default function BusinessTravelBlogPostPage() {
         </BlogPostSection>
 
         <BlogPostSection
-          number="07"
           title="Breakfast Can Make Your Morning Easier"
           imageAspectClassName="aspect-[16/9]"
           image={{
@@ -238,7 +231,7 @@ export default function BusinessTravelBlogPostPage() {
           </p>
         </BlogPostSection>
 
-        <BlogPostSection number="08" title="Look Beyond The Workday">
+        <BlogPostSection title="Look Beyond The Workday">
           <p>
             Business travel isn’t always meetings from morning to evening. If
             you have a free afternoon or a few hours between commitments,
@@ -271,7 +264,7 @@ export default function BusinessTravelBlogPostPage() {
           </p>
         </BlogPostSection>
 
-        <BlogPostSection number="09" title="Check The Practical Essentials">
+        <BlogPostSection title="Check The Practical Essentials">
           <p>
             When you’re travelling for business, convenience matters. Before
             confirming your booking, look beyond the room itself and check
@@ -298,7 +291,7 @@ export default function BusinessTravelBlogPostPage() {
           </p>
         </BlogPostSection>
 
-        <BlogPostSection number="10" title="Choose Based On The Trip You're Taking">
+        <BlogPostSection title="Choose Based On The Trip You're Taking">
           <p>
             There isn’t one perfect type of accommodation for every business
             traveller. Your priorities should depend on your schedule.
