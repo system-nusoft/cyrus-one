@@ -32,7 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Business Travel In Islamabad: Where Should You Stay?",
     excerpt:
       "Planning your stay in Islamabad? Stay close to the airport while keeping the city within easy reach.",
-    date: "2026-08-11",
+    date: "2026-09-18",
     categories: [
       "Islamabad Guides",
       "Travel Tips",
