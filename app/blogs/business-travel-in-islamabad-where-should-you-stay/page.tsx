@@ -41,8 +41,7 @@ export default function BusinessTravelBlogPostPage() {
           title="Start With Location"
           image={{
             src: "/blog-1-image-2.png",
-            // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-            alt: "A view of Islamabad's road network connecting the airport, city sectors and business districts.",
+            alt: "Faisal Mosque in Islamabad, showing its distinctive triangular roof and towering minarets against a clear blue sky",
           }}
         >
           <p>
@@ -72,8 +71,7 @@ export default function BusinessTravelBlogPostPage() {
           title="Think About Your Daily Schedule"
           image={{
             src: "/blog-1-image-3.png",
-            // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-            alt: "A business traveller checking their schedule between meetings in Islamabad.",
+            alt: "Empty multi-lane highway in Islamabad lined with trees and streetlights, with a motorcyclist and a car in view",
           }}
         >
           <p>
@@ -98,8 +96,8 @@ export default function BusinessTravelBlogPostPage() {
           title="Reliable Wi-Fi Is A Must"
           image={{
             src: "/free-hi-speed-wifi.png",
-            // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-            alt: "A wireless router with its signal lights on, representing reliable in-room Wi-Fi for business travellers.",
+            // Same client-supplied alt text used for this image on the homepage (ExperienceSection).
+            alt: "Cyrus One lounge with complimentary Wi-Fi and comfortable workspace",
           }}
         >
           <p>
@@ -120,8 +118,7 @@ export default function BusinessTravelBlogPostPage() {
           title="Don't Underestimate Room Size"
           image={{
             src: "/blog-1-image-5.png",
-            // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-            alt: "A spacious hotel room with comfortable seating, giving a business traveller room to work and unwind.",
+            alt: "Cyrus One hotel bedroom featuring a crisp white bed with a patterned runner, sheer curtains, and a freestanding tub",
           }}
         >
           <p>
@@ -155,8 +152,7 @@ export default function BusinessTravelBlogPostPage() {
           imageAspectClassName="aspect-[16/9]"
           image={{
             src: "/blog-1-image-6.png",
-            // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-            alt: "Islamabad's skyline with the Margalla Hills and Faisal Mosque in the distance, seen from a busy road.",
+            alt: "View of Islamabad's skyline showing Centaurus, the Faisal Mosque minarets, and the green Margalla Hills beyond",
           }}
         >
           <p>
@@ -183,8 +179,7 @@ export default function BusinessTravelBlogPostPage() {
           title="Make Your Airport Journey Simple"
           image={{
             src: "/blog-1-image-7.png",
-            // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-            alt: "A car waiting outside a hotel entrance, ready to take a guest to Islamabad International Airport.",
+            alt: "Cyrus One by Trivelles airport shuttle van parked outside Islamabad International Airport.",
           }}
         >
           <p>
@@ -211,8 +206,7 @@ export default function BusinessTravelBlogPostPage() {
           imageAspectClassName="aspect-[16/9]"
           image={{
             src: "/blog-1-image-8.png",
-            // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-            alt: "A breakfast spread laid out for guests, giving business travellers an easy start before a busy day of meetings.",
+            alt: "Overhead shot of Cyrus One breakfast spread with a vegetable omelette and banana-and-apple-topped French toast",
           }}
         >
           <p>
@@ -248,8 +242,7 @@ export default function BusinessTravelBlogPostPage() {
           <div className="relative aspect-[3/2] overflow-hidden">
             <Image
               src="/blog-1-image-9.png"
-              // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-              alt="A white marble pavilion in an Islamabad park, surrounded by gardens and city skyline in the background."
+              alt="White marble domed pavilion surrounded by orange marigold flower beds and palm trees in an Islamabad F9 park"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 768px"
@@ -311,8 +304,7 @@ export default function BusinessTravelBlogPostPage() {
           title="Why Choose Cyrus One For Your Trip?"
           image={{
             src: "/blog-1-image-10.png",
-            // Assistant-written, not client-supplied — needs confirmation, same caveat as other blog images.
-            alt: "Cyrus One's apartment-style accommodation, offering a comfortable base for business travellers in Islamabad.",
+            alt: "Cyrus One hotel lobby with a red velvet sofa, mustard-yellow armchairs, framed wall art, and elevator doors",
           }}
         >
           <p>

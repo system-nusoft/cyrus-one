@@ -43,8 +43,7 @@ export const BLOG_POSTS: BlogPost[] = [
     // is excluded from OtherBlogsSection, and LatestBlogSection doesn't render readTime).
     readTime: "7 Min Read",
     image: {
-      // Alt text is assistant-written, not client-supplied — needs confirmation, same caveat as other hero images.
-      alt: "A business traveller with a shoulder bag walking toward the Islamabad International Airport terminal at dusk, with a plane taking off overhead.",
+      alt: "Business traveler with a suitcase walking toward Islamabad International Airport at sunrise as a plane departs overhead",
       src: "/blog-1-hero.webp",
     },
   },

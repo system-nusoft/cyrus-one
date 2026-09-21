@@ -11,7 +11,7 @@ export default function BlogsHero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/blogs-hero-bg.png"
-          alt="Cyrus One hotel lobby with a rust-colored sofa and reception desk displaying the Cyrus One website, near Islamabad Airport."
+          alt="Cyrus One by Trivelles website open on a laptop screen inside the hotel lobby, with the tagline &quot;Explore Beyond Your Stay&quot;"
           fill
           priority
           className="object-cover"
