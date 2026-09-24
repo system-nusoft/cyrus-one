@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/about-us", label: "About Us" },
   { href: "/rooms", label: "Rooms & Suites" },
   { href: "/explore-islamabad", label: "Explore Islamabad" },
+  { href: "/blogs", label: "Blogs" },
   // Coming soon: Gallery, Contact
 ];
 
@@ -53,7 +54,7 @@ export default function Header({ dark = false }: HeaderProps) {
       } z-30 bg-black`}
     >
       <div className="px-6 md:px-10 lg:px-16 py-5">
-        <div className="grid grid-cols-2 md:grid-cols-3 items-center gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-[auto_1fr_auto] items-center gap-4">
           {/* Logo */}
           <Link
             href="/"
@@ -72,9 +73,9 @@ export default function Header({ dark = false }: HeaderProps) {
 
           {/* Nav — centered (desktop) */}
           <nav aria-label="Primary" className="hidden md:flex justify-self-center">
-            <ul className="flex items-center gap-8 lg:gap-10">
+            <ul className="flex items-center gap-6 lg:gap-8">
               {navLinks.map(({ href, label }) => (
-                <li key={label}>
+                <li key={label} className="whitespace-nowrap">
                   <Link
                     href={href}
                     className="text-sm md:text-base font-semibold tracking-wide text-white underline-offset-8 decoration-2 hover:underline"
