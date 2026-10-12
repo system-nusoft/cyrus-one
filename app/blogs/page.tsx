@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import BlogsHero from "@/components/sections/BlogsHero";
 import LatestBlogSection from "@/components/sections/LatestBlogSection";
-// import OtherBlogsSection from "@/components/sections/OtherBlogsSection"; // hidden until real posts are ready
+import OtherBlogsSection from "@/components/sections/OtherBlogsSection";
 import RibbonSection from "@/components/sections/RibbonSection";
 import Footer from "@/components/layout/Footer";
 
@@ -31,7 +31,7 @@ export default function BlogsPage() {
         <BlogsHero />
         <RibbonSection />
         <LatestBlogSection />
-        {/* <OtherBlogsSection /> */}
+        <OtherBlogsSection />
       </main>
 
       <Footer />

@@ -5,7 +5,7 @@ import { format, parse } from "date-fns";
 import { BLOG_POSTS } from "@/content/blogs";
 
 export default function LatestBlogSection() {
-  const latest = BLOG_POSTS[0];
+  const latest = BLOG_POSTS.find((post) => post.published);
   if (!latest) return null;
 
   return (

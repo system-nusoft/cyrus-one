@@ -3,10 +3,20 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BLOG_POSTS, BLOG_FILTER_CATEGORIES } from "@/content/blogs";
+import {
+  BLOG_POSTS,
+  DEFAULT_BLOG_AUTHOR,
+} from "@/content/blogs";
 
-// Featured post (index 0) already appears in LatestBlogSection — don't repeat it here.
-const OTHER_POSTS = BLOG_POSTS.slice(1);
+// The newest published post already appears in LatestBlogSection — don't repeat it here.
+// Unpublished (placeholder) posts have no detail page, so they're excluded too.
+const OTHER_POSTS = BLOG_POSTS.filter((post) => post.published).slice(1);
+
+// Filter pills are derived from the posts actually listed below, so every pill returns at least one post.
+const FILTER_CATEGORIES = [
+  "All",
+  ...Array.from(new Set(OTHER_POSTS.flatMap((post) => post.categories))),
+];
 
 export default function OtherBlogsSection() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -25,7 +35,7 @@ export default function OtherBlogsSection() {
         <span className="text-sm font-semibold tracking-widest text-neutral-500 uppercase mr-2">
           Filters
         </span>
-        {BLOG_FILTER_CATEGORIES.map((category) => {
+        {FILTER_CATEGORIES.map((category) => {
           const isActive = category === activeFilter;
           return (
             <button
@@ -72,7 +82,7 @@ export default function OtherBlogsSection() {
               {post.title}
             </h3>
             <p className="mt-2 text-sm text-neutral-500">
-              {post.readTime} · Placeholder
+              {post.readTime} · {post.author ?? DEFAULT_BLOG_AUTHOR}
             </p>
           </Link>
         ))}

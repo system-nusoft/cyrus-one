@@ -7,6 +7,8 @@ interface BlogPostSectionProps {
   image?: { src: string; alt: string };
   /** Tailwind aspect-ratio class for the image below the content. Defaults to the 3:2 ratio most blog photos use. */
   imageAspectClassName?: string;
+  /** Optional content rendered below the image, in the same text column and style as `children`. */
+  afterImage?: ReactNode;
 }
 
 export default function BlogPostSection({
@@ -14,6 +16,7 @@ export default function BlogPostSection({
   children,
   image,
   imageAspectClassName = "aspect-[3/2]",
+  afterImage,
 }: BlogPostSectionProps) {
   return (
     <section className="pb-8 md:pb-12 px-6 md:px-10 lg:px-16">
@@ -36,6 +39,12 @@ export default function BlogPostSection({
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 1024px"
           />
+        </div>
+      )}
+
+      {afterImage && (
+        <div className="max-w-3xl mx-auto mt-8 md:mt-10 flex flex-col gap-6 text-lg text-neutral-600 leading-relaxed">
+          {afterImage}
         </div>
       )}
     </section>

@@ -9,39 +9,42 @@ export interface BlogPost {
   image: { src: string; alt: string };
   /** Byline shown on the post's own detail page. Defaults to "Cyrus One Team" for all posts. */
   author?: string;
+  /** True once the post has a real detail page. Only published posts appear in LatestBlogSection. */
+  published?: boolean;
 }
 
 /** Two-letter initials shown in the byline avatar on a post's detail page. */
 export const DEFAULT_BLOG_AUTHOR = "Cyrus One Team";
 
-/** Filter pills shown on the blog listing grid, "All" plus every category used across posts. */
-export const BLOG_FILTER_CATEGORIES = [
-  "All",
-  "Islamabad Guides",
-  "Travel Tips",
-  "Airport & Travel",
-  "Dining",
-  "Local Life",
-];
-
 // Dummy content for now — copy and images are placeholders until real posts are written.
-// The featured post (index 0) is shown in LatestBlogSection; the rest populate the filterable grid.
+// Published posts (newest first): the first is shown in LatestBlogSection, the rest in OtherBlogsSection.
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "why-travelers-choose-cyrus-one-a-stay-built-around-comfort-and-convenience",
+    title: "Why Travelers Choose Cyrus One: A Stay Built Around Comfort & Convenience",
+    // Draft excerpt (used for meta description) — not client-supplied, needs confirmation.
+    excerpt:
+      "Discover why guests choose Cyrus One by Trivelles for a comfortable, convenient stay near Islamabad International Airport.",
+    date: "2026-10-09",
+    categories: ["Guest Stories"],
+    readTime: "6 Min Read",
+    published: true,
+    image: {
+      src: "/blog-2-image1.webp",
+      alt: "Reception lounge at Cyrus One hotel near Islamabad Airport with modern seating and warm lighting",
+    },
+  },
   {
     slug: "business-travel-in-islamabad-where-should-you-stay",
     title: "Business Travel In Islamabad: Where Should You Stay?",
     excerpt:
       "Planning your stay in Islamabad? Stay close to the airport while keeping the city within easy reach.",
     date: "2026-09-18",
-    categories: [
-      "Islamabad Guides",
-      "Travel Tips",
-      "Airport & Travel",
-      "Hotels Near Islamabad Airport",
-    ],
+    categories: ["Travel Tips"],
     // "7 Min Read" matches the detail page's own byline; was "6 Min Read" (unused elsewhere — this post
     // is excluded from OtherBlogsSection, and LatestBlogSection doesn't render readTime).
     readTime: "7 Min Read",
+    published: true,
     image: {
       alt: "Business traveler with a suitcase walking toward Islamabad International Airport at sunrise as a plane departs overhead",
       src: "/blog-1-hero.webp",

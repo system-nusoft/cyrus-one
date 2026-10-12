@@ -9,10 +9,13 @@ import BlogPostHeader from "@/components/sections/BlogPostHeader";
 import BlogPostIntro from "@/components/sections/BlogPostIntro";
 import BlogPostSection from "@/components/sections/BlogPostSection";
 import BlogPostClosing from "@/components/sections/BlogPostClosing";
+import BlogPostShare from "@/components/sections/BlogPostShare";
 import BlogPostTable from "@/components/sections/BlogPostTable";
 import { BLOG_POSTS } from "@/content/blogs";
 
-const post = BLOG_POSTS[0];
+const post = BLOG_POSTS.find(
+  (p) => p.slug === "business-travel-in-islamabad-where-should-you-stay",
+)!;
 const pageUrl = `https://cyrusonehotel.com/blogs/${post.slug}`;
 
 export const metadata: Metadata = {
@@ -355,6 +358,8 @@ export default function BusinessTravelBlogPostPage() {
               </span>
             </Link>
           </div>
+
+          <BlogPostShare url={pageUrl} title={post.title} />
         </BlogPostClosing>
       </main>
 
