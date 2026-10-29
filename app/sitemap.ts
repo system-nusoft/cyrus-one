@@ -42,5 +42,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${BASE_URL}/blogs/why-travelers-choose-cyrus-one-a-stay-built-around-comfort-and-convenience`,
+      lastModified: new Date("2026-10-09"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }
