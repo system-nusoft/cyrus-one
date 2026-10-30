@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Raleway, Roboto } from "next/font/google";
 import Script from "next/script";
 import WhatsAppFloatingButton from "@/components/ui/WhatsAppFloatingButton";
+import PhoneFloatingButton from "@/components/ui/PhoneFloatingButton";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -85,6 +86,7 @@ export default function RootLayout({
       <body className="font-raleway antialiased">
         {children}
         <WhatsAppFloatingButton />
+        <PhoneFloatingButton />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18205737022"
           strategy="afterInteractive"
