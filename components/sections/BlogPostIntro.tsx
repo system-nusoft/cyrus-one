@@ -9,15 +9,21 @@ interface BlogPostIntroProps {
   paragraphs?: string[];
   /** Optional larger, darker lead-in paragraph rendered above the body paragraphs. */
   lead?: string;
+  /** Optional plain paragraph rendered above the lead, in regular body style (no blockquote). */
+  opening?: string;
 }
 
 export default function BlogPostIntro({
   paragraphs = defaultParagraphs,
   lead,
+  opening,
 }: BlogPostIntroProps) {
   return (
     <section className="pb-8 md:pb-12 px-6 md:px-10 lg:px-16">
       <div className="max-w-3xl mx-auto flex flex-col gap-6">
+        {opening && (
+          <p className="text-lg text-neutral-600 leading-relaxed">{opening}</p>
+        )}
         {lead && (
           <p className="text-xl md:text-2xl font-medium text-neutral-900 leading-relaxed">
             {lead}
