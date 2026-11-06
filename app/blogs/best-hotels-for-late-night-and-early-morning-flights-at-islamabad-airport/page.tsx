@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import RibbonSection from "@/components/sections/RibbonSection";
@@ -359,6 +361,29 @@ export default function LateNightEarlyMorningFlightsPostPage() {
             Whether you’re arriving after midnight or heading out before
             sunrise, make your next stay in Islamabad a comfortable one.
           </p>
+
+          <div className="pt-4 flex flex-wrap gap-4">
+            <Link
+              href="/#availability"
+              className="flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full bg-neutral-900 text-white font-semibold text-md hover:bg-neutral-700 transition-colors w-fit"
+              aria-label="Book your stay"
+            >
+              <span>Book Your Stay</span>
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#d9c08a] text-neutral-900 shrink-0">
+                <ArrowUpRight className="w-5 h-5" />
+              </span>
+            </Link>
+            <Link
+              href="/rooms"
+              className="flex items-center justify-between gap-4 pl-6 pt-1 pr-1 pb-1 rounded-full border border-neutral-900 text-neutral-900 font-semibold text-md hover:bg-neutral-50 transition-colors w-fit"
+              aria-label="Explore rooms and suites"
+            >
+              <span>Explore Rooms &amp; Suites</span>
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 text-white shrink-0">
+                <ArrowUpRight className="w-5 h-5" />
+              </span>
+            </Link>
+          </div>
 
           <BlogPostShare url={pageUrl} title={post.title} />
         </BlogPostClosing>
