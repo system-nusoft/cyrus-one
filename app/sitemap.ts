@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${BASE_URL}/blogs/best-hotels-for-late-night-and-early-morning-flights-at-islamabad-airport`,
+      url: `${BASE_URL}/blogs/best-hotel-for-late-night-and-early-morning-flights-at-islamabad-airport`,
       lastModified: new Date("2026-11-06"),
       changeFrequency: "monthly",
       priority: 0.6,

@@ -15,7 +15,7 @@ import BlogPostTable from "@/components/sections/BlogPostTable";
 import { BLOG_POSTS } from "@/content/blogs";
 
 const SLUG =
-  "best-hotels-for-late-night-and-early-morning-flights-at-islamabad-airport";
+  "best-hotel-for-late-night-and-early-morning-flights-at-islamabad-airport";
 const post = BLOG_POSTS.find((p) => p.slug === SLUG)!;
 const pageUrl = `https://cyrusonehotel.com/blogs/${post.slug}`;
 
@@ -70,8 +70,8 @@ export default function LateNightEarlyMorningFlightsPostPage() {
             After a long flight, the last thing you want is an extended commute
             to your hotel. Similarly, when you’re catching an early-morning
             flight, staying within convenient reach of the airport helps
-            simplify your departure. Look for hotels near Islamabad
-            International Airport that offer easy access to the terminal and
+            simplify your departure. Look for a hotel near Islamabad
+            International Airport that offers easy access to the terminal and
             consider how much time you’ll need for the transfer.
           </p>
         </BlogPostSection>

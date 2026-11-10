@@ -7,10 +7,8 @@ import {
   LinkedInIcon,
   InstagramIcon,
   FacebookIcon,
-  WhatsAppIcon,
 } from "@/components/ui/SocialIcons";
 // import ContactModal from "./ContactModal";
-import { trackConversion } from "@/lib/analytics";
 
 const socialLinks = [
   {
@@ -28,7 +26,6 @@ const socialLinks = [
     label: "Facebook",
     Icon: FacebookIcon,
   },
-  { href: "https://wa.me/923224770222", label: "WhatsApp", Icon: WhatsAppIcon },
 ];
 
 const quickLinks = [
@@ -139,11 +136,6 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      onClick={
-                        label === "WhatsApp"
-                          ? () => trackConversion("whatsapp_click")
-                          : undefined
-                      }
                     >
                       <Icon className="w-10 h-10 md:w-12 md:h-12" />
                     </a>
