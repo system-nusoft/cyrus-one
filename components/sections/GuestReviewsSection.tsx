@@ -9,28 +9,28 @@ const platforms = [
     name: "Booking.com",
     icon: "/booking.svg",
     rating: "4.7",
-    reviews: "66 reviews",
+    reviews: "104 reviews",
     href: "https://www.booking.com/hotel/pk/cyrus-one-by-trivelles.html",
   },
   {
     name: "Agoda",
     icon: "/agoda.svg",
     rating: "4.5",
-    reviews: "111 reviews",
+    reviews: "167 reviews",
     href: "https://www.agoda.com/cyrus-one-by-trivelles/hotel/islamabad-pk.html",
   },
   {
     name: "Trip.com",
     icon: "/trip.svg",
     rating: "4.8",
-    reviews: "14 reviews",
+    reviews: "20 reviews",
     href: "https://www.trip.com/hotels/detail/?cityEnName=Islamabad&cityId=531&hotelId=134035371",
   },
   {
     name: "Expedia",
     icon: "/expedia.svg",
-    rating: "4.7",
-    reviews: "34 reviews",
+    rating: "4.5",
+    reviews: "2 reviews",
     href: "https://www.expedia.com/Cyrus-One-By-Trivelles.h128379625.Hotel-Information",
   },
 ];
@@ -39,6 +39,7 @@ function StarRating({ count }: { count: number }) {
   return (
     <div
       className="flex items-center gap-1"
+      role="img"
       aria-label={`${count} out of 5 stars`}
     >
       {[...Array(count)].map((_, i) => (

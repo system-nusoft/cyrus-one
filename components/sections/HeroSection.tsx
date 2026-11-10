@@ -34,13 +34,35 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
   const [current, setCurrent] = useState(0);
+  // Slides 2+ are mounted only after the page has loaded (or a 3s fallback), so they don't compete
+  // with slide 1 (the LCP image) for bandwidth. 3s < the 5s rotation, so slide 2 is ready in time.
+  const [restLoaded, setRestLoaded] = useState(false);
+  // The heading/copy fade-in only runs after the first rotation, so the initial text (an LCP candidate) isn't delayed.
+  const [hasRotated, setHasRotated] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroSlides.length);
+      setHasRotated(true);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    const load = () => setRestLoaded(true);
+    const fallback = setTimeout(load, 3000);
+    if (document.readyState === "complete") {
+      load();
+    } else {
+      window.addEventListener("load", load, { once: true });
+    }
+    return () => {
+      clearTimeout(fallback);
+      window.removeEventListener("load", load);
+    };
+  }, []);
+
+  const fadeClass = hasRotated ? "animate-[fadeIn_1.5s_ease]" : "";
 
   return (
     <section
@@ -50,17 +72,20 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
     >
       {/* Background carousel */}
       <div className="absolute inset-0 z-0">
-        {heroSlides.map((slide, i) => (
-          <Image
-            key={slide.src}
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            priority={i === 0}
-            className={`object-cover transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
-            sizes="100vw"
-          />
-        ))}
+        {heroSlides.map((slide, i) =>
+          i > 0 && !restLoaded ? null : (
+            <Image
+              key={slide.src}
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              className={`object-cover transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
+              sizes="100vw"
+              quality={65}
+            />
+          ),
+        )}
         <div className="absolute inset-0 bg-black/55" />
       </div>
 
@@ -72,13 +97,13 @@ export default function HeroSection({ onSearch, searching }: HeroSectionProps) {
         <div className="max-w-2xl">
           <h1
             key={`heading-${current}`}
-            className="text-4xl md:text-7xl font-normal text-white leading-tight animate-[fadeIn_1.5s_ease]"
+            className={`text-4xl md:text-7xl font-normal text-white leading-tight ${fadeClass}`}
           >
             {heroSlides[current].heading}
           </h1>
           <p
             key={`copy-${current}`}
-            className="text-md md:text-lg text-white/80 mt-6 max-w-lg leading-tight animate-[fadeIn_1.5s_ease]"
+            className={`text-md md:text-lg text-white/80 mt-6 max-w-lg leading-tight ${fadeClass}`}
           >
             {heroSlides[current].copy}
           </p>

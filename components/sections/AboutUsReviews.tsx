@@ -59,7 +59,7 @@ export default function AboutUsReviews() {
               className="shrink-0 w-[85%] sm:w-[60%] md:w-[42%] lg:w-[27%] snap-start"
             >
               <div className="h-full border border-neutral-200 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center gap-6">
-                <div className="flex gap-1" aria-label="Rated 5 out of 5 stars">
+                <div className="flex gap-1" role="img" aria-label="Rated 5 out of 5 stars">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}

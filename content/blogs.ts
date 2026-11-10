@@ -20,6 +20,21 @@ export const DEFAULT_BLOG_AUTHOR = "Cyrus One Team";
 // Published posts (newest first): the first is shown in LatestBlogSection, the rest in OtherBlogsSection.
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "best-hotel-for-late-night-and-early-morning-flights-at-islamabad-airport",
+    title: "Best Hotel For Late-Night And Early-Morning Flights At Islamabad Airport",
+    // DRAFT values — excerpt, category, readTime and alt are not client-supplied yet; confirm.
+    excerpt:
+      "Landing late or flying out at dawn? Here's what to look for in a hotel near Islamabad Airport so your stopover is rested and stress-free.",
+    date: "2026-11-06",
+    categories: ["Airport & Travel"],
+    readTime: "6 Min Read",
+    published: true,
+    image: {
+      src: "/blog-3-image-1.png",
+      alt: "Cyrus One by Trivelles hotel facade at dusk with warmly lit balconies and the Cyrus One sign",
+    },
+  },
+  {
     slug: "why-travelers-choose-cyrus-one-a-stay-built-around-comfort-and-convenience",
     title: "Why Travelers Choose Cyrus One: A Stay Built Around Comfort & Convenience",
     // Draft excerpt (used for meta description) — not client-supplied, needs confirmation.
