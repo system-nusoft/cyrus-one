@@ -296,10 +296,8 @@ export default function LateNightEarlyMorningFlightsPostPage() {
           faqs={[
             {
               question: "How Far Is Cyrus One From Islamabad International Airport?",
-              // TODO: client copy for this answer is a duplicate of the "Check In Whenever You Arrive" paragraph
-              // (nothing about distance) — likely a copy-paste error; confirm the intended answer.
               answer:
-                "Travel plans don’t always go according to schedule. With 24-hour reception and express check-in, guests can receive assistance beyond conventional arrival hours. Whether you’re checking in late at night or preparing for an early departure, the team is available to help make your stay smooth.",
+                "Cyrus One Hotel & Apartments is approximately 10-minute drive from Islamabad International Airport, making it a convenient accommodation option for travellers with late-night arrivals and early-morning departures.",
             },
             {
               question: "Does Cyrus One Offer Complimentary Airport Transfers?",
