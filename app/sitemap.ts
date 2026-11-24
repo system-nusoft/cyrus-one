@@ -54,5 +54,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${BASE_URL}/blogs/best-hotel-near-islamabad-airport`,
+      lastModified: new Date("2026-11-26"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }

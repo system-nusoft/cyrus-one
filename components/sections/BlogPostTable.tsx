@@ -13,7 +13,13 @@ export default function BlogPostTable({
   // Column widths are dynamic, so they're set via inline style rather than a
   // Tailwind arbitrary-value class — Tailwind can't generate a class from an
   // interpolated string, it only picks up literal class names it can statically scan.
-  const gridStyle = { gridTemplateColumns: `${columnWidths[0]} ${columnWidths[1]}` };
+  // Percentages + the column gap + side padding added up to more than 100%, pushing the
+  // right column against the border. Use fr units (share of the space left after the gap),
+  // and give the left column a min-content floor so long words never spill into column 2.
+  const [left, right] = columnWidths.map((w) => parseFloat(w));
+  const gridStyle = {
+    gridTemplateColumns: `minmax(min-content, ${left}fr) minmax(0, ${right}fr)`,
+  };
 
   return (
     <div className="border border-neutral-300">
