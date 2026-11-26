@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 
 interface BlogPostSectionProps {
   title: string;
-  children: ReactNode;
+  /** Omit for a heading-only section (e.g. an h2 that just introduces h3 sub-sections). */
+  children?: ReactNode;
   image?: { src: string; alt: string };
   /** Tailwind aspect-ratio class for the image below the content. Defaults to the 3:2 ratio most blog photos use. */
   imageAspectClassName?: string;
@@ -29,9 +30,11 @@ export default function BlogPostSection({
       <div className="max-w-3xl mx-auto">
         <Heading className={`${titleClassName} font-bold text-neutral-900`}>{title}</Heading>
 
-        <div className="mt-6 flex flex-col gap-6 text-lg text-neutral-600 leading-relaxed">
-          {children}
-        </div>
+        {children && (
+          <div className="mt-6 flex flex-col gap-6 text-lg text-neutral-600 leading-relaxed">
+            {children}
+          </div>
+        )}
       </div>
 
       {image && (

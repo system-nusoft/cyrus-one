@@ -20,6 +20,21 @@ export const DEFAULT_BLOG_AUTHOR = "Cyrus One Team";
 // Published posts (newest first): the first is shown in LatestBlogSection, the rest in OtherBlogsSection.
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "best-hotel-near-islamabad-airport",
+    title: "How To Choose The Best Luxury Hotel Near Islamabad Airport",
+    // DRAFT values — excerpt, category and readTime are not client-supplied yet; confirm. (Date and alt are client-supplied.)
+    excerpt:
+      "Booking a luxury hotel near Islamabad Airport? Here's what to look for, from comfort and location to service and amenities.",
+    date: "2026-11-26",
+    categories: ["Travel Tips"],
+    readTime: "6 Min Read",
+    published: true,
+    image: {
+      src: "/blog-4-image-1.png",
+      alt: "Hotel suite bedroom at Cyrus One by Trivelles, a luxury hotel near Islamabad Airport",
+    },
+  },
+  {
     slug: "best-hotel-for-late-night-and-early-morning-flights-at-islamabad-airport",
     title: "Best Hotel For Late-Night And Early-Morning Flights At Islamabad Airport",
     // DRAFT values — excerpt, category, readTime and alt are not client-supplied yet; confirm.
